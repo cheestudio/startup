@@ -1,0 +1,105 @@
+/* Core Form Styles
+========================================================= */
+
+$input-border-color: #333;
+$input-active-border-color: red;
+$input-border-radius: 0px;
+$input-box-shadow: inset 0 1px 3px #ddd;
+
+form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=date], form input[type=month], form input[type=time], form input[type=datetime], form input[type=datetime-local], form input[type=week], form input[type=number], form input[type=search], form input[type=tel], form input[type=color] {
+  padding: .5em .6em;
+  display: inline-block;
+  border: 1px solid $input-border-color;
+  box-shadow: $input-box-shadow;
+  border-radius: $input-border-radius;
+  @include trans(300ms, linear);
+}
+form select, form textarea {
+  padding: .5em .6em;
+  display: inline-block;
+  border: 1px solid $input-border-color;
+  box-shadow: $input-box-shadow;
+  border-radius: $input-border-radius;
+  @include trans(300ms, linear);
+}
+form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, form input[type=url]:focus, form input[type=date]:focus, form input[type=month]:focus, form input[type=time]:focus, form input[type=datetime]:focus, form input[type=datetime-local]:focus, form input[type=week]:focus, form input[type=number]:focus, form input[type=search]:focus, form input[type=tel]:focus, form input[type=color]:focus {
+  outline: 0;
+  border-color: $input-active-border-color;
+}
+form select:focus, form textarea:focus {
+  outline: 0;
+  border-color: $input-active-border-color;
+}
+form input[type=file]:focus, form input[type=radio]:focus, form input[type=checkbox]:focus {
+  outline: 1px auto $input-active-border-color;
+}
+
+/* Gravity Form Error Styles */
+
+div[id^=gform_wrapper] {
+  .top_label input.medium, .gform_wrapper .top_label select.medium {
+    width: 99%;
+  }
+  .validation_message, li.gfield.gfield_error .gfield_description {
+    font-size: 11px;
+    font-weight: normal;
+    display: none;
+  }
+  li.gfield.gfield_error {
+    background-color: transparent !important;
+    border: none !important;
+    margin-bottom: 0px !important;
+    padding: 6px 6px 4px 0 !important;
+    &.gfield_contains_required.gfield_creditcard_warning {
+      background-color: transparent !important;
+      border: none !important;
+      margin-bottom: 0px !important;
+      padding: 6px 6px 4px 0 !important;
+    }
+  }
+  .top_label .gfield_error {
+    width: 100%;
+  }
+  .top_label .gfield_error .ginput_container {
+    max-width: 100%;
+  }
+  .gfield_error {
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+      border:1px solid red !important;
+    }
+    .gfield_label {
+      color: red;
+    }
+  }
+    .gfield_required {
+      color: #d2722d !important;
+    }
+  li.gfield.gfield_error.gfield_contains_required {
+    label.gfield_label, div.ginput_container {
+      color:  !important;
+      padding: 0 !important;
+    }
+  }
+  li.gfield.gfield_error.gfield_contains_required {
+    padding: 0 !important;
+  }
+}
+.validation_error {
+  color: #DF1C1C !important;
+  font-size: 11px !important;
+  display: none;
+}
+
+.gforms_confirmation_message {
+  background-color: none !important;
+  color: #666!important;
+  border: none !important;
+  font-size: 15px!important;
+  margin-bottom: 40px!important;
+}
+
+.gform_validation_container {
+  display: none!important;
+  left: -9000px;
+  position: absolute!important;
+}

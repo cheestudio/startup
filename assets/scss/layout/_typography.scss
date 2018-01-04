@@ -1,0 +1,72 @@
+/* Fonts
+========================================================= */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,700,600italic,700italic);
+
+@mixin FONT( $STYLE:style ) {
+  @if $STYLE == 'style' {
+    font-family: 'FONT_FAMILY';
+  }
+  @elseif $STYLE2 == 'style2' {
+    font-family: 'FONT_FAMILY2';
+  }
+}
+
+/* Headings
+========================================================= */
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  line-height: normal;
+  margin: 0 0 20px 0;
+}
+h1 {
+  font-size: 40px;
+
+}
+h2 {
+  font-size: 35px;
+
+}
+h3 {
+  font-size: 30px;
+
+}
+h4 {
+  font-size: 25px;
+
+}
+h5 {
+  font-size: 20px;
+
+}
+h6 {
+  font-size: 15px;
+
+}
+
+/* Body
+========================================================= */
+body, p, main li {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a {
+  color: inherit;
+  &:hover {
+    color: red;
+  }
+}
+
+br {
+  @include grid-media($mobile) {
+    display: none;
+  }
+}
+
+button, .button, input[type="submit"] {
+  @include eButton;
+}

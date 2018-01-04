@@ -1,0 +1,48 @@
+/* Color VARs
+========================================================= */
+
+
+
+
+
+
+/* Button
+========================================================= */
+@mixin eButton($color:white, $bg:black) {
+	@include trans;
+	background: $bg;
+	border: 1px solid transparent;
+	color: $color;
+	cursor: pointer;
+	display: inline-block;
+	line-height: normal;
+	padding: 5px 10px;
+	text-align: center;
+	text-transform: uppercase;
+	user-select: none;
+	vertical-align: baseline;
+	&:hover {
+		color: $color;
+		background: $bg;
+	}
+}
+
+/* Font Awesome
+========================================================= */
+@mixin setFA {
+	font-family: 'FontAwesome';
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Transition
+========================================================= */
+@mixin trans($duration:200ms, $easing:ease-in-out, $property:all) {
+	transition: $property $duration $easing;
+}

@@ -1,0 +1,37 @@
+/*!
+Theme Name: NAME
+Theme URI: 
+Description: WP Theme for NAME
+Author: Chee Studio
+Author URI: http://chee.studio
+*/
+
+
+/* Site Styles
+========================================================= */
+@import "core/queries";
+@import "grid/neat/neat";
+@import "grid/grid-settings";
+@import "core/variables";
+@import "core/reset";
+
+
+/* Global Styles
+========================================================= */
+@import "layout/global";
+@import "layout/typography";
+@import "layout/mobile-nav";
+@import "layout/global-forms";
+
+
+/* Header & Footer
+========================================================= */
+@import "layout/global-header";
+@import "layout/global-footer";
+
+
+/* Pages
+========================================================= */
+@import "pages/home";
+@import "pages/blog-index";
+@import "pages/blog-single";
