@@ -8,6 +8,5 @@ require_once locate_template('/init/scripts.php');    // Theme Scripts and Style
 require_once locate_template('/init/helpers.php');   // All other custom functions
 require_once locate_template('/init/cpt.php');      // Custom Post Types
 
-
 /* Custom
 ========================================================= */
