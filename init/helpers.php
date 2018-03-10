@@ -88,6 +88,19 @@ if(function_exists('acf_add_options_page')) {
   acf_add_options_page( array('page_title' => 'Theme Options'));
 }
 
+/* ACF Image - SourceSet
+========================================================= */
+function acf_image( $image_id, $max_width, $image_size ) {
+  if ( $image_id != '' ) :
+    // set the default src image size
+    $image_src = wp_get_attachment_image_url( $image_id, $image_size );
+    // set the srcset with various image sizes
+    $image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
+    // generate the markup for the responsive image
+    echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.'px) 100vw, '.$max_width.'px"';
+  endif;
+}
+
 
 /* Hide Admin Panel (for launch)
 ========================================================= */
