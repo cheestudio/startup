@@ -5,7 +5,7 @@
   <div class="container">
 
     <?php get_template_part('partials/blog/content-single'); ?>
-    
+
   </div>
 </div>
 

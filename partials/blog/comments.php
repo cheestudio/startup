@@ -8,7 +8,7 @@ if ( have_comments() ) : ?>
   <h3><?php printf(_n('One Response to &ldquo;%2$s&rdquo;', '%1$s Responses to &ldquo;%2$s&rdquo;', get_comments_number()), number_format_i18n(get_comments_number()), get_the_title()); ?></h3>
 
   <ul class="comment-list">
-    <?php wp_list_comments(array('walker' => new init_Walker_Comment)); ?>
+    <?php wp_list_comments(array('walker' => new comment_walker() )); ?>
   </ul>
 
   <?php if ( get_comment_pages_count() > 1 && get_option('page_comments') ) : ?>
@@ -60,16 +60,24 @@ if ( have_comments() ) : ?>
               <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account'); ?>"><?php _e('Log out &raquo;'); ?></a>
             </p>
           <?php else : ?>
-            <label for="author"><?php _e('Name'); if ($req) _e(' (required)'); ?></label>
-            <input type="text" class="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
-            <label for="email"><?php _e('Email (will not be published)'); if ($req) _e(' (required)'); ?></label>
-            <input type="email" class="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
-            <label for="url"><?php _e('Website'); ?></label>
-            <input type="url" class="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22">
+<div class="comment-form-field">
+  <label for="author"><?php _e('Name'); if ($req) _e(' (required)'); ?></label>
+  <input type="text" class="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
+</div>
+<div class="comment-form-field">
+  <label for="email"><?php _e('Email (will not be published)'); if ($req) _e(' (required)'); ?></label>
+  <input type="email" class="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
+</div>
+<div class="comment-form-field">
+  <label for="url"><?php _e('Website'); ?></label>
+  <input type="url" class="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22">
+</div>
           <?php endif; ?>
-          <label for="comment"><?php _e('Comment'); ?></label>
-          <textarea name="comment" id="comment" class="input-xlarge" rows="5" aria-required="true"></textarea>
-          <p><input name="submit" class="btn btn-primary" type="submit" id="submit" value="<?php _e('Submit Comment'); ?>"></p>
+<div class="comment-form-field">
+  <label for="comment"><?php _e('Comment'); ?></label>
+  <textarea name="comment" id="comment" class="input-xlarge" rows="5" aria-required="true"></textarea>
+</div>
+          <input name="submit" class="btn btn-primary" type="submit" id="submit" value="<?php _e('Submit Comment'); ?>">
           <?php comment_id_fields(); ?>
           <?php do_action('comment_form', $post->ID); ?>
         </form>

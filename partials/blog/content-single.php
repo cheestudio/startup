@@ -20,4 +20,4 @@
 <?php endwhile; ?>
 
 
-<?php comments_template('partials/blog/comments.php'); ?>
+<?php comments_template('/partials/blog/comments.php'); ?>
