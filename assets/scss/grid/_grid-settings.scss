@@ -24,7 +24,7 @@ $mobile: (
   media: "(max-width: 767px)",
   );
 
-@mixin content-container($width: 1420px) {
+@mixin content-container( $width: 1420px ) {
   max-width: $width;
   margin: 0 auto;
   padding: 0 15px;

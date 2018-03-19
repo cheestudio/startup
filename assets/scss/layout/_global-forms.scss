@@ -12,7 +12,7 @@ form input[type=text], form input[type=password], form input[type=email], form i
   border: 1px solid $input-border-color;
   box-shadow: $input-box-shadow;
   border-radius: $input-border-radius;
-  @include trans(300ms, linear);
+  @include trans(300, linear);
 }
 form select, form textarea {
   padding: .5em .6em;
@@ -20,7 +20,7 @@ form select, form textarea {
   border: 1px solid $input-border-color;
   box-shadow: $input-box-shadow;
   border-radius: $input-border-radius;
-  @include trans(300ms, linear);
+  @include trans(300, linear);
 }
 form input[type=text]:focus, form input[type=password]:focus, form input[type=email]:focus, form input[type=url]:focus, form input[type=date]:focus, form input[type=month]:focus, form input[type=time]:focus, form input[type=datetime]:focus, form input[type=datetime-local]:focus, form input[type=week]:focus, form input[type=number]:focus, form input[type=search]:focus, form input[type=tel]:focus, form input[type=color]:focus {
   outline: 0;

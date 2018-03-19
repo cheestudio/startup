@@ -1,8 +1,8 @@
 {
   "name": "Chee_Gulp",
   "author": "Chee Studio",
-  "version": "2.0.0",
-  "description": "Front End WordPress Framework",
+  "version": "3.0.0",
+  "description": "Custom WordPress Framework",
   "license": "GPL-2.0",
   "main": "gulpfile.js",
   "devDependencies": {

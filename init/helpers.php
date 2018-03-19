@@ -2,13 +2,13 @@
 /* HELPER FUNCTIONS
 ========================================================= */
 
-/* Gravity Forms
-   Gravity Forms anchor creation
-   ========================================================= */
-   add_filter("gform_confirmation_anchor", create_function("","return false;"));
+
+/* Gravity Forms anchor creation
+========================================================= */
+add_filter("gform_confirmation_anchor", create_function("","return false;"));
 
 /* Fix Gravity Form Tabindex Conflicts
-http://gravitywiz.com/fix-gravity-form-tabindex-conflicts
+   http://gravitywiz.com/fix-gravity-form-tabindex-conflicts
 ========================================================= */
 add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
 function gform_tabindexer( $tab_index, $form = false ) {
@@ -18,8 +18,6 @@ function gform_tabindexer( $tab_index, $form = false ) {
     return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
   }
 
-/* MISC. HELPER FUNCTIONS
-========================================================= */
 
 /* Add Slug to Body Class
 ========================================================= */
@@ -61,11 +59,12 @@ add_action('admin_head', 'hide_help');
 /* Custom Footer Text
 ========================================================= */
 function remove_footer_admin () {
-  echo 'Custom WordPress Web Development by <a href="https://goodchee.com/" title="Chee Studios Web Development" target="_blank">Chee Studios</a>';
+  echo 'Custom WordPress Web Development by <a href="https://goodchee.com/" title="Chee Studios Web Development" target="_blank">Chee Studio\'s</a>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
-/* Stop images getting wrapped up in p tags when they get dumped out with the_content() for easier theme styling
+
+/* Stop images getting wrapped up in <p> tags when they get dumped out with the_content()
 ========================================================= */
 function remove_img_ptags($content){
   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
@@ -88,6 +87,7 @@ if(function_exists('acf_add_options_page')) {
   acf_add_options_page( array('page_title' => 'Theme Options'));
 }
 
+
 /* ACF Image - SourceSet
 ========================================================= */
 function acf_image( $image_id, $max_width, $image_size ) {
@@ -102,14 +102,14 @@ function acf_image( $image_id, $max_width, $image_size ) {
 }
 
 
-/* Hide Admin Panel (for launch)
-========================================================= */
-//add_filter('acf/settings/show_admin', '__return_false');
-
-
 /* Remove Emoji scripts from head
 ========================================================= */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+
+/* Hide Admin Panel (for launch)
+========================================================= */
+//add_filter('acf/settings/show_admin', '__return_false');

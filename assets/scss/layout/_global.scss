@@ -90,7 +90,7 @@ sub {
   bottom: -0.25em;
 }
 dl, menu, ol, ul {
-  margin: 1em 0;
+  margin: 10px 0;
 }
 dd {
   margin: 0 0 0 40px;
@@ -326,4 +326,8 @@ img {
       }
     }
   }
+}
+
+.page-404 {
+  text-align: center;
 }

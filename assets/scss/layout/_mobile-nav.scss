@@ -35,14 +35,16 @@ $current-link-highlight : black;
     height: 3px;
     margin-bottom: 7px;
     width: 32px;
-    &:first-child, &:last-child {
+
+    &:first-child,
+    &:last-child {
       @include trans;
       transform: translate(0);
     }
-    &:nth-child(2n):before, &:nth-child(2n):after {
+    &:nth-child(2n):before,
+    &:nth-child(2n):after {
       @include trans;
-      background: $active-toggle-color;
-      background: $resting-toggle-color;
+      background-color: $active-toggle-color;
       border-radius: 5px;
       content:'';
       display: block;
@@ -66,6 +68,9 @@ $current-link-highlight : black;
 ========================================================= */
 @include grid-media($tablet) {
 
+  main {
+    margin-top: 60px;
+  }
   .brand {
     display: none;
   }
@@ -81,7 +86,7 @@ $current-link-highlight : black;
     top: 0;
     min-height: 60px;
     width: 100%;
-    z-index: 9000;
+    z-index: 9999;
     .mobile-brand {
       position: absolute;
       left: 15px;
@@ -130,6 +135,7 @@ $current-link-highlight : black;
               background: none !important;
             }
             &:after {
+              content: '';
               border-color: #fff transparent transparent transparent;
               border-style: solid;
               border-width: 10.4px 6px 0 6px;
@@ -138,6 +144,7 @@ $current-link-highlight : black;
             }
             &.open {
               &:after {
+                content: '';
                 border-color: transparent transparent #fff transparent;
                 border-style: solid;
                 border-width: 0 6px 10.4px 6px;

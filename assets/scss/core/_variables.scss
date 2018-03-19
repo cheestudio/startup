@@ -6,17 +6,17 @@
 
 
 
-/* Button
+/* Button ( $color, $bg )
 ========================================================= */
 @mixin eButton($color:white, $bg:black) {
-	@include trans;
+	transition: background-color 400ms ease-in-out, transform 50ms linear;
 	background: $bg;
 	border: 1px solid transparent;
 	color: $color;
 	cursor: pointer;
 	display: inline-block;
 	line-height: normal;
-	padding: 5px 10px;
+	padding: 10px 20px;
 	text-align: center;
 	text-transform: uppercase;
 	user-select: none;
@@ -24,6 +24,9 @@
 	&:hover {
 		color: $color;
 		background: $bg;
+	}
+		&:active {
+		transform: translateY(-3px);
 	}
 }
 
@@ -41,8 +44,21 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Global Transition
+/* Global Row Padding ( $large, $small )
 ========================================================= */
-@mixin trans($duration:200ms, $easing:ease-in-out, $property:all) {
-	transition: $property $duration $easing;
+@mixin row-padding( $large:70, $small:35 ) {
+	@include grid-media($tablet-up) {
+		padding-top:    $large+px;
+		padding-bottom: $large+px;
+	}
+	@include grid-media($mobile) {
+		padding-top:    $small+px;
+		padding-bottom: $small+px;
+	}
+}
+
+/* Global Transition ( $duration, $easing, $property )
+========================================================= */
+@mixin trans($duration:200, $easing:ease-in-out, $property:all) {
+	transition: $property $duration+ms $easing;
 }
