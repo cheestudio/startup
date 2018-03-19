@@ -83,8 +83,39 @@ add_filter( 'tiny_mce_before_init', 'unhide_kitchensink' );
 
 /* ACF Global Options Page
 ========================================================= */
-if(function_exists('acf_add_options_page')) {
-  acf_add_options_page( array('page_title' => 'Theme Options'));
+if ( function_exists('acf_add_options_page') ) {
+
+  acf_add_options_page(array(
+    'page_title'  => 'Theme Settings',
+    'menu_title'  => 'Theme Settings',
+    'menu_slug'   => 'theme-settings',
+    'capability'  => 'edit_posts',
+    'redirect'    => true
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Global Settings',
+    'menu_title'  => 'Global Settings',
+    'parent_slug' => 'theme-settings',
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Footer Content',
+    'menu_title'  => 'Footer Content',
+    'parent_slug' => 'theme-settings',
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Company Settings',
+    'menu_title'  => 'Company Info',
+    'parent_slug' => 'theme-settings',
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Social Media Settings',
+    'menu_title'  => 'Social Media',
+    'parent_slug' => 'theme-settings',
+  ));
 }
 
 
