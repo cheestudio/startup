@@ -21,11 +21,12 @@
 	text-transform: uppercase;
 	user-select: none;
 	vertical-align: baseline;
+	-webkit-appearance: none;
 	&:hover {
 		color: $color;
 		background: $bg;
 	}
-		&:active {
+	&:active {
 		transform: translateY(-3px);
 	}
 }
