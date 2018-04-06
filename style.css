@@ -614,6 +614,7 @@ img {
 	    -ms-user-select: none;
 	        user-select: none;
 	vertical-align: baseline;
+	-webkit-appearance: none;
 }
 
 .post-nav .pager li a:hover {
@@ -727,6 +728,7 @@ input[type="submit"] {
 	    -ms-user-select: none;
 	        user-select: none;
 	vertical-align: baseline;
+	-webkit-appearance: none;
 }
 
 button:hover,
@@ -979,7 +981,7 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 /* BLOG - Single
 ========================================================= */
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
 
 .content-inner {
 	margin-left: -20px;
@@ -989,7 +991,7 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
 
 .wp-caption {
 	width: auto !important;
@@ -1183,7 +1185,7 @@ main {
 
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
 .alignleft {
 	float: none;
