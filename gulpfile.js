@@ -1,6 +1,6 @@
 /* Variables
 ========================================================= */
-const PROJECT_URL      = 'http://localhost:8080/NAME/',
+const PROJECT_URL      = 'http://localhost/NAME/',
       ROOT             = './',
       STYLES_MAIN      = 'assets/scss/main.scss',
       STYLES_SOURCE    = 'assets/scss/**/*.scss',
@@ -153,7 +153,7 @@ gulp.task( 'browser-sync', function() {
 gulp.task('default', ['styles', 'scriptsJS', 'images', 'browser-sync'], function() {
   gulp.watch( STYLES_SOURCE, [ 'styles' ] );
   gulp.watch( IMAGES_SOURCE, [ 'images' ] );
-  gulp.watch( JS_SOURCE, [ 'scriptsJS', reload ] );
+  gulp.watch( JS_SOURCE, [ 'scriptsJS' ] );
   gulp.watch( ALL_PHP, [ 'styles', reload ] );
 });
 
