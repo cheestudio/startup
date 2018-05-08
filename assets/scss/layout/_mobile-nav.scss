@@ -1,14 +1,17 @@
 /* Mobile NAV
 ========================================================= */
-$menu-background        : black;
+$menu-background        : white;
 $menu-border-color      : white;
-$resting-toggle-color   : white;
-$active-toggle-color    : red;
-$menu-dropdown-color    : black;
-$link-color             : white;
-$link-hover-color       : red;
-$current-link-highlight : black;
-
+$resting-toggle-color   :  black;
+$active-toggle-color    :  black;
+$menu-dropdown-color    : white;
+$link-color             :  black;
+$link-background : white;
+$link-hover-color       : white;
+$link-hover-background             :  black;
+$link-border-color: #eee;
+$current-link-background:  black;
+$current-link-color: white;
 
 .mobile-nav-wrap {
   display: none;
@@ -17,9 +20,10 @@ $current-link-highlight : black;
   background: none;
   border: none;
   display: none;
-  float: right;
-  margin: 15px 15px 0;
-  position: relative;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 10000;
   .title {
     color: black;
     float: left;
@@ -35,14 +39,15 @@ $current-link-highlight : black;
     height: 3px;
     margin-bottom: 7px;
     width: 32px;
-    &:first-child, &:last-child {
+    &:first-child,
+    &:last-child {
       @include trans;
       transform: translate(0);
     }
-    &:nth-child(2n):before, &:nth-child(2n):after {
+    &:nth-child(2n):before,
+    &:nth-child(2n):after {
       @include trans;
-      background: $active-toggle-color;
-      background: $resting-toggle-color;
+      background-color: $active-toggle-color;
       border-radius: 5px;
       content:'';
       display: block;
@@ -66,6 +71,9 @@ $current-link-highlight : black;
 ========================================================= */
 @include grid-media($tablet) {
 
+  main {
+    margin-top: 60px;
+  }
   .brand {
     display: none;
   }
@@ -81,21 +89,25 @@ $current-link-highlight : black;
     top: 0;
     min-height: 60px;
     width: 100%;
-    z-index: 9000;
+    z-index: 3000;
     .mobile-brand {
       position: absolute;
       left: 15px;
       top: 15px;
-      img {}
+      img {
+        display: block;
+        width: 150px;
+      }
     }
     .mobile-nav {
-      background: $menu-dropdown-color;
+      background: $menu-background;
       clear: both;
       display: none;
       left: 0;
       position: absolute;
       top: 60px;
       width: 100%;
+      height: 1500px;
       z-index: 9999;
       ul {
         margin: 0;
@@ -105,70 +117,89 @@ $current-link-highlight : black;
           display: block;
           position: relative;
           margin: 0;
-          a {
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            border: none;
+          border-bottom: 1px solid $link-border-color;
+          > a {
             color: $link-color;
             display: block;
             font-size: 16px;
-            margin: 0 !important;
-            padding: 10px 15px 10px 25px;
+            line-height: 24px;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 15px 15px 15px 25px;
+            background-color: $link-background;
             &:hover {
-              background: $link-hover-color;
+              background-color: $link-hover-background;
+              color: $link-hover-color;
             }
           }
           .expand {
-            background: none;
-            border: none;
+            @include trans(400);
             display: block;
-            padding: 0 14px 20px 14px;
+            padding: 27px 27px 27px 36px;
             position: absolute;
             right: 0px;
-            top: 16px;
-            z-index: 9999;
+            z-index: 1000;
+            background-image: url('assets/img/caret-right.svg');
+            background-size: 15px 15px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transform-origin: center center;
+            background-color: transparent !important;
             &:hover {
-              background: none !important;
-            }
-            &:after {
-              border-color: #fff transparent transparent transparent;
-              border-style: solid;
-              border-width: 10.4px 6px 0 6px;
-              height: 0;
-              width: 0;
-            }
-            &.open {
-              &:after {
-                border-color: transparent transparent #fff transparent;
-                border-style: solid;
-                border-width: 0 6px 10.4px 6px;
-                height: 0;
-                width: 0;
-              }
+              transform: rotate(-180deg);
             }
           }
-          &:hover {
-            ul {}
+          .close-sub {
+            display: block;
+            width: 50px;
+            height: 20px;
+            background:url(assets/img/nav-arrow-left.svg) 0 0 no-repeat;
+            background-color: transparent !important;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 2000;
+            @include trans;
+            &:hover {
+            transform:translateX(-5px);
+            }
           }
-          ul {
-            background: #4e4e4e;
+          .sub-menu {
+            background-color: $link-background;
+            position: fixed;
             border: none;
-            display: none;
-            opacity: 1;
-            position: static;
-            text-align: left;
+            opacity:0;
             visibility: visible;
+            text-align: center;
+            @include trans;
+            transform:translateX(100%);
+            width: 100%;
+            height: 100%;
+            padding-top: 60px;
+            top: 0;
+            z-index: 4000;
+            &.sub-open {
+              opacity: 1;
+              transform:translateX(0);
+            }
             &:before {
               display: none;
             }
             li {
               text-align: left;
+              border-bottom: 1px solid $link-border-color;
               a {
-                border-bottom: 1px solid #606064 !important;
                 border: none;
                 color: $link-color;
                 display: block;
                 font-size: 16px;
-                padding-left: 40px;
+                letter-spacing: 1px;
+                //padding-left: 40px;
+                text-transform: none;
+                &:hover {
+                color: #fff;
+                }
               }
             }
           }
@@ -186,8 +217,9 @@ $current-link-highlight : black;
         }
         &.current-menu-item,
         &.current-page-ancestor {
-          a {
-            background: $current-link-highlight;
+          > a {
+            background-color: $current-link-background;
+            color: $current-link-color;
           }
         }
       }

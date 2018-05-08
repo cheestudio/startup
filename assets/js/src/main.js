@@ -1,30 +1,27 @@
 jQuery(document).ready(function($) {
 
-/* Mobile Nav
+/* Mobile Nav Toggle
 ========================================================= */
 $('.navbar-toggle').click(function() {
-  $('.mobile-nav').slideToggle();
+  $('.mobile-nav').fadeToggle();
   $(this).parent().toggleClass('open');
+  $('.sub-menu').removeClass('sub-open');
   return false;
 });
 
-/* Close Mobile Nav on-click
-========================================================= */
-$('.mobile-nav ul li a').click(function() {
-  $('.mobile-nav').fadeOut();
-  $('.mobile-nav-wrap').removeClass('open');
-});
-
-/* Mobile Nav with Nested Sub-Menu's
+/* Mobile Nav with Flyout Menus
 ========================================================= */
 $('.mobile-nav ul li').has('ul').prepend('<a href="#" class="expand"></a>');
-$('.mobile-nav ul .current-menu-ancestor > .expand').addClass('open');
-$('#open-nav, .mobile-nav ul .menu-item-has-children > a.expand').click(function(event) {
-  event.preventDefault();
+$('.mobile-nav .sub-menu').prepend('<a href="#" class="close-sub"></a>');
+$('.mobile-nav ul .menu-item-has-children > a.expand').click(function(e) {
   var current = $(this);
-  $("~ ul", current).stop(true,true).slideToggle(200);
-  $(current).toggleClass('open');
+  e.preventDefault();
+  $("~ ul", current).toggleClass('sub-open');
+  $(current).toggleClass('expand-open');
 });
-
+$('.close-sub').click(function(e){
+  e.preventDefault();
+  $(this).parent().removeClass('sub-open');
+});
 
 }); // End Document Ready
