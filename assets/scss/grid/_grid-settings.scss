@@ -3,28 +3,28 @@
 $desktop: (
   columns: 12,
   gutter: 20px,
-  media: "(min-width: 1025px)",
+  media: "screen and (min-width: 1025px)",
   );
 
 $tablet: (
   columns: 4,
   gutter: 20px,
-  media: "(max-width: 1024px)",
+  media: "screen and (max-width: 1024px)",
   );
 
 $tablet-up: (
   columns: 4,
   gutter: 20px,
-  media: "(min-width: 768px)",
+  media: "screen and (min-width: 768px)",
   );
 
 $mobile: (
   columns: 2,
   gutter: 20px,
-  media: "(max-width: 767px)",
+  media: "screen and (max-width: 767px)",
   );
 
-@mixin content-container($width: 1420px) {
+@mixin content-container( $width: 1420px ) {
   max-width: $width;
   margin: 0 auto;
   padding: 0 15px;
@@ -32,7 +32,7 @@ $mobile: (
 
 @mixin nested-wrap{
  @include grid-container;
- @include min-screen(1025px) {
+ @include grid-media($desktop) {
    @include grid-collapse;
  }
 }

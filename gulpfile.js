@@ -1,7 +1,6 @@
-
 /* Variables
 ========================================================= */
-const PROJECT_URL      = 'http://localhost:8080/startup/',
+const PROJECT_URL      = 'http://localhost/NAME/',
       ROOT             = './',
       STYLES_MAIN      = 'assets/scss/main.scss',
       STYLES_SOURCE    = 'assets/scss/**/*.scss',
@@ -9,7 +8,7 @@ const PROJECT_URL      = 'http://localhost:8080/startup/',
       JS_DEST          = 'assets/js/',
       IMAGES_SOURCE    = 'assets/img/**/*',
       IMAGES_DEST      = 'assets/img',
-      ALL_PHP          = '**/*.php',
+      ALL_PHP          = './**/*.php',
       BROWSER_VERSIONS = [
         'last 2 version',
         '> 1%',
@@ -84,12 +83,7 @@ gulp.task('scriptsJS', function() {
 
   return gulp.src( JS_SOURCE )
     .pipe(plumber( { errorHandler: onError } ))
-    .pipe(concat('all.js'))
-    .pipe(gulp.dest( JS_DEST ))
-    .pipe(rename( {
-      basename: "all",
-      suffix: '.min'
-    } ))
+    .pipe(concat('all.min.js'))
     .pipe(uglifyJS() )
     .pipe(plumber.stop() )
     .pipe(gulp.dest( JS_DEST ))
@@ -158,9 +152,9 @@ gulp.task( 'browser-sync', function() {
 ========================================================= */
 gulp.task('default', ['styles', 'scriptsJS', 'images', 'browser-sync'], function() {
   gulp.watch( STYLES_SOURCE, [ 'styles' ] );
-  gulp.watch( IMAGES_SOURCE, [ 'images' ], reload );
-  gulp.watch( JS_SOURCE, [ 'scriptsJS', reload ] );
-  gulp.watch( ALL_PHP, [ 'styles' ], reload );
+  gulp.watch( IMAGES_SOURCE, [ 'images' ] );
+  gulp.watch( JS_SOURCE, [ 'scriptsJS' ] );
+  gulp.watch( ALL_PHP, [ 'styles', reload ] );
 });
 
 

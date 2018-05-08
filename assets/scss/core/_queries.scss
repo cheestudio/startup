@@ -2,7 +2,7 @@
 ========================================================= */
 @mixin screen($resMin, $resMax)
 {
-  @media (min-width: $resMin) and (max-width: $resMax)
+  @media screen and (min-width: $resMin) and (max-width: $resMax)
   {
     @content;
   }
@@ -10,7 +10,7 @@
 
 @mixin max-screen($res)
 {
-  @media (max-width: $res)
+  @media screen and (max-width: $res)
   {
     @content;
   }
@@ -18,7 +18,7 @@
 
 @mixin min-screen($res)
 {
-  @media (min-width: $res)
+  @media screen and (min-width: $res)
   {
     @content;
   }
@@ -26,7 +26,7 @@
 
 @mixin screen-height($resMin, $resMax)
 {
-  @media (min-height: $resMin) and (max-height: $resMax)
+  @media screen and (min-height: $resMin) and (max-height: $resMax)
   {
     @content;
   }
@@ -34,7 +34,7 @@
 
 @mixin max-screen-height($res)
 {
-  @media (max-height: $res)
+  @media screen and (max-height: $res)
   {
     @content;
   }
@@ -42,7 +42,7 @@
 
 @mixin min-screen-height($res)
 {
-  @media (min-height: $res)
+  @media screen and (min-height: $res)
   {
     @content;
   }

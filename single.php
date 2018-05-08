@@ -4,7 +4,9 @@
 <div class="blog-single">
   <div class="container">
 
-    <?php get_template_part('partials/blog/content-single'); ?>
+    <?php while ( have_posts() ) : the_post();?>
+      <?php get_template_part('partials/blog/content-single'); ?>
+    <?php endwhile; ?>
 
   </div>
 </div>

@@ -22,11 +22,3 @@ function theme_styles() {
   wp_enqueue_style( 'main-stylesheet' );
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
-
-
-/* Wizzy MCE Icons
-========================================================= */
-function shortcode_icons() {
-  wp_enqueue_style('shortcode-icons', get_template_directory_uri() . '/assets/scss/core/_mce-style.css');
-}
-add_action('admin_enqueue_scripts', 'shortcode_icons');

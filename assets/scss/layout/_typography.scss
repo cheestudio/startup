@@ -1,6 +1,8 @@
 /* Fonts
 ========================================================= */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,700,600italic,700italic);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700');
+// 400, 400i, 600, 700
+
 
 @mixin FONT( $STYLE:style ) {
   @if $STYLE == 'style' {
@@ -11,6 +13,7 @@
   }
 }
 
+
 /* Headings
 ========================================================= */
 h1, h2, h3, h4, h5, h6 {
@@ -19,27 +22,27 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 20px 0;
 }
 h1 {
-  font-size: 40px;
+  font-size: 60px;
 
 }
 h2 {
-  font-size: 35px;
+  font-size: 50px;
 
 }
 h3 {
-  font-size: 30px;
+  font-size: 40px;
 
 }
 h4 {
-  font-size: 25px;
+  font-size: 30px;
 
 }
 h5 {
-  font-size: 20px;
+  font-size: 25px;
 
 }
 h6 {
-  font-size: 15px;
+  font-size: 20px;
 
 }
 
@@ -49,11 +52,12 @@ body, p, main li {
   font-size: 16px;
   line-height: 26px;
 }
-
 p {
   margin-bottom: 10px;
 }
-
+em {
+  font-style: italic;
+}
 a {
   color: inherit;
   &:hover {

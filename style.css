@@ -1,9 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,700,600italic,700italic);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700");
 
 /*!
 Theme Name: Chee Startup
 Theme URI:
-Description:
+Description: 
 Author: Chee Studio
 Author URI: http://chee.studio
 */
@@ -38,13 +38,16 @@ Author URI: http://chee.studio
 /* Color VARs
 ========================================================= */
 
-/* Button
+/* Button ( $color, $bg )
 ========================================================= */
 
 /* Font Awesome
 ========================================================= */
 
-/* Global Transition
+/* Global Row Padding ( $large, $small )
+========================================================= */
+
+/* Global Transition ( $duration, $easing, $property )
 ========================================================= */
 
 /* Reset
@@ -155,11 +158,6 @@ section {
 
 body {
 	line-height: 1;
-}
-
-ol,
-ul {
-	list-style: none;
 }
 
 blockquote,
@@ -316,7 +314,7 @@ dl,
 menu,
 ol,
 ul {
-	margin: 1em 0;
+	margin: 10px 0;
 }
 
 dd {
@@ -598,15 +596,17 @@ img {
 
 .post-nav .pager li a {
 	padding: 0 5px;
-	-webkit-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	-webkit-transition: background-color 400ms ease-in-out, -webkit-transform 50ms linear;
+	transition: background-color 400ms ease-in-out, -webkit-transform 50ms linear;
+	transition: background-color 400ms ease-in-out, transform 50ms linear;
+	transition: background-color 400ms ease-in-out, transform 50ms linear, -webkit-transform 50ms linear;
 	background: black;
 	border: 1px solid transparent;
 	color: white;
 	cursor: pointer;
 	display: inline-block;
 	line-height: normal;
-	padding: 5px 10px;
+	padding: 10px 20px;
 	text-align: center;
 	text-transform: uppercase;
 	-webkit-user-select: none;
@@ -614,11 +614,18 @@ img {
 	    -ms-user-select: none;
 	        user-select: none;
 	vertical-align: baseline;
+	-webkit-appearance: none;
 }
 
 .post-nav .pager li a:hover {
 	color: white;
 	background: black;
+}
+
+.post-nav .pager li a:active {
+	-webkit-transform: translateY(-3px);
+	    -ms-transform: translateY(-3px);
+	        transform: translateY(-3px);
 }
 
 .post-nav .pager li.previous {
@@ -627,6 +634,10 @@ img {
 
 .post-nav .pager li.next {
 	float: right;
+}
+
+.page-404 {
+	text-align: center;
 }
 
 /* Fonts
@@ -647,27 +658,27 @@ h6 {
 }
 
 h1 {
-	font-size: 40px;
+	font-size: 60px;
 }
 
 h2 {
-	font-size: 35px;
+	font-size: 50px;
 }
 
 h3 {
-	font-size: 30px;
+	font-size: 40px;
 }
 
 h4 {
-	font-size: 25px;
+	font-size: 30px;
 }
 
 h5 {
-	font-size: 20px;
+	font-size: 25px;
 }
 
 h6 {
-	font-size: 15px;
+	font-size: 20px;
 }
 
 /* Body
@@ -684,6 +695,10 @@ p {
 	margin-bottom: 10px;
 }
 
+em {
+	font-style: italic;
+}
+
 a {
 	color: inherit;
 }
@@ -695,15 +710,17 @@ a:hover {
 button,
 .button,
 input[type="submit"] {
-	-webkit-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	-webkit-transition: background-color 400ms ease-in-out, -webkit-transform 50ms linear;
+	transition: background-color 400ms ease-in-out, -webkit-transform 50ms linear;
+	transition: background-color 400ms ease-in-out, transform 50ms linear;
+	transition: background-color 400ms ease-in-out, transform 50ms linear, -webkit-transform 50ms linear;
 	background: black;
 	border: 1px solid transparent;
 	color: white;
 	cursor: pointer;
 	display: inline-block;
 	line-height: normal;
-	padding: 5px 10px;
+	padding: 10px 20px;
 	text-align: center;
 	text-transform: uppercase;
 	-webkit-user-select: none;
@@ -711,6 +728,7 @@ input[type="submit"] {
 	    -ms-user-select: none;
 	        user-select: none;
 	vertical-align: baseline;
+	-webkit-appearance: none;
 }
 
 button:hover,
@@ -718,6 +736,14 @@ button:hover,
 input[type="submit"]:hover {
 	color: white;
 	background: black;
+}
+
+button:active,
+.button:active,
+input[type="submit"]:active {
+	-webkit-transform: translateY(-3px);
+	    -ms-transform: translateY(-3px);
+	        transform: translateY(-3px);
 }
 
 /* Mobile NAV
@@ -767,8 +793,7 @@ input[type="submit"]:hover {
 .navbar-toggle .icon-bar:nth-child(2n):after {
 	-webkit-transition: all 200ms ease-in-out;
 	transition: all 200ms ease-in-out;
-	background: red;
-	background: white;
+	background-color: red;
 	border-radius: 5px;
 	content: '';
 	display: block;
@@ -956,7 +981,7 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 /* BLOG - Single
 ========================================================= */
 
-@media (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
 
 .content-inner {
 	margin-left: -20px;
@@ -966,10 +991,14 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
 
 .wp-caption {
 	width: auto !important;
+}
+
+main {
+	margin-top: 60px;
 }
 
 .brand {
@@ -989,7 +1018,7 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 	top: 0;
 	min-height: 60px;
 	width: 100%;
-	z-index: 9000;
+	z-index: 9999;
 }
 
 .mobile-nav-wrap .mobile-brand {
@@ -1051,6 +1080,7 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 }
 
 .mobile-nav-wrap .mobile-nav ul li .expand:after {
+	content: '';
 	border-color: #fff transparent transparent transparent;
 	border-style: solid;
 	border-width: 10.4px 6px 0 6px;
@@ -1059,6 +1089,7 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 }
 
 .mobile-nav-wrap .mobile-nav ul li .expand.open:after {
+	content: '';
 	border-color: transparent transparent #fff transparent;
 	border-style: solid;
 	border-width: 0 6px 10.4px 6px;
@@ -1154,7 +1185,7 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
 .alignleft {
 	float: none;
