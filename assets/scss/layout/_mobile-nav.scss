@@ -1,17 +1,17 @@
 /* Mobile NAV
 ========================================================= */
-$menu-background        : white;
-$menu-border-color      : white;
-$resting-toggle-color   : black;
-$active-toggle-color    : black;
-$menu-dropdown-color    : white;
-$link-color             : black;
-$link-background : white;
-$link-hover-color       : white;
-$link-hover-background             : black;
-$link-border-color: #eee;
-$current-link-background: black;
-$current-link-color: white;
+$menu-background         : white;
+$menu-border-color       : white;
+$resting-toggle-color    : black;
+$active-toggle-color     : black;
+$menu-dropdown-color     : white;
+$link-color              : black;
+$link-background         : white;
+$link-hover-color        : white;
+$link-hover-background   : black;
+$link-border-color       : #eee;
+$current-link-background : black;
+$current-link-color      : white;
 
 .mobile-nav-wrap {
   display: none;
@@ -140,7 +140,7 @@ $current-link-color: white;
             position: absolute;
             right: 0px;
             z-index: 1000;
-            background-image: url('assets/img/caret-right.svg');
+            background-image: url('assets/img/svg/caret-right.svg');
             background-size: 15px 15px;
             background-position: center center;
             background-repeat: no-repeat;
@@ -154,7 +154,7 @@ $current-link-color: white;
             display: block;
             width: 50px;
             height: 20px;
-            background:url(assets/img/nav-arrow-left.svg) 0 0 no-repeat;
+            background:url(assets/img/svg/nav-arrow-left.svg) 0 0 no-repeat;
             background-color: transparent !important;
             position: absolute;
             top: 15px;
@@ -162,7 +162,7 @@ $current-link-color: white;
             z-index: 2000;
             @include trans;
             &:hover {
-            transform:translateX(-5px);
+              transform:translateX(-5px);
             }
           }
           .sub-menu {
@@ -198,7 +198,7 @@ $current-link-color: white;
                 //padding-left: 40px;
                 text-transform: none;
                 &:hover {
-                color: #fff;
+                  color: #fff;
                 }
               }
             }
