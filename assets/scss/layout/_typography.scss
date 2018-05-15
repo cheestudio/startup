@@ -48,12 +48,18 @@ h6 {
 
 /* Body
 ========================================================= */
-body, p, main li {
-  font-size: 16px;
-  line-height: 26px;
+body {
+
 }
-p {
-  margin-bottom: 10px;
+main  {
+  p, li {
+    font-size: 20px;
+    line-height: 30px;
+    @include grid-media($mobile) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
 }
 em {
   font-style: italic;

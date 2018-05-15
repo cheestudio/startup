@@ -191,7 +191,7 @@ table {
 }
 
 * {
-	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-tap-highlight-color: transparent;
 	outline: none;
 	outline: 0;
@@ -684,15 +684,10 @@ h6 {
 /* Body
 ========================================================= */
 
-body,
-p,
+main p,
 main li {
-	font-size: 16px;
-	line-height: 26px;
-}
-
-p {
-	margin-bottom: 10px;
+	font-size: 20px;
+	line-height: 30px;
 }
 
 em {
@@ -757,9 +752,10 @@ input[type="submit"]:active {
 	background: none;
 	border: none;
 	display: none;
-	float: right;
-	margin: 15px 15px 0;
-	position: relative;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	z-index: 10000;
 }
 
 .navbar-toggle .title {
@@ -772,7 +768,7 @@ input[type="submit"]:active {
 }
 
 .navbar-toggle .icon-bar {
-	background: white;
+	background: black;
 	border-radius: 5px;
 	display: block;
 	height: 3px;
@@ -793,7 +789,7 @@ input[type="submit"]:active {
 .navbar-toggle .icon-bar:nth-child(2n):after {
 	-webkit-transition: all 200ms ease-in-out;
 	transition: all 200ms ease-in-out;
-	background-color: red;
+	background-color: black;
 	border-radius: 5px;
 	content: '';
 	display: block;
@@ -1010,7 +1006,7 @@ main {
 }
 
 .mobile-nav-wrap {
-	background: black;
+	background: white;
 	border-bottom: white;
 	position: fixed;
 	display: block;
@@ -1018,7 +1014,7 @@ main {
 	top: 0;
 	min-height: 60px;
 	width: 100%;
-	z-index: 9999;
+	z-index: 3000;
 }
 
 .mobile-nav-wrap .mobile-brand {
@@ -1027,14 +1023,20 @@ main {
 	top: 15px;
 }
 
+.mobile-nav-wrap .mobile-brand img {
+	display: block;
+	width: 150px;
+}
+
 .mobile-nav-wrap .mobile-nav {
-	background: black;
+	background: white;
 	clear: both;
 	display: none;
 	left: 0;
 	position: absolute;
 	top: 60px;
 	width: 100%;
+	height: 1500px;
 	z-index: 9999;
 }
 
@@ -1048,80 +1050,116 @@ main {
 	display: block;
 	position: relative;
 	margin: 0;
+	border-bottom: 1px solid #eee;
 }
 
-.mobile-nav-wrap .mobile-nav ul li a {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-	border: none;
-	color: white;
+.mobile-nav-wrap .mobile-nav ul li > a {
+	color: black;
 	display: block;
 	font-size: 16px;
-	margin: 0 !important;
-	padding: 10px 15px 10px 25px;
+	line-height: 24px;
+	letter-spacing: .25em;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 15px 15px 15px 25px;
+	background-color: white;
 }
 
-.mobile-nav-wrap .mobile-nav ul li a:hover {
-	background: red;
+.mobile-nav-wrap .mobile-nav ul li > a:hover {
+	background-color: black;
+	color: white;
 }
 
 .mobile-nav-wrap .mobile-nav ul li .expand {
-	background: none;
-	border: none;
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
 	display: block;
-	padding: 0 14px 20px 14px;
+	padding: 27px 27px 27px 36px;
 	position: absolute;
 	right: 0px;
-	top: 16px;
-	z-index: 9999;
+	z-index: 1000;
+	background-image: url("assets/img/svg/caret-right.svg");
+	background-size: 15px 15px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-transform-origin: center center;
+	    -ms-transform-origin: center center;
+	        transform-origin: center center;
+	background-color: transparent !important;
 }
 
 .mobile-nav-wrap .mobile-nav ul li .expand:hover {
-	background: none !important;
+	-webkit-transform: rotate(-180deg);
+	    -ms-transform: rotate(-180deg);
+	        transform: rotate(-180deg);
 }
 
-.mobile-nav-wrap .mobile-nav ul li .expand:after {
-	content: '';
-	border-color: #fff transparent transparent transparent;
-	border-style: solid;
-	border-width: 10.4px 6px 0 6px;
-	height: 0;
-	width: 0;
+.mobile-nav-wrap .mobile-nav ul li .close-sub {
+	display: block;
+	width: 50px;
+	height: 20px;
+	background: url(assets/img/svg/nav-arrow-left.svg) 0 0 no-repeat;
+	background-color: transparent !important;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	z-index: 2000;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
 }
 
-.mobile-nav-wrap .mobile-nav ul li .expand.open:after {
-	content: '';
-	border-color: transparent transparent #fff transparent;
-	border-style: solid;
-	border-width: 0 6px 10.4px 6px;
-	height: 0;
-	width: 0;
+.mobile-nav-wrap .mobile-nav ul li .close-sub:hover {
+	-webkit-transform: translateX(-5px);
+	    -ms-transform: translateX(-5px);
+	        transform: translateX(-5px);
 }
 
-.mobile-nav-wrap .mobile-nav ul li ul {
-	background: #4e4e4e;
+.mobile-nav-wrap .mobile-nav ul li .sub-menu {
+	background-color: white;
+	position: fixed;
 	border: none;
-	display: none;
-	opacity: 1;
-	position: static;
-	text-align: left;
+	opacity: 0;
 	visibility: visible;
+	text-align: center;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+	-webkit-transform: translateX(100%);
+	    -ms-transform: translateX(100%);
+	        transform: translateX(100%);
+	width: 100%;
+	height: 100%;
+	padding-top: 60px;
+	top: 0;
+	z-index: 4000;
 }
 
-.mobile-nav-wrap .mobile-nav ul li ul:before {
+.mobile-nav-wrap .mobile-nav ul li .sub-menu.sub-open {
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	    -ms-transform: translateX(0);
+	        transform: translateX(0);
+}
+
+.mobile-nav-wrap .mobile-nav ul li .sub-menu:before {
 	display: none;
 }
 
-.mobile-nav-wrap .mobile-nav ul li ul li {
+.mobile-nav-wrap .mobile-nav ul li .sub-menu li {
 	text-align: left;
+	border-bottom: 1px solid #eee;
 }
 
-.mobile-nav-wrap .mobile-nav ul li ul li a {
-	border-bottom: 1px solid #606064 !important;
+.mobile-nav-wrap .mobile-nav ul li .sub-menu li a {
 	border: none;
-	color: white;
+	color: black;
 	display: block;
 	font-size: 16px;
-	padding-left: 40px;
+	letter-spacing: 1px;
+	text-transform: none;
+}
+
+.mobile-nav-wrap .mobile-nav ul li .sub-menu li a:hover {
+	color: #fff;
 }
 
 .mobile-nav-wrap .mobile-nav ul li.menu-item-has-children:hover .sub-menu:before {
@@ -1132,15 +1170,16 @@ main {
 	border-color: #4f4f52 !important;
 }
 
-.mobile-nav-wrap .mobile-nav ul li.current-menu-item a,
-.mobile-nav-wrap .mobile-nav ul li.current-page-ancestor a {
-	background: black;
+.mobile-nav-wrap .mobile-nav ul li.current-menu-item > a,
+.mobile-nav-wrap .mobile-nav ul li.current-page-ancestor > a {
+	background-color: black;
+	color: white;
 }
 
 .mobile-nav-wrap.open a .icon-bar {
 	-webkit-transition: all 200ms ease-in-out;
 	transition: all 200ms ease-in-out;
-	background: red;
+	background: black;
 }
 
 .mobile-nav-wrap.open a .icon-bar:first-child,
@@ -1197,6 +1236,12 @@ main {
 	float: none;
 	margin: 15px auto;
 	display: block;
+}
+
+main p,
+main li {
+	font-size: 16px;
+	line-height: 26px;
 }
 
 br {
