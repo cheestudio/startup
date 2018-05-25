@@ -59,7 +59,7 @@ add_action('admin_head', 'hide_help');
 /* Custom Footer Text
 ========================================================= */
 function remove_footer_admin () {
-  echo 'Custom WordPress Web Development by <a href="https://goodchee.com/" title="Chee Studios Web Development" target="_blank">Chee Studio\'s</a>';
+  echo 'Custom WordPress Web Development by <a href="https://goodchee.com/" title="Chee Studio Web Development" target="_blank">Chee Studio</a>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
