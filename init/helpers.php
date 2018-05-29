@@ -2,7 +2,6 @@
 /* HELPER FUNCTIONS
 ========================================================= */
 
-
 /* Gravity Forms anchor creation
 ========================================================= */
 add_filter("gform_confirmation_anchor", create_function("","return false;"));
@@ -140,6 +139,12 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
+/* Remove the additional CSS section, introduced in 4.7, from the Customizer.
+========================================================= */
+add_action( 'customize_register', 'prefix_remove_css_section', 15 );
+function prefix_remove_css_section( $wp_customize ) {
+  $wp_customize->remove_section( 'custom_css' );
+}
 
 /* Hide Admin Panel (for launch)
 ========================================================= */
