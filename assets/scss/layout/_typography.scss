@@ -60,6 +60,9 @@ main  {
       line-height: 26px;
     }
   }
+  p:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
 }
 em {
   font-style: italic;
