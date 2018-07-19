@@ -31,18 +31,12 @@
 	}
 }
 
-/* Font Awesome
+/* BG Image
 ========================================================= */
-@mixin setFA {
-	font-family: 'FontAwesome';
-	font-weight: normal;
-	font-style: normal;
-	display: inline-block;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+@mixin bg {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 /* Global Row Padding ( $large, $small )
