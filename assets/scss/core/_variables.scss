@@ -3,13 +3,10 @@
 
 
 
-
-
-
 /* Button ( $color, $bg )
 ========================================================= */
-@mixin eButton($color:white, $bg:black) {
-	transition: background-color 400ms ease-in-out, transform 50ms linear;
+@mixin button($color:white, $bg:black) {
+	@include trans;
 	background: $bg;
 	border: 1px solid transparent;
 	color: $color;
@@ -26,23 +23,17 @@
 		color: $color;
 		background: $bg;
 	}
-	&:active {
-		transform: translateY(-3px);
-	}
 }
 
-/* Font Awesome
+/* BG Image
 ========================================================= */
-@mixin setFA {
-	font-family: 'FontAwesome';
-	font-weight: normal;
-	font-style: normal;
-	display: inline-block;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+@mixin bg($path,$sizing:cover,$position:center,$repeat: no-repeat) {
+	background: {
+		image:url($path);
+		position: $position;
+		repeat: $repeat;
+		size: $sizing;
+	}
 }
 
 /* Global Row Padding ( $large, $small )
@@ -60,6 +51,6 @@
 
 /* Global Transition ( $duration, $easing, $property )
 ========================================================= */
-@mixin trans($duration:200, $easing:ease-in-out, $property:all) {
+@mixin trans($duration:400, $easing:ease-in-out, $property:all) {
 	transition: $property $duration+ms $easing;
 }
