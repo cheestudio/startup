@@ -1,6 +1,14 @@
 /* Core Form Styles
 ========================================================= */
 
+// Placeholder
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
 $input-border-color: #333;
 $input-active-border-color: red;
 $input-border-radius: 0px;

@@ -690,6 +690,10 @@ main li {
 	line-height: 30px;
 }
 
+main p:not(:last-of-type) {
+	margin-bottom: 20px;
+}
+
 em {
 	font-style: italic;
 }
