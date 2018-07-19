@@ -87,7 +87,9 @@ gulp.task('scriptsJS', function() {
     .pipe(uglifyJS() )
     .pipe(plumber.stop() )
     .pipe(gulp.dest( JS_DEST ))
+    .pipe(reload( { stream: true } ))
 });
+
 
 
 /* Images - Task
@@ -154,9 +156,8 @@ gulp.task('default', ['styles', 'scriptsJS', 'images', 'browser-sync'], function
   gulp.watch( STYLES_SOURCE, [ 'styles' ] );
   gulp.watch( IMAGES_SOURCE, [ 'images' ] );
   gulp.watch( JS_SOURCE, [ 'scriptsJS' ] );
-  gulp.watch( ALL_PHP, [ 'styles', reload ] );
+  gulp.watch( ALL_PHP, reload );
 });
-
 
 /* Clear Gulp Cache with [ gulp clear ]
 ========================================================= */
