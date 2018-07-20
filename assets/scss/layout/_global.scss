@@ -250,7 +250,7 @@ img {
 /* Responsive Video Embeds
 ========================================================= */
 .embed-container {
-  position: relative; 
+  position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
@@ -316,7 +316,6 @@ img {
     li {
       a {
         padding: 0 5px;
-        @include eButton();
       }
       &.previous {
         float: left;

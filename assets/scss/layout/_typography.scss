@@ -81,5 +81,5 @@ br {
 }
 
 button, .button, input[type="submit"] {
-  @include eButton;
+  @include button;
 }
