@@ -1029,6 +1029,8 @@ main {
 }
 
 .mobile-nav-wrap .mobile-nav ul li > a {
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
 	color: black;
 	display: block;
 	font-size: 16px;
