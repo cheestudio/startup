@@ -4,73 +4,41 @@
 
 /* Custom Login Screen
 ========================================================= */
-
 function custom_login_screen() { ?>
+  <style type="text/css">
 
-<style type="text/css">
+  #login h1 a,
+  .login h1 a {
+    background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/LOGO.png); padding-bottom: 0px; background-size: 100%;  width: 100%; height: 120px;
+  }
 
-#login h1 a, .login h1 a {
-    background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/LOGO.png); padding-bottom: 0px; background-size: 100%;  width: 100%; height: 160px;
-}
-body {
-  background: #fefefe !important;
-}
-#login a {
-  color: #000 !important;
-}
-#login a:hover {
-  color: red !important;
-}
-#wp-submit {
-    display: inline-block;
-  *display: inline;
-  zoom: 1;
-  line-height: normal;
-  white-space: nowrap;
-  vertical-align: baseline;
-  text-align: center;
-  cursor: pointer;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 2px solid #000;
-  color:white;
-  padding:5px 10px;
-  -webkit-transition:400ms;
-  -o-transition:400ms;
-  transition:400ms;
-  background:#000;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: 19px;
-  font-weight: 700;
-  border-radius: 0;
-  line-height: 0;
-  padding: 10px;
-  box-shadow: none;
-  text-shadow: none;
-}
- </style>
+</style>
 <?php }
-
 add_action( 'login_enqueue_scripts', 'custom_login_screen' );
+
+
+/* Gravity Forms Button
+========================================================= */
+function form_submit_button( $button, $form ) {
+ return "<button class='button' id='gform_submit_button_{$form["id"]}'>{$form['button']['text']}</button>";
+}
+add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
+
 
 /* Gravity Forms anchor creation
 ========================================================= */
 add_filter("gform_confirmation_anchor", create_function("","return false;"));
 
 /* Fix Gravity Form Tabindex Conflicts
-   http://gravitywiz.com/fix-gravity-form-tabindex-conflicts
+http://gravitywiz.com/fix-gravity-form-tabindex-conflicts
 ========================================================= */
 add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
 function gform_tabindexer( $tab_index, $form = false ) {
-    $starting_index = 1000; // if you need a higher tabindex, update this number
-    if( $form )
-      add_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
-    return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
-  }
+  $starting_index = 1000; // if you need a higher tabindex, update this number
+  if( $form )
+    add_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
+  return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
+}
 
 
 /* Add Slug to Body Class

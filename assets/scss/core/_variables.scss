@@ -20,28 +20,43 @@
 	vertical-align: baseline;
 	-webkit-appearance: none;
 	&:hover {
-		color: $color;
-		background: $bg;
+		color: $bg;
+		background: $color;
 	}
+}
+
+/* Font Awesome 5
+========================================================= */
+@mixin fa {
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900; // 300 also valid for Free version
+	-webkit-font-smoothing: antialiased;
 }
 
 /* BG Image
 ========================================================= */
-@mixin bg($path,$sizing:cover,$position:center,$repeat: no-repeat) {
+@mixin bg( $sizing:cover, $position:center, $repeat:no-repeat ) {
 	background: {
-		image:url($path);
 		position: $position;
 		repeat: $repeat;
 		size: $sizing;
 	}
 }
 
-/* Global Row Padding ( $large, $small )
+/* Global Row Padding
 ========================================================= */
-@mixin row-padding( $large:70, $small:35 ) {
-	@include grid-media($tablet-up) {
+@mixin row-padding( $large:100, $medium:70, $small:50 ) {
+	@include grid-media($desktop) {
 		padding-top:    $large+px;
 		padding-bottom: $large+px;
+	}
+	@include grid-media($tablet) {
+		padding-top:    $medium+px;
+		padding-bottom: $medium+px;
 	}
 	@include grid-media($mobile) {
 		padding-top:    $small+px;

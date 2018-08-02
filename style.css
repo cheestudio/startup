@@ -3,7 +3,7 @@
 /*!
 Theme Name: Chee Startup
 Theme URI:
-Description: 
+Description:
 Author: Chee Studio
 Author URI: http://chee.studio
 */
@@ -41,10 +41,13 @@ Author URI: http://chee.studio
 /* Button ( $color, $bg )
 ========================================================= */
 
-/* Font Awesome
+/* Font Awesome 5
 ========================================================= */
 
-/* Global Row Padding ( $large, $small )
+/* BG Image
+========================================================= */
+
+/* Global Row Padding
 ========================================================= */
 
 /* Global Transition ( $duration, $easing, $property )
@@ -596,36 +599,6 @@ img {
 
 .post-nav .pager li a {
 	padding: 0 5px;
-	-webkit-transition: background-color 400ms ease-in-out, -webkit-transform 50ms linear;
-	transition: background-color 400ms ease-in-out, -webkit-transform 50ms linear;
-	transition: background-color 400ms ease-in-out, transform 50ms linear;
-	transition: background-color 400ms ease-in-out, transform 50ms linear, -webkit-transform 50ms linear;
-	background: black;
-	border: 1px solid transparent;
-	color: white;
-	cursor: pointer;
-	display: inline-block;
-	line-height: normal;
-	padding: 10px 20px;
-	text-align: center;
-	text-transform: uppercase;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
-	vertical-align: baseline;
-	-webkit-appearance: none;
-}
-
-.post-nav .pager li a:hover {
-	color: white;
-	background: black;
-}
-
-.post-nav .pager li a:active {
-	-webkit-transform: translateY(-3px);
-	    -ms-transform: translateY(-3px);
-	        transform: translateY(-3px);
 }
 
 .post-nav .pager li.previous {
@@ -709,10 +682,8 @@ a:hover {
 button,
 .button,
 input[type="submit"] {
-	-webkit-transition: background-color 400ms ease-in-out, -webkit-transform 50ms linear;
-	transition: background-color 400ms ease-in-out, -webkit-transform 50ms linear;
-	transition: background-color 400ms ease-in-out, transform 50ms linear;
-	transition: background-color 400ms ease-in-out, transform 50ms linear, -webkit-transform 50ms linear;
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
 	background: black;
 	border: 1px solid transparent;
 	color: white;
@@ -733,16 +704,8 @@ input[type="submit"] {
 button:hover,
 .button:hover,
 input[type="submit"]:hover {
-	color: white;
-	background: black;
-}
-
-button:active,
-.button:active,
-input[type="submit"]:active {
-	-webkit-transform: translateY(-3px);
-	    -ms-transform: translateY(-3px);
-	        transform: translateY(-3px);
+	color: black;
+	background: white;
 }
 
 /* Mobile NAV
@@ -782,8 +745,8 @@ input[type="submit"]:active {
 
 .navbar-toggle .icon-bar:first-child,
 .navbar-toggle .icon-bar:last-child {
-	-webkit-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
 	-webkit-transform: translate(0);
 	    -ms-transform: translate(0);
 	        transform: translate(0);
@@ -791,8 +754,8 @@ input[type="submit"]:active {
 
 .navbar-toggle .icon-bar:nth-child(2n):before,
 .navbar-toggle .icon-bar:nth-child(2n):after {
-	-webkit-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
 	background-color: black;
 	border-radius: 5px;
 	content: '';
@@ -972,6 +935,9 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 /* Pages
 ========================================================= */
 
+/* Shared Styles
+========================================================= */
+
 /* HOME
 ========================================================= */
 
@@ -987,6 +953,11 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 	margin-left: -20px;
 	margin-right: -20px;
 	width: calc(100% + 40px);
+}
+
+.page-404 {
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 
 }
@@ -1108,8 +1079,8 @@ main {
 	top: 15px;
 	left: 15px;
 	z-index: 2000;
-	-webkit-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
 }
 
 .mobile-nav-wrap .mobile-nav ul li .close-sub:hover {
@@ -1125,8 +1096,8 @@ main {
 	opacity: 0;
 	visibility: visible;
 	text-align: center;
-	-webkit-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
 	-webkit-transform: translateX(100%);
 	    -ms-transform: translateX(100%);
 	        transform: translateX(100%);
@@ -1181,8 +1152,8 @@ main {
 }
 
 .mobile-nav-wrap.open a .icon-bar {
-	-webkit-transition: all 200ms ease-in-out;
-	transition: all 200ms ease-in-out;
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
 	background: black;
 }
 
@@ -1226,6 +1197,11 @@ main {
 	float: right;
 }
 
+.page-404 {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
 }
 
 @media screen and (max-width: 767px) {
@@ -1250,6 +1226,11 @@ main li {
 
 br {
 	display: none;
+}
+
+.page-404 {
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 }
