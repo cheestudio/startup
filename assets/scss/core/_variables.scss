@@ -47,16 +47,12 @@
 	}
 }
 
-/* Global Row Padding
+/* Global Row Padding ( $large, $small )
 ========================================================= */
-@mixin row-padding( $large:100, $medium:70, $small:50 ) {
-	@include grid-media($desktop) {
+@mixin row-padding( $large:70, $small:50 ) {
+	@include grid-media($tablet-up) {
 		padding-top:    $large+px;
 		padding-bottom: $large+px;
-	}
-	@include grid-media($tablet) {
-		padding-top:    $medium+px;
-		padding-bottom: $medium+px;
 	}
 	@include grid-media($mobile) {
 		padding-top:    $small+px;
