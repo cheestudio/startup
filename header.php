@@ -12,6 +12,10 @@
   <?php wp_head(); ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
+  <?php $header_code = get_field( 'header_code', 'option' ); ?>
+  <?php if($header_code){ ?>
+    <?php echo $header_code;?>
+  <?php } ?>
 </head>
 
 <body <?php body_class(); ?> >
@@ -33,32 +37,32 @@
             'fallback_cb'     => 'wp_page_menu',
             'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
             'depth'           => 2
-            )); ?>
-          </div>
+          )); ?>
+        </div>
 
-          <div class="mobile-nav-wrap">
-            <a class="mobile-brand" href="/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Mobile Site Logo"></a>
-            <a class="navbar-toggle">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-            <div class="mobile-nav">
-             <?php wp_nav_menu( array(
-              'theme_location'  => 'primary_nav',
-              'container'       => '',
-              'container_class' => '',
-              'menu_class'      => '',
-              'echo'            => true,
-              'fallback_cb'     => 'wp_page_menu',
-              'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-              'depth'           => 2
-              )); ?>
-            </div>
-            
-          </div>
-        </nav>
+        <div class="mobile-nav-wrap">
+          <a class="mobile-brand" href="/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Mobile Site Logo"></a>
+          <a class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <div class="mobile-nav">
+           <?php wp_nav_menu( array(
+            'theme_location'  => 'primary_nav',
+            'container'       => '',
+            'container_class' => '',
+            'menu_class'      => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth'           => 2
+          )); ?>
+        </div>
+
       </div>
-    </header>
+    </nav>
+  </div>
+</header>
 
-    <main id="top">
+<main id="top">
