@@ -1,6 +1,15 @@
 /* Color VARs
 ========================================================= */
 
+$color1:#;
+$color2:#;
+$color3:#;
+
+$primary-color: $color1;
+$secondary-color: $color1;
+
+$body-color: $primary-color;
+$header-color: $secondary-color;
 
 
 /* Button ( $color, $bg )
