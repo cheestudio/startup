@@ -58,7 +58,7 @@ body {
 add_action( 'login_enqueue_scripts', 'custom_login_screen' );
 
 
-/* Gravity Forms Button
+/* Gravity Forms Button Markup
 ========================================================= */
 function form_submit_button( $button, $form ) {
  return "<button class='button' id='gform_submit_button_{$form["id"]}'>{$form['button']['text']}</button>";
@@ -81,6 +81,12 @@ function gform_tabindexer( $tab_index, $form = false ) {
   return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
 }
 
+/* Responsive IFRAME tags
+========================================================= */
+add_filter('embed_oembed_html', 'responsive_embed', 10, 3);
+function responsive_embed($html, $url, $attr) {
+  return $html!=='' ? '<div class="embed-container">'.$html.'</div>' : '';
+}
 
 /* Add Slug to Body Class
 ========================================================= */
