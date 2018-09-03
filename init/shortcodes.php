@@ -2,29 +2,18 @@
 /* Shortcodes
 ========================================================= */
 
-// YouTube Shortcode
-function youtube_embed_shortcode( $atts ) {
-
-  extract( shortcode_atts(
-    array(
-      'link' => '',
-      ), $atts )
-  );
-
-  return '<div class="embed-container"><iframe src="//www.youtube.com/embed/' . $link  . '"' . 'frameborder="0" allowfullscreen></iframe></div>';
+/* Button (with on-page anchor class when arugment is used)
+========================================================= */
+function ebutton($atts, $content = null) {
+ extract(shortcode_atts(array(
+  'align'  => '',
+  'url'   => '',
+  'target' => '',
+  'anchor' => ''
+  ),
+ $atts));
+ $output  = '<p';
+ if($align){$output.=' style="text-align:'.$align.'"';}$output .= '><a';if($target){$output.=' target="'.$target.'"';}$output .= ' href="'.$url.'" class="button';if($anchor){$output.= ' same-page';}$output.='">' . do_shortcode($content) . '</a></p>';
+ return $output;
 }
-add_shortcode( 'youtube', 'youtube_embed_shortcode' );
-
-
-// Vimeo Shortcode
-function vimeo_embed_shortcode( $atts ) {
-
-  extract( shortcode_atts(
-    array(
-      'link' => '',
-      ), $atts )
-  );
-
-  return '<div class="embed-container"><iframe src="//player.vimeo.com/video/' . $link  . '?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>';
-}
-add_shortcode( 'vimeo', 'vimeo_embed_shortcode' );
+add_shortcode('button', 'ebutton');
