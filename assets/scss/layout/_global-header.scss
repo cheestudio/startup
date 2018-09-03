@@ -1,21 +1,26 @@
-header {
+@include grid-media($desktop) {
+  header {
 
-  .brand {
-    img {
+    .container {
 
     }
-  }
-  
-  nav {
+    .brand {
+      img {
 
-    ul {
-
-      li {
-
-        a {
-
-        }
       }
     }
-  }
+
+    nav {
+
+      ul {
+
+        li {
+
+          a {
+
+          }
+        } // END li
+      }
+    }
+  } // END header
 }
