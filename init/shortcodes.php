@@ -17,3 +17,12 @@ function ebutton($atts, $content = null) {
  return $output;
 }
 add_shortcode('button', 'ebutton');
+
+/* Current Year (for use within WYSIWYG editor, such as a Copyright Date)
+========================================================= */
+function jr_cy_y() {
+  $date = getdate();
+  return $date['year'];
+}
+
+add_shortcode( 'year', 'jr_cy_c' );
