@@ -39,6 +39,7 @@
 
     <div class="button-wrap">
       <a href="#" class="button">I'm a Button</a>
+      <a href="#" class="button">I'm a Button</a>
     </div>
     <hr>
 

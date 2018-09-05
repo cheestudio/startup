@@ -38,9 +38,6 @@ Author URI: http://chee.studio
 /* Color VARs
 ========================================================= */
 
-/* Button ( $color, $bg )
-========================================================= */
-
 /* Font Awesome 5
 ========================================================= */
 
@@ -52,6 +49,27 @@ Author URI: http://chee.studio
 
 /* Global Transition ( $duration, $easing, $property )
 ========================================================= */
+
+/* Button ( color, background, border )
+========================================================= */
+
+button,
+.button,
+input[type="submit"] {
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px 40px;
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	vertical-align: baseline;
+	-webkit-appearance: none;
+}
 
 /* Reset
 ========================================================= */
@@ -682,30 +700,17 @@ a:hover {
 button,
 .button,
 input[type="submit"] {
-	-webkit-transition: all 400ms ease-in-out;
-	transition: all 400ms ease-in-out;
-	background: black;
-	border: 1px solid transparent;
-	color: white;
-	cursor: pointer;
-	display: inline-block;
-	line-height: normal;
-	padding: 10px 20px;
-	text-align: center;
-	text-transform: uppercase;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
-	vertical-align: baseline;
-	-webkit-appearance: none;
+	background-color: white;
+	border: 2px solid black;
+	color: black;
 }
 
 button:hover,
 .button:hover,
 input[type="submit"]:hover {
-	color: black;
-	background: white;
+	color: white;
+	background-color: black;
+	border-color: black;
 }
 
 /* Mobile NAV
