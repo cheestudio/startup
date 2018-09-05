@@ -12,10 +12,11 @@
   <?php wp_head(); ?>
 
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
-  <?php $header_code = get_field( 'header_code', 'option' ); ?>
-  <?php if($header_code){ ?>
-    <?php echo $header_code;?>
-  <?php } ?>
+
+  <?php $header_code = get_field( 'header_code', 'options' ); ?>
+  <?php if ( $header_code ) : ?>
+    <?php echo $header_code; ?>
+  <?php endif; ?>
 </head>
 
 <body <?php body_class(); ?> >

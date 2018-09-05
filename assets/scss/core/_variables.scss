@@ -1,38 +1,16 @@
 /* Color VARs
 ========================================================= */
 
-$color1:#;
-$color2:#;
-$color3:#;
+// $color1:#;
+// $color2:#;
+// $color3:#;
 
-$primary-color: $color1;
-$secondary-color: $color1;
+// $primary-color: $color1;
+// $secondary-color: $color1;
 
-$body-color: $primary-color;
-$header-color: $secondary-color;
+// $body-color: $primary-color;
+// $header-color: $secondary-color;
 
-
-/* Button ( $color, $bg )
-========================================================= */
-@mixin button($color:white, $bg:black) {
-	@include trans;
-	background: $bg;
-	border: 1px solid transparent;
-	color: $color;
-	cursor: pointer;
-	display: inline-block;
-	line-height: normal;
-	padding: 10px 20px;
-	text-align: center;
-	text-transform: uppercase;
-	user-select: none;
-	vertical-align: baseline;
-	-webkit-appearance: none;
-	&:hover {
-		color: $bg;
-		background: $color;
-	}
-}
 
 /* Font Awesome 5
 ========================================================= */
@@ -73,4 +51,34 @@ $header-color: $secondary-color;
 ========================================================= */
 @mixin trans($duration:400, $easing:ease-in-out, $property:all) {
 	transition: $property $duration+ms $easing;
+}
+
+/* Button ( color, background, border )
+========================================================= */
+%btn {
+	@include trans(400);
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px 40px;
+	text-align: center;
+	text-transform: uppercase;
+	user-select: none;
+	vertical-align: baseline;
+	-webkit-appearance: none;
+	// font-family: "";
+	// font-size: 16px;
+	// line-height: normal;
+	// font-weight: 400;
+	// letter-spacing: 1px;
+}
+@mixin button($color:black, $bg:white, $border:black) {
+	@extend %btn;
+	background-color: $bg;
+	border: 2px solid $border;
+	color: $color;
+	&:hover {
+		color: $bg;
+		background-color: $color;
+		border-color: $border;
+	}
 }
