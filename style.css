@@ -1020,15 +1020,6 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 /* BLOG - Single
 ========================================================= */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-
-.page-404 {
-	padding-top: 70px;
-	padding-bottom: 70px;
-}
-
-}
-
 @media screen and (min-width: 1025px) {
 
 .content-inner {
