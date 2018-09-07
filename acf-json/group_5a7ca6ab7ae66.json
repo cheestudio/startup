@@ -1,7 +1,46 @@
 {
     "key": "group_5a7ca6ab7ae66",
     "title": "Settings - Global",
-    "fields": false,
+    "fields": [
+        {
+            "key": "field_5b92f8a0032d6",
+            "label": "Header Code",
+            "name": "header_code",
+            "type": "textarea",
+            "instructions": "Paste optional JS code here to include in Header.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5b92f8d3032d7",
+            "label": "Footer Code",
+            "name": "footer_code",
+            "type": "textarea",
+            "instructions": "Paste optional JS code here to include in Footer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
     "location": [
         [
             {
@@ -19,5 +58,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518118627
+    "modified": 1536358636
 }

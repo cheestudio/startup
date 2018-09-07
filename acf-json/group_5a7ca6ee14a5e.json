@@ -1,7 +1,64 @@
 {
     "key": "group_5a7ca6ee14a5e",
     "title": "Settings - Company Info",
-    "fields": false,
+    "fields": [
+        {
+            "key": "field_5b92f8553f573",
+            "label": "Phone",
+            "name": "company_phone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b92f8643f574",
+            "label": "Email",
+            "name": "company_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5b92f8723f575",
+            "label": "Address",
+            "name": "company_address",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
+        }
+    ],
     "location": [
         [
             {
@@ -19,5 +76,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518118667
+    "modified": 1536358541
 }
