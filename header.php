@@ -5,6 +5,7 @@
   <title><?php bloginfo('name'); ?></title>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f00">
   <?php if ( is_single() ) : ?>
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>">
