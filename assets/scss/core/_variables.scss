@@ -34,18 +34,39 @@
 	}
 }
 
-/* Global Row Padding ( $large, $small )
+/* Global Row Padding
 ========================================================= */
-@mixin row-padding( $large:70, $small:50 ) {
-	@include grid-media($tablet-up) {
-		padding-top:    $large+px;
-		padding-bottom: $large+px;
+@mixin row-padding(
+	$top-large:70,  $bottom-large:70, 
+	$top-small:35,  $bottom-small:35,
+	$top-medium:$top-large, $bottom-medium:$bottom-large) {
+
+	// Desktop
+	@include grid-media($desktop) {
+		padding-top:    $top-large + px;
+		padding-bottom: $bottom-large + px;
 	}
+	// Mobile
 	@include grid-media($mobile) {
-		padding-top:    $small+px;
-		padding-bottom: $small+px;
+		padding-top:    $top-small + px;
+		padding-bottom: $bottom-small + px;
 	}
-}
+		// Tablet
+		@include screen(768px, 1024px) {
+			@if $top-medium == $top-large {
+				padding-top: $top-large + px;
+			}
+			@else {
+				padding-top: $top-medium + px;
+			}
+			@if $bottom-medium == $bottom-large {
+				padding-bottom: $bottom-large + px;
+			}
+			@else {
+				padding-bottom: $bottom-medium + px;
+			}
+		}
+	}
 
 /* Global Transition ( $duration, $easing, $property )
 ========================================================= */

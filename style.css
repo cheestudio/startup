@@ -44,7 +44,7 @@ Author URI: http://chee.studio
 /* BG Image
 ========================================================= */
 
-/* Global Row Padding ( $large, $small )
+/* Global Row Padding
 ========================================================= */
 
 /* Global Transition ( $duration, $easing, $property )
@@ -1020,7 +1020,7 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 /* BLOG - Single
 ========================================================= */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 
 .page-404 {
 	padding-top: 70px;
@@ -1035,6 +1035,11 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 	margin-left: -20px;
 	margin-right: -20px;
 	width: calc(100% + 40px);
+}
+
+.page-404 {
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
 
 }
@@ -1303,8 +1308,8 @@ br {
 }
 
 .page-404 {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 35px;
+	padding-bottom: 35px;
 }
 
 }
