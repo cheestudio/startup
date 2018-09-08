@@ -24,4 +24,15 @@ $('.close-sub').click(function(e){
   $(this).parent().removeClass('sub-open');
 });
 
+/* Add Class to Header on Scroll
+========================================================= */
+$(window).scroll(function(){
+  var currentPos = $(this).scrollTop();
+  if (currentPos > 0)
+    $("header").addClass("nav-sticky");
+  else
+    $("header").removeClass("nav-sticky");
+});
+
+
 }); // End Document Ready
