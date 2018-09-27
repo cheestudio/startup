@@ -1,5 +1,5 @@
 <?php // VARs
-$footer_code = get_field( 'footer_code', 'options' ); ?>
+$footer_code = get_field( 'footer_code', 'option' ); ?>
 </main>
 
 <footer>
