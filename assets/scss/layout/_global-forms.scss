@@ -82,7 +82,7 @@ div[id^=gform_wrapper] {
     }
   li.gfield.gfield_error.gfield_contains_required {
     label.gfield_label, div.ginput_container {
-      color:  !important;
+      color: red !important;
       padding: 0 !important;
     }
   }
@@ -97,7 +97,7 @@ div[id^=gform_wrapper] {
 }
 
 .gforms_confirmation_message {
-  background-color: none !important;
+  background-color: transparent !important;
   color: #666!important;
   border: none !important;
   font-size: 15px!important;
