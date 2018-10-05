@@ -51,7 +51,6 @@ body {
   padding: 10px;
   box-shadow: none;
   text-shadow: none;
-}
  </style>
 <?php }
 
