@@ -59,10 +59,10 @@ add_action( 'login_enqueue_scripts', 'custom_login_screen' );
 
 /* Gravity Forms Button Markup
 ========================================================= */
-function form_submit_button( $button, $form ) {
- return "<button class='button' id='gform_submit_button_{$form["id"]}'>{$form['button']['text']}</button>";
-}
 add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
+function form_submit_button( $button, $form ) {
+    return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'><span>{$form['button']['text']}</span></button>";
+}
 
 
 /* Gravity Forms anchor creation
