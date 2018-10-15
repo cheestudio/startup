@@ -25,4 +25,4 @@ function jr_cy_y() {
   return $date['year'];
 }
 
-add_shortcode( 'year', 'jr_cy_c' );
+add_shortcode( 'year', 'jr_cy_y' );
