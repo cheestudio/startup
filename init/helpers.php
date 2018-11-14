@@ -80,6 +80,10 @@ function gform_tabindexer( $tab_index, $form = false ) {
   return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
 }
 
+/* Enable Gravity Forms field label visibility
+========================================================= */
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
 /* Responsive IFRAME tags
 ========================================================= */
 add_filter('embed_oembed_html', 'responsive_embed', 10, 3);
@@ -213,6 +217,14 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 add_action( 'customize_register', 'prefix_remove_css_section', 15 );
 function prefix_remove_css_section( $wp_customize ) {
   $wp_customize->remove_section( 'custom_css' );
+}
+
+/* Show Single Post/Page Content (without loop)
+========================================================= */
+function show_content(){
+ $current_page = get_queried_object();
+ $content      = apply_filters( 'the_content', $current_page->post_content );
+ echo $content;
 }
 
 /* Hide Admin Panel (for launch)
