@@ -11,10 +11,11 @@ register_nav_menus(array(
 ========================================================= */
 add_theme_support('post-thumbnails');
 
+
 /* Custom Image Sizes
 ========================================================= */
 //add_image_size('NAME', X, Y, $crop);
-add_image_size('opengraph', 1200, 630, true);
+
 
 /* Register Sidebars
 ========================================================= */
