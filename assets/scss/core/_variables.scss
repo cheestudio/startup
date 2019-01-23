@@ -1,3 +1,14 @@
+/* Content Container
+========================================================= */
+
+@mixin content-container( $width: 1130px ) {
+	max-width: $width;
+	margin: 0 auto;
+	@include for-size(1129px) {
+		padding: 0 15px;
+	}
+}
+
 /* Color VARs
 ========================================================= */
 
@@ -25,7 +36,7 @@
 /* Global Row Padding
 ========================================================= */
 @mixin row-padding(
-	$top-large:80,  $bottom-large:80, 
+	$top-large:80,  $bottom-large:80,
 	$top-small:40,  $bottom-small:40) {
 
 	@include grid-media($tablet-up) {

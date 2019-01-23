@@ -10,29 +10,25 @@ Author URI: http://chee.studio
 /* Site Styles
 ========================================================= */
 @import "core/queries";
-@import "grid/neat/neat";
-@import "grid/grid-settings";
-@import "core/variables";
 @import "core/reset";
-
+@import "core/typography";
+@import "core/variables";
 
 /* Global Styles
 ========================================================= */
 @import "layout/global";
-@import "layout/typography";
-@import "layout/mobile-nav";
 @import "layout/global-forms";
-
 
 /* Header & Footer
 ========================================================= */
 @import "layout/global-header";
 @import "layout/global-footer";
 
+/* Text Elements and Page Components
+========================================================= */
+@import "elements/misc";
 
 /* Pages
 ========================================================= */
 @import "pages/shared";
 @import "pages/home";
-@import "pages/blog-index";
-@import "pages/blog-single";

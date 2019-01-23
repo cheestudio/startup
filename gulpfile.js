@@ -1,7 +1,6 @@
 /* Variables
 ========================================================= */
 const PROJECT_URL      = 'http://localhost/NAME/',
-//const PROJECT_URL      = 'http://localhost:8080/NAME/',
       ROOT             = './',
       STYLES_MAIN      = 'assets/scss/main.scss',
       STYLES_SOURCE    = 'assets/scss/**/*.scss',
