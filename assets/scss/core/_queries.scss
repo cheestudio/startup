@@ -62,16 +62,13 @@ $upper-breakpoint: map-get($breakpoints, $upper);
 // Write the media query.
 @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint)) {
   @content;
-}
-
-// If the breakpoints don't exist, allow manual breakpoints
-} @else {
-  @media (min-width: $lower) and (max-width: ($upper)) {
-    @content;
   }
 }
-}
-
-@include for-size(tablet,up) {
+// If the breakpoints don't exist, allow manual breakpoints
+@else {
+  @media (min-width: $lower) and (max-width: ($upper)) {
+    @content;
+    }
+  }
 
 }

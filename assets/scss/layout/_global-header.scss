@@ -1,4 +1,4 @@
-@include grid-media($desktop) {
+@include for-size(desktop,up) {
   header {
 
     .container {

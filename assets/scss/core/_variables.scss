@@ -39,11 +39,11 @@
 	$top-large:80,  $bottom-large:80,
 	$top-small:40,  $bottom-small:40) {
 
-	@include grid-media($tablet-up) {
+	@include for-size(tablet-lg,up) {
 		padding-top:    $top-large + px;
 		padding-bottom: $bottom-large + px;
 	}
-	@include grid-media($mobile) {
+	@include for-size(phone) {
 		padding-top:    $top-small + px;
 		padding-bottom: $bottom-small + px;
 	}

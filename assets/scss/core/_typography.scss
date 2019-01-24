@@ -55,7 +55,7 @@ main  {
   p, li {
     font-size: 20px;
     line-height: 30px;
-    @include grid-media($mobile) {
+    @include for-size(phone) {
       font-size: 16px;
       line-height: 26px;
     }
@@ -75,11 +75,7 @@ a {
 }
 
 br {
-  @include grid-media($mobile) {
+@include for-size(phone) {
     display: none;
   }
-}
-
-button, .button, input[type="submit"] {
-  @include button;
 }

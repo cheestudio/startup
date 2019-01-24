@@ -173,6 +173,9 @@ table {
 
 /* Buttons
 ========================================================= */
+button, .button, input[type="submit"] {
+  @include button;
+}
 .button::-moz-focus-inner, button::-moz-focus-inner {
   padding: 0;
   border: 0;
@@ -276,7 +279,7 @@ img {
 .alignleft {
   float: left;
   margin: 0 15px 15px 0;
-  @include max-screen(767px) {
+  @include for-size(phone) {
     float: none;
     margin: 15px auto;
     display: block;
@@ -285,7 +288,7 @@ img {
 .alignright {
   float: right;
   margin: 0 0 15px 15px;
-  @include max-screen(767px) {
+  @include for-size(phone) {
     float: none;
     margin: 15px auto;
     display: block;
@@ -296,7 +299,7 @@ img {
   border: 1px solid #ccc;
   padding: 5px;
   text-align: center;
-  @include max-screen(1024px) {
+  @include for-size(tablet-lg) {
     width: auto !important;
   }
   p {
