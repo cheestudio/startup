@@ -14,11 +14,14 @@ $breakpoints: (
 /* ONE DIRECTIONAL */
 
 @mixin for-size($breakpoint, $direction:down) {
+
 // If the breakpoint exists in the map.
 @if map-has-key($breakpoints, $breakpoint) {
+
 // Get the breakpoint value.
 $breakpoint-value: map-get($breakpoints, $breakpoint);
-// Write the media query.
+
+// Determine the direction and then write the media query.
 @if $direction == up {
   @media (min-width: $breakpoint-value) {
     @content;
@@ -27,14 +30,26 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
 @else if $direction == down {
   @media (max-width: $breakpoint-value) {
     @content;
+     }
   }
 }
 // If the breakpoint doesn't exist in the map, pass a manual breakpoint
-} @else {
-  @media (max-width: $breakpoint) {
-    @content;
+@else {
+  @if $direction == up {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+  @else if $direction == down {
+    @media (max-width: $breakpoint) {
+      @content;
+       }
+    }
   }
 }
+
+@include for-size(1256px) {
+
 }
 
 /* BI-DIRECTIONAL */
@@ -59,4 +74,8 @@ $upper-breakpoint: map-get($breakpoints, $upper);
     @content;
   }
 }
+}
+
+@include for-size(tablet,up) {
+
 }
