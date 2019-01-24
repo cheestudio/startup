@@ -48,10 +48,6 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
   }
 }
 
-@include for-size(1256px) {
-
-}
-
 /* BI-DIRECTIONAL */
 
 @mixin between-sizes($lower, $upper) {
