@@ -23,6 +23,7 @@ form input[type=text], form input[type=password], form input[type=email], form i
   border-radius: $input-border-radius;
   padding-left: 15px !important;
   color: red;
+  font-family: inherit;
   @include placeholder {
     color: black;
   }
