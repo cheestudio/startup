@@ -726,15 +726,15 @@ form select,
 form textarea {
 	-webkit-transition: linear 300ms ease-in-out;
 	transition: linear 300ms ease-in-out;
-	padding: .5em .6em;
+	padding: 10px 40px;
 	display: inline-block;
-	border: 1px solid black;
+	border: 2px solid black;
 	-webkit-box-shadow: none;
 	        box-shadow: none;
 	border-radius: 0px;
 	padding-left: 15px !important;
-	color: red;
 	font-family: inherit;
+	color: red;
 }
 
 form input[type=text]::-webkit-input-placeholder,
@@ -753,7 +753,7 @@ form input[type=tel]::-webkit-input-placeholder,
 form input[type=color]::-webkit-input-placeholder,
 form select::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder {
-	color: black;
+	color: red;
 }
 
 form input[type=text]:-moz-placeholder,
@@ -772,7 +772,7 @@ form input[type=tel]:-moz-placeholder,
 form input[type=color]:-moz-placeholder,
 form select:-moz-placeholder,
 form textarea:-moz-placeholder {
-	color: black;
+	color: red;
 }
 
 form input[type=text]::-moz-placeholder,
@@ -791,7 +791,7 @@ form input[type=tel]::-moz-placeholder,
 form input[type=color]::-moz-placeholder,
 form select::-moz-placeholder,
 form textarea::-moz-placeholder {
-	color: black;
+	color: red;
 }
 
 form input[type=text]:-ms-input-placeholder,
@@ -810,7 +810,7 @@ form input[type=tel]:-ms-input-placeholder,
 form input[type=color]:-ms-input-placeholder,
 form select:-ms-input-placeholder,
 form textarea:-ms-input-placeholder {
-	color: black;
+	color: red;
 }
 
 form input[type=text]:focus,
@@ -922,6 +922,18 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 	display: none !important;
 	left: -9000px;
 	position: absolute !important;
+}
+
+/* Global Form Default Styles
+========================================================= */
+
+.gform_wrapper .gform_body ul {
+	margin: 0;
+	padding: 0;
+}
+
+.gform_wrapper .gform_body ul li .gfield_label {
+	display: none;
 }
 
 /* Mobile NAV
