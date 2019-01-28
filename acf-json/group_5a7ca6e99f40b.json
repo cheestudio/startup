@@ -1,6 +1,6 @@
 {
     "key": "group_5a7ca6e99f40b",
-    "title": "Settings - Footer",
+    "title": "Settings - Footer Content",
     "fields": false,
     "location": [
         [
@@ -19,5 +19,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518118650
+    "modified": 1548718452
 }
