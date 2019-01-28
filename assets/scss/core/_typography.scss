@@ -1,8 +1,5 @@
 /* Fonts
 ========================================================= */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700');
-// 400, 400i, 600, 700
-
 
 @mixin FONT( $STYLE:style ) {
   @if $STYLE == 'style' {
@@ -23,27 +20,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
   font-size: 60px;
+  line-height: 60px;
+  @include for-size(phone) {
 
+  }
 }
 h2 {
   font-size: 50px;
+  line-height: 50px;
+  @include for-size(phone) {
 
+  }
 }
 h3 {
   font-size: 40px;
+  line-height: 40px;
+  @include for-size(phone) {
 
+  }
 }
 h4 {
   font-size: 30px;
+  line-height: 30px;
+  @include for-size(phone) {
 
+  }
 }
 h5 {
   font-size: 25px;
+  line-height: 25px;
+  @include for-size(phone) {
 
+  }
 }
 h6 {
   font-size: 20px;
+  line-height: 20px;
+  @include for-size(phone) {
 
+  }
 }
 
 /* Body
@@ -75,7 +90,7 @@ a {
 }
 
 br {
-@include for-size(phone) {
+  @include for-size(phone) {
     display: none;
   }
 }
