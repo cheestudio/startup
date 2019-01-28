@@ -36,10 +36,10 @@
 /* Global Row Padding
 ========================================================= */
 @mixin row-padding(
-	$top-large:80,  $bottom-large:80,
-	$top-small:40,  $bottom-small:40) {
+	$top-large:100,  $bottom-large:100,
+	$top-small:50,  $bottom-small:50) {
 
-	@include for-size(tablet-lg,up) {
+	@include for-size(tablet, up) {
 		padding-top:    $top-large + px;
 		padding-bottom: $bottom-large + px;
 	}
@@ -79,7 +79,7 @@
 /* Button ( color, background, border )
 ========================================================= */
 %btn {
-	@include trans(400);
+	@include trans();
 	cursor: pointer;
 	display: inline-block;
 	padding: 10px 40px;

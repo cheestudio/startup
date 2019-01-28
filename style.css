@@ -11,68 +11,12 @@ Author URI: http://chee.studio
 /* Site Styles
 ========================================================= */
 
-/* Screen
+/* Responsive Queries
 ========================================================= */
 
-/* Grid Settings
-========================================================= */
+/* ONE DIRECTIONAL */
 
-.container {
-	max-width: 1420px;
-	margin: 0 auto;
-	padding: 0 15px;
-}
-
-.container::after {
-	clear: both;
-	content: "";
-	display: block;
-}
-
-.content-inner::after {
-	clear: both;
-	content: "";
-	display: block;
-}
-
-/* Color VARs
-========================================================= */
-
-/* BG Image
-========================================================= */
-
-/* Global Row Padding
-========================================================= */
-
-/* Global Transition ( 400, all, ease-in-out )
-========================================================= */
-
-/* CSS Truncate
-========================================================= */
-
-/* Font Awesome 5 ( needs content specified )
-========================================================= */
-
-/* Button ( color, background, border )
-========================================================= */
-
-button,
-.button,
-input[type="submit"] {
-	-webkit-transition: all 400ms ease-in-out;
-	transition: all 400ms ease-in-out;
-	cursor: pointer;
-	display: inline-block;
-	padding: 10px 40px;
-	text-align: center;
-	text-transform: uppercase;
-	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
-	vertical-align: baseline;
-	-webkit-appearance: none;
-}
+/* BI-DIRECTIONAL */
 
 /* Reset
 ========================================================= */
@@ -166,6 +110,7 @@ video {
 	vertical-align: baseline;
 }
 
+main,
 article,
 aside,
 details,
@@ -200,6 +145,114 @@ q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+/* Content Container
+========================================================= */
+
+/* Color VARs
+========================================================= */
+
+/* BG Image
+========================================================= */
+
+/* Global Row Padding
+========================================================= */
+
+/* Global Transition ( 400, all, ease-in-out )
+========================================================= */
+
+/* CSS Truncate
+========================================================= */
+
+/* Font Awesome 5 ( needs content specified )
+========================================================= */
+
+/* Button ( color, background, border )
+========================================================= */
+
+button,
+.button,
+input[type="submit"] {
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px 40px;
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	vertical-align: baseline;
+	-webkit-appearance: none;
+}
+
+/* Fonts
+========================================================= */
+
+/* Headings
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: black;
+	line-height: normal;
+	margin: 0 0 20px 0;
+}
+
+h1 {
+	font-size: 60px;
+}
+
+h2 {
+	font-size: 50px;
+}
+
+h3 {
+	font-size: 40px;
+}
+
+h4 {
+	font-size: 30px;
+}
+
+h5 {
+	font-size: 25px;
+}
+
+h6 {
+	font-size: 20px;
+}
+
+/* Body
+========================================================= */
+
+main p,
+main li {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+main p:not(:last-of-type) {
+	margin-bottom: 20px;
+}
+
+em {
+	font-style: italic;
+}
+
+a {
+	color: inherit;
+}
+
+a:hover {
+	color: red;
 }
 
 /* Global Styles
@@ -238,8 +291,6 @@ table {
 
 a {
 	text-decoration: none;
-	-webkit-transition: color 200ms;
-	transition: color 200ms;
 }
 
 a:focus {
@@ -460,6 +511,22 @@ table {
 /* Buttons
 ========================================================= */
 
+button,
+.button,
+input[type="submit"] {
+	background-color: white;
+	border: 2px solid black;
+	color: black;
+}
+
+button:hover,
+.button:hover,
+input[type="submit"]:hover {
+	color: white;
+	background-color: black;
+	border-color: black;
+}
+
 .button::-moz-focus-inner,
 button::-moz-focus-inner {
 	padding: 0;
@@ -634,159 +701,6 @@ img {
 	text-align: center;
 }
 
-/* Fonts
-========================================================= */
-
-/* Headings
-========================================================= */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	color: black;
-	line-height: normal;
-	margin: 0 0 20px 0;
-}
-
-h1 {
-	font-size: 60px;
-}
-
-h2 {
-	font-size: 50px;
-}
-
-h3 {
-	font-size: 40px;
-}
-
-h4 {
-	font-size: 30px;
-}
-
-h5 {
-	font-size: 25px;
-}
-
-h6 {
-	font-size: 20px;
-}
-
-/* Body
-========================================================= */
-
-main p,
-main li {
-	font-size: 20px;
-	line-height: 30px;
-}
-
-main p:not(:last-of-type) {
-	margin-bottom: 20px;
-}
-
-em {
-	font-style: italic;
-}
-
-a {
-	color: inherit;
-}
-
-a:hover {
-	color: red;
-}
-
-button,
-.button,
-input[type="submit"] {
-	background-color: white;
-	border: 2px solid black;
-	color: black;
-}
-
-button:hover,
-.button:hover,
-input[type="submit"]:hover {
-	color: white;
-	background-color: black;
-	border-color: black;
-}
-
-/* Mobile NAV
-========================================================= */
-
-.mobile-nav-wrap {
-	display: none;
-}
-
-.navbar-toggle {
-	background: none;
-	border: none;
-	display: none;
-	position: absolute;
-	right: 15px;
-	top: 15px;
-	z-index: 10000;
-}
-
-.navbar-toggle .title {
-	color: black;
-	float: left;
-	font-size: 15px;
-	font-weight: 500;
-	margin: -2px 0 0 -50px;
-	text-transform: uppercase;
-}
-
-.navbar-toggle .icon-bar {
-	background: black;
-	border-radius: 5px;
-	display: block;
-	height: 3px;
-	margin-bottom: 7px;
-	width: 32px;
-}
-
-.navbar-toggle .icon-bar:first-child,
-.navbar-toggle .icon-bar:last-child {
-	-webkit-transition: all 400ms ease-in-out;
-	transition: all 400ms ease-in-out;
-	-webkit-transform: translate(0);
-	    -ms-transform: translate(0);
-	        transform: translate(0);
-}
-
-.navbar-toggle .icon-bar:nth-child(2n):before,
-.navbar-toggle .icon-bar:nth-child(2n):after {
-	-webkit-transition: all 400ms ease-in-out;
-	transition: all 400ms ease-in-out;
-	background-color: black;
-	border-radius: 5px;
-	content: '';
-	display: block;
-	height: 3px;
-	left: 0;
-	margin-bottom: 7px;
-	opacity: 0;
-	position: absolute;
-	top: 34%;
-	-webkit-transform: rotate(0deg);
-	    -ms-transform: rotate(0deg);
-	        transform: rotate(0deg);
-	width: 32px;
-}
-
-.navbar-toggle {
-	display: none;
-}
-
-/* Initiate Mobile Nav
-========================================================= */
-
 /* Core Form Styles
 ========================================================= */
 
@@ -816,6 +730,7 @@ form textarea {
 	border-radius: 0px;
 	padding-left: 15px !important;
 	color: red;
+	font-family: inherit;
 }
 
 form input[type=text]::-webkit-input-placeholder,
@@ -1005,7 +920,84 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 	position: absolute !important;
 }
 
+/* Mobile NAV
+========================================================= */
+
+.mobile-nav-wrap {
+	display: none;
+}
+
+.navbar-toggle {
+	background: none;
+	border: none;
+	display: none;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	z-index: 10000;
+}
+
+.navbar-toggle .title {
+	color: black;
+	float: left;
+	font-size: 15px;
+	font-weight: 500;
+	margin: -2px 0 0 -50px;
+	text-transform: uppercase;
+}
+
+.navbar-toggle .icon-bar {
+	background: black;
+	border-radius: 5px;
+	display: block;
+	height: 3px;
+	margin-bottom: 7px;
+	width: 32px;
+}
+
+.navbar-toggle .icon-bar:first-child,
+.navbar-toggle .icon-bar:last-child {
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+	-webkit-transform: translate(0);
+	    -ms-transform: translate(0);
+	        transform: translate(0);
+}
+
+.navbar-toggle .icon-bar:nth-child(2n):before,
+.navbar-toggle .icon-bar:nth-child(2n):after {
+	-webkit-transition: all 400ms ease-in-out;
+	transition: all 400ms ease-in-out;
+	background-color: black;
+	border-radius: 5px;
+	content: '';
+	display: block;
+	height: 3px;
+	left: 0;
+	margin-bottom: 7px;
+	opacity: 0;
+	position: absolute;
+	top: 34%;
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	width: 32px;
+}
+
+.navbar-toggle {
+	display: none;
+}
+
+/* Initiate Mobile Nav
+========================================================= */
+
 /* Header & Footer
+========================================================= */
+
+/* Text Elements and Page Components
+========================================================= */
+
+/* Misc. Text and Page Components
 ========================================================= */
 
 /* Pages
@@ -1017,28 +1009,16 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 /* HOME
 ========================================================= */
 
-/* BLOG - Index
-========================================================= */
-
-/* BLOG - Single
-========================================================= */
-
-@media screen and (min-width: 1025px) {
-
-.content-inner {
-	margin-left: -20px;
-	margin-right: -20px;
-	width: calc(100% + 40px);
-}
+@media (min-width: 768px) {
 
 .page-404 {
-	padding-top: 70px;
-	padding-bottom: 70px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
 
 .wp-caption {
 	width: auto !important;
@@ -1277,7 +1257,17 @@ main {
 
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
+
+main p,
+main li {
+	font-size: 16px;
+	line-height: 26px;
+}
+
+br {
+	display: none;
+}
 
 .alignleft {
 	float: none;
@@ -1291,19 +1281,9 @@ main {
 	display: block;
 }
 
-main p,
-main li {
-	font-size: 16px;
-	line-height: 26px;
-}
-
-br {
-	display: none;
-}
-
 .page-404 {
-	padding-top: 35px;
-	padding-bottom: 35px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 }
