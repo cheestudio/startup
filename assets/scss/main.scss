@@ -27,9 +27,11 @@ Author URI: http://chee.studio
 
 /* Text Elements and Page Components
 ========================================================= */
+@import "elements/shared";
 @import "elements/misc";
 
 /* Pages
 ========================================================= */
-@import "pages/shared";
+@import "pages/blog-index";
+@import "pages/blog-single";
 @import "pages/home";
