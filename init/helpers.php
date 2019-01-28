@@ -227,6 +227,10 @@ function show_content(){
  echo $content;
 }
 
+/* Enqueue Default Editor Styles
+========================================================= */
+add_editor_style( 'editor-style.css' );
+
 /* Hide Admin Panel (for launch)
 ========================================================= */
 //add_filter('acf/settings/show_admin', '__return_false');
