@@ -6,32 +6,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 45px;
   line-height: 50px;
 }
 h2 {
   font-size: 40px;
-  line-height: 40px;
+  line-height: 45px;
 }
 h3 {
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 35px;
+  line-height: 40px;
 }
 h4 {
-  font-size: 25px;
-  line-height: 25px;
+  font-size: 30px;
+  line-height: 35px;
 }
 h5 {
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 25px;
+  line-height: 30px;
 }
 h6 {
-  font-size: 15px;
-  line-height: 15px;
+  font-size: 20px;
+  line-height: 25px;
 }
 
-
 p {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 22px;
 }
