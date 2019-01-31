@@ -1,7 +1,64 @@
 {
     "key": "group_5a7ca6f04aa5d",
     "title": "Settings - Social Media",
-    "fields": false,
+    "fields": [
+        {
+            "key": "field_5c4f9180693ec",
+            "label": "Social Icons",
+            "name": "social_icons",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5c4f9189693ed",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "add Social Link",
+            "sub_fields": [
+                {
+                    "key": "field_5c4f9189693ed",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5c4f9192693ee",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "http:\/\/"
+                }
+            ]
+        }
+    ],
     "location": [
         [
             {
@@ -19,5 +76,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518118681
+    "modified": 1548718515
 }

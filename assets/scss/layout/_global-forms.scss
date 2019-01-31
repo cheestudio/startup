@@ -16,16 +16,16 @@ $input-box-shadow: none;
 
 form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=date], form input[type=month], form input[type=time], form input[type=datetime], form input[type=datetime-local], form input[type=week], form input[type=number], form input[type=search], form input[type=tel], form input[type=color], form select, form textarea {
   @include trans(300, linear);
-  padding: .5em .6em;
+  padding: 10px 40px;
   display: inline-block;
-  border: 1px solid $input-border-color;
+  border: 2px solid $input-border-color;
   box-shadow: $input-box-shadow;
   border-radius: $input-border-radius;
   padding-left: 15px !important;
-  color: red;
   font-family: inherit;
+  color: red;
   @include placeholder {
-    color: black;
+    color: red;
   }
 }
 
@@ -78,9 +78,9 @@ div[id^=gform_wrapper] {
       color: red;
     }
   }
-    .gfield_required {
-      color: #d2722d !important;
-    }
+  .gfield_required {
+    color: #d2722d !important;
+  }
   li.gfield.gfield_error.gfield_contains_required {
     label.gfield_label, div.ginput_container {
       color: red !important;
@@ -110,3 +110,32 @@ div[id^=gform_wrapper] {
   left: -9000px;
   position: absolute!important;
 }
+
+/* Global Form Default Styles
+========================================================= */
+.gform_wrapper {
+
+  .gform_body {
+
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        .gfield_label {
+          display: none;
+        }
+        input {
+
+        }
+      }
+    }
+  } // END body
+
+  .gform_footer {
+
+    button {
+
+    }
+  } // END footer
+  
+} // END wrapper

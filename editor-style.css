@@ -1,0 +1,36 @@
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  line-height: normal;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+}
+
+h1 {
+  font-size: 45px;
+  line-height: 50px;
+}
+h2 {
+  font-size: 40px;
+  line-height: 45px;
+}
+h3 {
+  font-size: 35px;
+  line-height: 40px;
+}
+h4 {
+  font-size: 30px;
+  line-height: 35px;
+}
+h5 {
+  font-size: 25px;
+  line-height: 30px;
+}
+h6 {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 22px;
+}
