@@ -63,6 +63,17 @@ main  {
   p:not(:last-of-type) {
     margin-bottom: 20px;
   }
+  ol {
+    list-style: none;
+    counter-reset: custom-counter;
+  }
+  ol li {
+    counter-increment: custom-counter;
+  }
+  ol li:before {
+    content: counter(custom-counter) ". ";
+    font-weight: bold;
+  }
 }
 em {
   font-style: italic;
@@ -75,7 +86,7 @@ a {
 }
 
 br {
-@include for-size(phone) {
+  @include for-size(phone) {
     display: none;
   }
 }
