@@ -12,6 +12,12 @@ Author URI: http://chee.studio
 /* Responsive Queries
 ========================================================= */
 
+.container {
+	max-width: 1130px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
 /* ONE DIRECTIONAL */
 
 /* BI-DIRECTIONAL */
@@ -145,9 +151,6 @@ table {
 	border-spacing: 0;
 }
 
-/* Content Container
-========================================================= */
-
 /* Color VARs
 ========================================================= */
 
@@ -245,6 +248,20 @@ main li {
 
 main p:not(:last-of-type) {
 	margin-bottom: 20px;
+}
+
+main ol {
+	list-style: none;
+	counter-reset: custom-counter;
+}
+
+main ol li {
+	counter-increment: custom-counter;
+}
+
+main ol li:before {
+	content: counter(custom-counter) ". ";
+	font-weight: bold;
 }
 
 em {

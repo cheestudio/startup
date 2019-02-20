@@ -1,6 +1,17 @@
 /* Responsive Queries
 ========================================================= */
 
+//Content Container
+@mixin content-container( $width: 1130px ) {
+  max-width: $width;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container {
+  @include content-container;
+}
+
+
 // A map of breakpoints.
 $breakpoints: (
   phone-sm: 420px,
@@ -30,8 +41,8 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
 @else if $direction == down {
   @media (max-width: $breakpoint-value) {
     @content;
-     }
   }
+}
 }
 // If the breakpoint doesn't exist in the map, pass a manual breakpoint
 @else {
@@ -43,9 +54,9 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
   @else if $direction == down {
     @media (max-width: $breakpoint) {
       @content;
-       }
     }
   }
+}
 }
 
 /* BI-DIRECTIONAL */
@@ -62,13 +73,12 @@ $upper-breakpoint: map-get($breakpoints, $upper);
 // Write the media query.
 @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint)) {
   @content;
-  }
+}
 }
 // If the breakpoints don't exist, allow manual breakpoints
 @else {
   @media (min-width: $lower) and (max-width: ($upper)) {
     @content;
-    }
   }
-
+}
 }

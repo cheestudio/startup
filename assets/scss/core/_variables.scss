@@ -1,14 +1,3 @@
-/* Content Container
-========================================================= */
-
-@mixin content-container( $width: 1130px ) {
-	max-width: $width;
-	margin: 0 auto;
-	@include for-size(1129px) {
-		padding: 0 15px;
-	}
-}
-
 /* Color VARs
 ========================================================= */
 
@@ -88,7 +77,6 @@
 	user-select: none;
 	vertical-align: baseline;
 	-webkit-appearance: none;
-	// font-family: "";
 	// font-size: 16px;
 	// line-height: normal;
 	// font-weight: 400;
