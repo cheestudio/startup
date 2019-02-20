@@ -14,21 +14,24 @@ Author URI: http://chee.studio
 @import "core/variables";
 @import "core/typography";
 
+
 /* Global Styles
 ========================================================= */
 @import "layout/global";
 @import "layout/global-forms";
 @import "layout/mobile-nav";
 
+
 /* Header & Footer
 ========================================================= */
 @import "layout/global-header";
 @import "layout/global-footer";
 
+
 /* Text Elements and Page Components
 ========================================================= */
-@import "elements/shared";
 @import "elements/misc";
+
 
 /* Pages
 ========================================================= */
