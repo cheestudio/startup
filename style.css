@@ -272,6 +272,10 @@ a[href^="tel"]:hover {
 	color: red;
 }
 
+p {
+	margin-bottom: 20px;
+}
+
 /* Global Styles
 ========================================================= */
 

@@ -96,7 +96,9 @@ a, a[href^="tel"] {
     color: red;
   }
 }
-
+p {
+  margin-bottom: 20px;
+}
 br {
   @include for-size(phone) {
     display: none;
