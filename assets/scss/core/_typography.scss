@@ -75,9 +75,6 @@ main  {
       line-height: 26px;
     }
   }
-  p:not(:last-of-type) {
-    margin-bottom: 20px;
-  }
   ol {
     list-style: none;
     counter-reset: custom-counter;
@@ -93,7 +90,7 @@ main  {
 em {
   font-style: italic;
 }
-a {
+a, a[href^="tel"] {
   color: inherit;
   &:hover {
     color: red;

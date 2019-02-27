@@ -246,10 +246,6 @@ main li {
 	line-height: 30px;
 }
 
-main p:not(:last-of-type) {
-	margin-bottom: 20px;
-}
-
 main ol {
 	list-style: none;
 	counter-reset: custom-counter;
@@ -268,11 +264,13 @@ em {
 	font-style: italic;
 }
 
-a {
+a,
+a[href^="tel"] {
 	color: inherit;
 }
 
-a:hover {
+a:hover,
+a[href^="tel"]:hover {
 	color: red;
 }
 
