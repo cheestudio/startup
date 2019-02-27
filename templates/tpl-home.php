@@ -16,7 +16,15 @@
     <h5>Heading #5</h5>
     <h6>Heading #6</h6>
     <hr>
-
+    
+    <p style="font-weight: 300">Font Weight: 300</p>
+    <p style="font-weight: 400">Font Weight: 400</p>
+    <p style="font-weight: 500">Font Weight: 500</p>
+    <p style="font-weight: 600">Font Weight: 600</p>
+    <p style="font-weight: 700">Font Weight: 700</p>
+    <p style="font-weight: 800">Font Weight: 800</p>
+    <hr>
+    
     <ul>
       <li>Unordered list item 1</li>
       <li>Unordered list item 2</li>
