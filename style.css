@@ -1045,6 +1045,59 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 /* HOME
 ========================================================= */
 
+@media (min-width: 1025px) {
+
+header .container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+header .brand {
+	margin-right: auto;
+}
+
+header .brand img {
+	display: block;
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+header nav ul li {
+	padding-left: 20px;
+	padding-right: 20px;
+	position: relative;
+}
+
+header nav ul li .sub-menu {
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
+header nav ul li .sub-menu li {
+	white-space: nowrap;
+}
+
+}
+
 @media (max-width: 1024px) {
 
 .wp-caption {
