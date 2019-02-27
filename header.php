@@ -8,10 +8,9 @@
   <meta name="theme-color" content="#f00">
   <?php wp_head(); ?>
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
-  <?php $header_code = get_field( 'header_code', 'option' ); ?>
-  <?php if ( $header_code ) : ?>
-    <?php echo $header_code; ?>
-  <?php endif; ?>
+
+  <?php $header_code = get_field('header_code', 'option'); ?>
+  <?php if ( $header_code ) echo $header_code; ?>
 </head>
 
 <body <?php body_class(); ?> >
@@ -19,7 +18,7 @@
   <header class="main-banner" role="banner">
     <div class="container">
       <a class="brand" href="/">
-        <img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Site Logo">
+        <img src="<?php bloginfo('template_directory'); ?>/assets/img/svg/logo.svg" alt="Site Logo">
       </a>
 
       <nav>
@@ -37,7 +36,7 @@
         </div>
 
         <div class="mobile-nav-wrap">
-          <a class="mobile-brand" href="/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Mobile Site Logo"></a>
+          <a class="mobile-brand" href="/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/svg/logo.svg" alt="Mobile Site Logo"></a>
           <a class="navbar-toggle">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
