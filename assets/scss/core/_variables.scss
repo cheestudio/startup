@@ -1,15 +1,6 @@
 /* Color VARs
 ========================================================= */
 
-// $color1:#;
-// $color2:#;
-// $color3:#;
-
-// $primary-color: $color1;
-// $secondary-color: $color1;
-
-// $body-color: $primary-color;
-// $header-color: $secondary-color;
 
 
 /* BG Image
@@ -44,15 +35,6 @@
 	transition: $property $duration+ms $easing;
 }
 
-/* CSS Truncate
-========================================================= */
-@mixin truncate( $max ) {
-    max-width: $max + px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 /* Font Awesome 5 ( needs content specified )
 ========================================================= */
 @mixin fa {
@@ -77,10 +59,7 @@
 	user-select: none;
 	vertical-align: baseline;
 	-webkit-appearance: none;
-	// font-size: 16px;
-	// line-height: normal;
-	// font-weight: 400;
-	// letter-spacing: 1px;
+	font-size: 16px;
 }
 @mixin button($color:black, $bg:white, $border:black) {
 	@extend %btn;
