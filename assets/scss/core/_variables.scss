@@ -1,3 +1,22 @@
+/* Containers
+========================================================= */
+@mixin content-container( $width: 1130px ) {
+  max-width: $width;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container {
+  @include content-container;
+}
+
+
+/* Fonts
+========================================================= */
+
+@mixin FONT { //weights e.g., 400, 500, 700
+  font-family:'FONT-FAMILY-NAME';
+}
+
 /* Color VARs
 ========================================================= */
 

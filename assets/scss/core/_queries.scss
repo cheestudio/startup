@@ -1,17 +1,6 @@
 /* Responsive Queries
 ========================================================= */
 
-//Content Container
-@mixin content-container( $width: 1130px ) {
-  max-width: $width;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-.container {
-  @include content-container;
-}
-
-
 // A map of breakpoints.
 $breakpoints: (
   phone-sm: 420px,
