@@ -29,8 +29,8 @@ const PROJECT_URL      = 'http://localhost/NAME/',
 let gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifyCSS    = require('gulp-uglifycss'), // Minify CSS
     mmq          = require('gulp-merge-media-queries'),
+    cleanCSS = require('gulp-clean-css'),
     filter       = require('gulp-filter'),
     uglifyJS     = require('gulp-uglify'), // Minify JS
     plumber      = require('gulp-plumber'), // Error catcher
@@ -64,13 +64,14 @@ gulp.task('styles', function() {
       precision: 10
     } ))
     .pipe(mmq( { log: true } )) // Combines Media Queries
+   .pipe(cleanCSS({ level: { 2: {all: true}} }))
     .pipe(autoprefixer( BROWSER_VERSIONS ))
     .pipe(lineec() ) // Line Endings for non-UNIX systems
     .pipe(rename('style.css'))
     .pipe(gulp.dest( ROOT ))
     .pipe(filter( 'style.css' )) // Filtering stream to only style.css
     .pipe(rename( { suffix: '.min' } ))
-    .pipe(minifyCSS( { maxLineLen: 0 } ))
+   // .pipe(minifyCSS( { maxLineLen: 0 } ))
     .pipe(plumber.stop() )
     .pipe(gulp.dest( ROOT ))
     .pipe(reload( { stream: true } )) // Inject Styles when min style file is created
@@ -126,7 +127,7 @@ gulp.task( 'browser-sync', function() {
     proxy: PROJECT_URL,
     open: true,
     online: true,
-    host: "192.168.0.145", // your internal IP
+    host: "192.168.1.179", // your internal IP
     notify: {
       styles: {
         backgroundColor: 'rgba(60, 197, 31, 0.7)',

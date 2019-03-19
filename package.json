@@ -11,6 +11,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-cache": "^1.0.1",
+    "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-filter": "^5.1.0",
     "gulp-imagemin": "^4.0.0",
