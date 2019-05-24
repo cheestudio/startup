@@ -1,15 +1,17 @@
+"use strict";
+
 /* Variables
 ========================================================= */
-const PROJECT_URL      = 'http://localhost/NAME/',
-ROOT             = './',
-STYLES_MAIN      = 'assets/scss/main.scss',
-STYLES_SOURCE    = 'assets/scss/**/*.scss',
-JS_SOURCE        = 'assets/js/src/*.js',
-JS_DEST          = 'assets/js/',
-IMAGES_SOURCE    = 'assets/img/**/*',
-IMAGES_DEST      = 'assets/img',
-ALL_PHP          = './**/*.php',
-BROWSER_VERSIONS = [
+const PROJECT_URL = 'http://localhost/framework/',
+ROOT              = './',
+STYLES_MAIN       = './assets/scss/main.scss',
+STYLES_SOURCE     = './assets/scss/**/*.scss',
+JS_SOURCE         = './assets/js/src/*.js',
+JS_DEST           = './assets/js/',
+IMAGES_SOURCE     = './assets/img/**/*',
+IMAGES_DEST       = './assets/img',
+ALL_PHP           = './**/*.php',
+BROWSER_VERSIONS  = [
 'last 2 version',
 '> 1%',
 'ie >= 9',
@@ -23,50 +25,48 @@ BROWSER_VERSIONS = [
 'bb >= 10'
 ];
 
-
 /* Plugins
 ========================================================= */
-let gulp         = require('gulp'),
+const gulp   = require('gulp'),
 sass         = require('gulp-sass'),
 autoprefixer = require('gulp-autoprefixer'),
 mmq          = require('gulp-merge-media-queries'),
-cleanCSS = require('gulp-clean-css'),
+cleanCSS     = require('gulp-clean-css'),
 filter       = require('gulp-filter'),
-minifyCSS    = require('gulp-uglifycss'), // Minify CSS
-    uglifyJS     = require('gulp-uglify'), // Minify JS
-    plumber      = require('gulp-plumber'), // Error catcher
-    newer        = require('gulp-newer'),
-    rename       = require('gulp-rename'),
-    concat       = require('gulp-concat'), // Concatenate JS files
-    cache        = require('gulp-cache'),
-    colors       = require('ansicolors'),
-    lineec       = require('gulp-line-ending-corrector'),
-    imagemin     = require('gulp-imagemin'),
-    browserSync  = require('browser-sync'),
-    reload       = browserSync.reload;
+uglifyJS     = require('gulp-uglify'),
+plumber      = require('gulp-plumber'),
+rename       = require('gulp-rename'),
+concat       = require('gulp-concat'),
+lineec       = require('gulp-line-ending-corrector'),
+notify       = require('gulp-notify'),
+browsersync  = require('browser-sync').create();
 
 
 /* Error Handling
 ========================================================= */
-let onError = function (err) {
-  console.log(colors.red('\n\n*** NOOO SIR, CAN\'T DO! ***\n\n'), colors.magenta(err.message));
+const onError = function(err) {
+  notify.onError({
+    title:    "Gulp Error",
+    message:  "Your code is not working! Fix this:\n\n <%= error.message %>"
+  })(err);
 };
 
 
-/* Styles - Task
+/* Styles
 ========================================================= */
-gulp.task('styles', function() {
-
-  return gulp.src( STYLES_MAIN )
+function styles() {
+  return gulp
+  .src( STYLES_MAIN )
   .pipe(plumber( { errorHandler: onError } ))
   .pipe(sass( {
     errLogToConsole: true,
     outputStyle: 'expanded',
     precision: 10
-    } ))
+  } ))
     .pipe(mmq( { log: true } )) // Combines Media Queries
     .pipe(cleanCSS({
       format: 'beautify',
+      sourceMap: true,
       level: {
         2: {
           all: true,
@@ -74,104 +74,67 @@ gulp.task('styles', function() {
           mergeMedia: false
         }
       }
-      }))
+    }))
     .pipe(autoprefixer( BROWSER_VERSIONS ))
     .pipe(lineec() ) // Line Endings for non-UNIX systems
     .pipe(rename('style.css'))
     .pipe(gulp.dest( ROOT ))
     .pipe(filter( 'style.css' )) // Filtering stream to only style.css
     .pipe(rename( { suffix: '.min' } ))
-    .pipe(minifyCSS( { maxLineLen: 0 } ))
+    .pipe(cleanCSS( 'style.min.css' ))
     .pipe(plumber.stop() )
     .pipe(gulp.dest( ROOT ))
-    .pipe(reload( { stream: true } )) // Inject Styles when min style file is created
-    });
+    .pipe(browsersync.stream())
+  }
 
 
-/* JS Files - Task
+/* JS Files
 ========================================================= */
-gulp.task('scriptsJS', function() {
-
-  return gulp.src( JS_SOURCE )
+function scriptsJS() {
+  return gulp
+  .src( JS_SOURCE )
   .pipe(plumber( { errorHandler: onError } ))
   .pipe(concat('all.min.js'))
   .pipe(uglifyJS() )
   .pipe(plumber.stop() )
   .pipe(gulp.dest( JS_DEST ))
-  .pipe(reload( { stream: true } ))
-  });
+  .pipe(browsersync.stream())
+}
 
 
-
-/* Images - Task
+/* Browser Sync
 ========================================================= */
-gulp.task('images', function() {
-
-  return gulp.src( IMAGES_SOURCE )
-  .pipe(plumber( { errorHandler: onError } ))
-    .pipe(newer( IMAGES_DEST )) // Pass through newer images only
-    .pipe(imagemin([
-      imagemin.gifsicle( {interlaced: true} ),
-      imagemin.jpegtran( {progressive: true} ),
-      imagemin.optipng( {optimizationLevel: 7} ),
-      imagemin.svgo({
-        plugins: [ // https://github.com/svg/svgo#what-it-can-do
-        {removeViewBox: true},
-        {removeComments: true},
-        {removeTitle: true},
-        {removeXMLProcInst: true},
-        {cleanupIDs: false}
-        ]
-        })
-      ]))
-    .pipe(plumber.stop() )
-    .pipe(gulp.dest( IMAGES_DEST ))
-    });
-
-
-/* Broswer Sync - Task
-========================================================= */
-gulp.task( 'browser-sync', function() {
-
-  browserSync.init( {
+function browserSync(done) {
+  browsersync.init({
     proxy: PROJECT_URL,
-    open: true,
-    online: true,
-    host: "192.168.1.179", // your internal IP
-    notify: {
-      styles: {
-        backgroundColor: 'rgba(60, 197, 31, 0.7)',
-        borderRadius: '5px 0px 0px',
-        bottom: '0',
-        top: 'auto',
-        color: 'white',
-        display: 'block',
-        fontSize: '14px',
-        margin: '0px',
-        padding: '5px 10px',
-        position: 'fixed',
-        textAlign: 'center',
-        zIndex: '9999'
-      }
-      },
-    // Use a specific port
-    //port: 8080,
-    injectChanges: true
-    });
+    port: 3000
   });
+  done();
+}
+
+function reload(done) {
+  browsersync.reload();
+  done();
+}
 
 
 /* Watch Tasks
 ========================================================= */
-gulp.task('default', ['styles', 'scriptsJS', 'images', 'browser-sync'], function() {
-  gulp.watch( STYLES_SOURCE, [ 'styles' ] );
-  gulp.watch( IMAGES_SOURCE, [ 'images' ] );
-  gulp.watch( JS_SOURCE, [ 'scriptsJS' ] );
+function watchFiles() {
+  gulp.watch( STYLES_SOURCE, styles );
+  gulp.watch( JS_SOURCE, scriptsJS );
   gulp.watch( ALL_PHP, reload );
-  });
+}
 
-/* Clear Gulp Cache with [ gulp clear ]
+
+/* Build
 ========================================================= */
-gulp.task('clear', function () {
-  cache.clearAll();
-  });
+const watch = gulp.parallel( watchFiles, browserSync );
+const build = gulp.series( gulp.parallel(styles, scriptsJS), watch );
+
+exports.styles  = styles;
+exports.js      = scriptsJS;
+exports.watch   = watch;
+exports.build   = build;
+
+exports.default = build;

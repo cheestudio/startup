@@ -1,27 +1,27 @@
 {
-  "name": "Chee_Gulp",
+  "name": "chee-gulp",
   "author": "Chee Studio",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Custom WordPress Framework",
   "license": "GPL-2.0",
   "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheestudio/startup.git"
+  },
   "devDependencies": {
-    "ansicolors": "^0.3.2",
-    "browser-sync": "^2.23.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.1.0",
-    "gulp-cache": "^1.0.1",
-    "gulp-clean-css": "^4.0.0",
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-filter": "^5.1.0",
-    "gulp-imagemin": "^4.0.0",
-    "gulp-line-ending-corrector": "^1.0.2",
+    "gulp-line-ending-corrector": "^1.0.3",
     "gulp-merge-media-queries": "^0.2.1",
-    "gulp-newer": "^1.3.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-uglifycss": "^1.0.9"
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
   }
 }
