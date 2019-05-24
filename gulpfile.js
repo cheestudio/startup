@@ -6,8 +6,8 @@ const PROJECT_URL = 'http://localhost/framework/',
 ROOT              = './',
 STYLES_MAIN       = './assets/scss/main.scss',
 STYLES_SOURCE     = './assets/scss/**/*.scss',
-JS_SOURCE         = './assets/js/src/*.js',
-JS_DEST           = './assets/js/',
+JS_SOURCE         = 'assets/js/src/**/*.js',
+JS_DEST           = 'assets/js/',
 IMAGES_SOURCE     = './assets/img/**/*',
 IMAGES_DEST       = './assets/img',
 ALL_PHP           = './**/*.php',
@@ -33,7 +33,7 @@ autoprefixer = require('gulp-autoprefixer'),
 mmq          = require('gulp-merge-media-queries'),
 cleanCSS     = require('gulp-clean-css'),
 filter       = require('gulp-filter'),
-uglifyJS     = require('gulp-uglify'),
+uglify       = require('gulp-uglify'),
 plumber      = require('gulp-plumber'),
 rename       = require('gulp-rename'),
 concat       = require('gulp-concat'),
@@ -77,7 +77,7 @@ function styles() {
     }))
     .pipe(autoprefixer( BROWSER_VERSIONS ))
     .pipe(lineec() ) // Line Endings for non-UNIX systems
-    .pipe(rename('style.css'))
+    .pipe(rename( 'style.css' ))
     .pipe(gulp.dest( ROOT ))
     .pipe(filter( 'style.css' )) // Filtering stream to only style.css
     .pipe(rename( { suffix: '.min' } ))
@@ -94,9 +94,9 @@ function scriptsJS() {
   return gulp
   .src( JS_SOURCE )
   .pipe(plumber( { errorHandler: onError } ))
-  .pipe(concat('all.min.js'))
-  .pipe(uglifyJS() )
-  .pipe(plumber.stop() )
+  .pipe(concat( 'all.min.js' ))
+  .pipe(uglify())
+  .pipe(plumber.stop())
   .pipe(gulp.dest( JS_DEST ))
   .pipe(browsersync.stream())
 }
