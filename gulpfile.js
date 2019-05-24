@@ -6,10 +6,8 @@ const PROJECT_URL = 'http://localhost/framework/',
 ROOT              = './',
 STYLES_MAIN       = './assets/scss/main.scss',
 STYLES_SOURCE     = './assets/scss/**/*.scss',
-JS_SOURCE         = 'assets/js/src/**/*.js',
-JS_DEST           = 'assets/js/',
-IMAGES_SOURCE     = './assets/img/**/*',
-IMAGES_DEST       = './assets/img',
+JS_SOURCE         = './assets/js/src/**/*.js',
+JS_DEST           = './assets/js/',
 ALL_PHP           = './**/*.php',
 BROWSER_VERSIONS  = [
 'last 2 version',
@@ -47,7 +45,7 @@ browsersync  = require('browser-sync').create();
 const onError = function(err) {
   notify.onError({
     title:    "Gulp Error",
-    message:  "Your code is not working! Fix this:\n\n <%= error.message %>"
+    message:  "Your code is not working! Here's why:\n\n <%= error.message %>"
   })(err);
 };
 
@@ -66,7 +64,6 @@ function styles() {
     .pipe(mmq( { log: true } )) // Combines Media Queries
     .pipe(cleanCSS({
       format: 'beautify',
-      sourceMap: true,
       level: {
         2: {
           all: true,
