@@ -44,6 +44,11 @@ a:hover,
 button:focus {
   outline: 0
 }
+div[id^=gform_wrapper] .top_label .gfield_error,
+div[id^=gform_wrapper] form div.gform_body ul li input,
+div[id^=gform_wrapper] form div.gform_body ul li textarea {
+  width: 100%
+}
 .alignleft,
 .post-nav .pager li.previous {
   float: left
@@ -646,10 +651,6 @@ form input[type=file]:focus,
 form input[type=radio]:focus {
   outline: red auto 1px
 }
-div[id^=gform_wrapper] .gform_wrapper .top_label select.medium,
-div[id^=gform_wrapper] .top_label input.medium {
-  width: 99%
-}
 div[id^=gform_wrapper] .validation_message,
 div[id^=gform_wrapper] li.gfield.gfield_error .gfield_description {
   font-size: 11px;
@@ -662,9 +663,6 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required.gfield_cr
   border: none!important;
   margin-bottom: 0!important;
   padding: 6px 6px 4px 0!important
-}
-div[id^=gform_wrapper] .top_label .gfield_error {
-  width: 100%
 }
 div[id^=gform_wrapper] .top_label .gfield_error .ginput_container {
   max-width: 100%
@@ -706,14 +704,18 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
   left: -9000px;
   position: absolute!important
 }
-.gform_wrapper .gform_body ul li .gfield_label,
 .mobile-nav-wrap,
-.navbar-toggle {
+.navbar-toggle,
+div[id^=gform_wrapper] form div.gform_body ul li .gfield_label {
   display: none
 }
-.gform_wrapper .gform_body ul {
+div[id^=gform_wrapper] form div.gform_body ul {
   margin: 0;
-  padding: 0
+  padding: 0;
+  list-style-type: none
+}
+div[id^=gform_wrapper] form div.gform_body ul li {
+  margin-bottom: 15px
 }
 .navbar-toggle {
   background: 0 0;
