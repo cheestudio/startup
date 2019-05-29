@@ -1,9 +1,11 @@
 "use strict";
 
+// THIS VERSION COMPILES CSS & JS ONLY, NO BROWSER SYNC
+// RENAME gulpfile-ALT.js to gulpfile.js to use
+
 /* Variables
 ========================================================= */
-const PROJECT_URL = 'http://localhost/framework/',
-ROOT              = './',
+const ROOT        = './',
 STYLES_MAIN       = './assets/scss/main.scss',
 STYLES_SOURCE     = './assets/scss/**/*.scss',
 JS_SOURCE         = './assets/js/src/**/*.js',
