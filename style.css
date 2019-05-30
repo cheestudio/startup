@@ -845,8 +845,8 @@ div[id^=gform_wrapper] form div.gform_body ul li {
   }
   .mobile-nav-wrap .mobile-brand {
     position: absolute;
-    left: 15px;
-    top: 15px
+    top: 15px;
+    left: 15px
   }
   .mobile-nav-wrap .mobile-brand img {
     display: block;
