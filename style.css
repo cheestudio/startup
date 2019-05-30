@@ -4,6 +4,7 @@ Theme URI: https://github.com/cheestudio/startup
 Description: Custom Wordpress Theme Framework
 Author: Chee Studio
 Author URI: https://cheewebdevelopment.com/
+Version: 3.11
 */
 a,
 a[href^=tel] {
@@ -855,11 +856,11 @@ div[id^=gform_wrapper] form div.gform_body ul li {
     background: #fff;
     clear: both;
     display: none;
+    height: 1500px;
     left: 0;
     position: absolute;
     top: 60px;
     width: 100%;
-    height: 1500px;
     z-index: 9999
   }
   .mobile-nav-wrap .mobile-nav ul {
@@ -876,32 +877,32 @@ div[id^=gform_wrapper] form div.gform_body ul li {
   .mobile-nav-wrap .mobile-nav ul li > a {
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
+    background-color: #fff;
     color: #000;
     display: block;
     font-size: 16px;
+    letter-spacing: 2px;
     line-height: 24px;
-    letter-spacing: .25em;
-    text-transform: uppercase;
     margin: 0;
     padding: 15px 15px 15px 25px;
-    background-color: #fff
+    text-transform: uppercase
   }
   .mobile-nav-wrap .mobile-nav ul li .expand {
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
+    background-color: transparent!important;
+    background-image: url(assets/img/svg/caret-right.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
     display: block;
     padding: 27px 27px 27px 36px;
     position: absolute;
     right: 0;
-    z-index: 1000;
-    background-image: url(assets/img/svg/caret-right.svg);
-    background-size: 15px 15px;
-    background-position: center center;
-    background-repeat: no-repeat;
     -webkit-transform-origin: center center;
         -ms-transform-origin: center center;
             transform-origin: center center;
-    background-color: transparent!important
+    z-index: 1000
   }
   .mobile-nav-wrap .mobile-nav ul li .expand:hover {
     -webkit-transform: rotate(-180deg);
@@ -927,21 +928,21 @@ div[id^=gform_wrapper] form div.gform_body ul li {
             transform: translateX(-5px)
   }
   .mobile-nav-wrap .mobile-nav ul li .sub-menu {
-    background-color: #fff;
-    position: fixed;
-    border: none;
-    opacity: 0;
-    visibility: visible;
-    text-align: center;
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
+    background-color: #fff;
+    border: none;
+    height: 100%;
+    opacity: 0;
+    padding-top: 60px;
+    position: fixed;
+    text-align: center;
+    top: 0;
     -webkit-transform: translateX(100%);
         -ms-transform: translateX(100%);
             transform: translateX(100%);
+    visibility: visible;
     width: 100%;
-    height: 100%;
-    padding-top: 60px;
-    top: 0;
     z-index: 4000
   }
   .mobile-nav-wrap .mobile-nav ul li .sub-menu.sub-open {
@@ -958,8 +959,9 @@ div[id^=gform_wrapper] form div.gform_body ul li {
     border: none;
     color: #000;
     display: block;
-    font-size: 16px;
     letter-spacing: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-transform: none
   }
   .mobile-nav-wrap .mobile-nav ul li .sub-menu li a:hover {
