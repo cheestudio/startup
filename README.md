@@ -1,6 +1,6 @@
 ## Chee Studio - Custom Wordpress Theme Framework
 
-[cheewebdevelopment.com](https://chee.studio)
+[chee.studio](https://cheewebdevelopment.com)
 
 <br>
 
