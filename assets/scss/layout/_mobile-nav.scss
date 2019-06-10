@@ -24,41 +24,34 @@ $current-link-color      : white;
   right: 15px;
   top: 15px;
   z-index: 10000;
-  .title {
-    color: black;
-    float: left;
-    font-size: 15px;
-    font-weight: 500;
-    margin: -2px 0 0 -50px;
-    text-transform: uppercase;
-  }
   .icon-bar {
     background: $resting-toggle-color;
     border-radius: 5px;
     display: block;
-    height: 3px;
+    height: 4px;
     margin-bottom: 7px;
     width: 32px;
+    @include trans;
     &:first-child,
     &:last-child {
       @include trans;
       transform: translate(0);
     }
-    &:nth-child(2n):before,
-    &:nth-child(2n):after {
+    &:nth-child(2):before,
+    &:nth-child(2):after {
       @include trans;
       background-color: $active-toggle-color;
-      border-radius: 5px;
       content:'';
       display: block;
-      height: 3px;
+      border-radius: 5px;
+      height: 4px;
       left: 0;
       margin-bottom: 7px;
       opacity: 0;
       position: absolute;
       top: 34%;
       transform: rotate(0deg);
-      width: 32px;
+      background-color: red;
     }
   }
 }
@@ -74,15 +67,19 @@ $current-link-color      : white;
   main {
     margin-top: 60px;
   }
-  .brand {
-    display: none;
+
+  header {
+    .brand {
+      display: none;
+    }
   }
+
   .main-nav-wrap {
     display: none;
   }
   .mobile-nav-wrap {
     background: $menu-background;
-    border-bottom: $menu-border-color;
+    box-shadow:0px 0px 5px rgba(black,0.1);
     position: fixed;
     display: block;
     left: 0;
@@ -96,7 +93,7 @@ $current-link-color      : white;
       top: 15px;
       img {
         display: block;
-        width: 150px;
+        width: 130px;
       }
     }
     .mobile-nav {
@@ -122,10 +119,9 @@ $current-link-color      : white;
             @include trans(400);
             color: $link-color;
             display: block;
-            font-size: 16px;
-            line-height: 24px;
-            letter-spacing: .25em;
-            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.45px;
             margin: 0;
             padding: 15px 15px 15px 25px;
             background-color: $link-background;
@@ -139,9 +135,10 @@ $current-link-color      : white;
             display: block;
             padding: 27px 27px 27px 36px;
             position: absolute;
+            top: -5px;
             right: 0px;
             z-index: 1000;
-            background-image: url('assets/img/svg/caret-right.svg');
+            background-image: url('assets/img/svg/Arrow_Right.svg');
             background-size: 15px 15px;
             background-position: center center;
             background-repeat: no-repeat;
@@ -155,13 +152,14 @@ $current-link-color      : white;
             display: block;
             width: 50px;
             height: 20px;
-            background:url(assets/img/svg/nav-arrow-left.svg) 0 0 no-repeat;
+            background:url(assets/img/svg/Arrow_Left.svg) 0 0 no-repeat;
             background-color: transparent !important;
             position: absolute;
             top: 15px;
             left: 15px;
             z-index: 2000;
             @include trans;
+            background-size: contain;
             &:hover {
               transform:translateX(-5px);
             }
@@ -171,10 +169,10 @@ $current-link-color      : white;
             position: fixed;
             border: none;
             opacity:0;
-            visibility: visible;
+            visibility: hidden;
             text-align: center;
             @include trans;
-            transform:translateX(100%);
+            //transform:translateX(100%);
             width: 100%;
             height: 100%;
             padding-top: 60px;
@@ -182,6 +180,7 @@ $current-link-color      : white;
             z-index: 4000;
             &.sub-open {
               opacity: 1;
+              visibility: visible;
               transform:translateX(0);
             }
             &:before {
@@ -192,15 +191,10 @@ $current-link-color      : white;
               border-bottom: 1px solid $link-border-color;
               a {
                 border: none;
-                color: $link-color;
                 display: block;
                 font-size: 16px;
                 letter-spacing: 1px;
-                //padding-left: 40px;
                 text-transform: none;
-                &:hover {
-                  color: #fff;
-                }
               }
             }
           }
@@ -227,30 +221,23 @@ $current-link-color      : white;
     }
   }
   &.open {
+    background-color: #fff;
     a {
       .icon-bar {
         @include trans;
         background: $active-toggle-color;
-        &:first-child,
-        &:last-child {
-          opacity: 0;
-        }
+        width: 32px;
         &:first-child {
-          transform: translate(0,10px);
+          transform: translate(0,12px)  rotate(46deg);
+
         }
         &:last-child {
-          transform: translate(0,-10px);
+          transform: translate(0,-10px) rotate(-46deg);
         }
         &:nth-child(2n) {
           background: transparent;
-          &:before {
-            opacity: 1;
-            transform: rotate(46deg);
-          }
-          &:after {
-            opacity: 1;
-            transform: rotate(-46deg);
-          }
+          opacity: 0;
+          transform:scale(0);
         }
       }
     }
@@ -260,6 +247,19 @@ $current-link-color      : white;
 .navbar-toggle {
   display: block;
   float: right;
+}
+
+.sub-menu-title {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  background-color: $softblue;
+  padding: 20px 0;
 }
 
 } // END
