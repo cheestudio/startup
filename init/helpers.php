@@ -4,7 +4,6 @@
 
 /* Custom Login Screen
 ========================================================= */
-
 function custom_login_screen() { ?>
 
 <style type="text/css">
@@ -80,9 +79,11 @@ function gform_tabindexer( $tab_index, $form = false ) {
   return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
 }
 
+
 /* Enable Gravity Forms field label visibility
 ========================================================= */
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
 
 /* Responsive IFRAME tags
 ========================================================= */
@@ -131,7 +132,7 @@ add_action('admin_head', 'hide_help');
 /* Custom Footer Text
 ========================================================= */
 function remove_footer_admin () {
-  echo 'Custom WordPress Web Development by <a href="https://goodchee.com/" title="Chee Studio Web Development" target="_blank">Chee Studio</a>';
+  echo 'Custom WordPress Web Development by <a href="https://cheewebdevelopment.com/" title="Chee Studio Web Development" target="_blank">Chee Studio</a>';
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
@@ -156,7 +157,6 @@ add_filter( 'tiny_mce_before_init', 'unhide_kitchensink' );
 /* ACF Global Options Page
 ========================================================= */
 if ( function_exists('acf_add_options_page') ) {
-
   acf_add_options_page(array(
     'page_title'  => 'Theme Settings',
     'menu_title'  => 'Theme Settings',
@@ -191,20 +191,6 @@ if ( function_exists('acf_add_options_page') ) {
 }
 
 
-/* ACF Image - SourceSet
-========================================================= */
-function acf_image( $image_id, $max_width, $image_size ) {
-  if ( $image_id != '' ) :
-    // set the default src image size
-    $image_src = wp_get_attachment_image_url( $image_id, $image_size );
-    // set the srcset with various image sizes
-    $image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
-    // generate the markup for the responsive image
-    echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.'px) 100vw, '.$max_width.'px"';
-  endif;
-}
-
-
 /* Remove Emoji scripts from head
 ========================================================= */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -212,12 +198,14 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
+
 /* Remove the additional CSS section, introduced in 4.7, from the Customizer.
 ========================================================= */
 add_action( 'customize_register', 'prefix_remove_css_section', 15 );
 function prefix_remove_css_section( $wp_customize ) {
   $wp_customize->remove_section( 'custom_css' );
 }
+
 
 /* Show Single Post/Page Content (without loop)
 ========================================================= */
@@ -227,9 +215,11 @@ function show_content(){
  echo $content;
 }
 
+
 /* Enqueue Default Editor Styles
 ========================================================= */
 add_editor_style( 'editor-style.css' );
+
 
 /* Hide Admin Panel (for launch)
 ========================================================= */

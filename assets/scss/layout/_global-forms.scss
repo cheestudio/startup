@@ -41,11 +41,11 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
   outline: 1px auto $input-active-border-color;
 }
 
-/* Gravity Form Error Styles */
-
+/* Gravity Form Error Styles
+========================================================= */
 div[id^=gform_wrapper] {
   .top_label input.medium, .gform_wrapper .top_label select.medium {
-    width: 99%;
+    //width: 99%;
   }
   .validation_message, li.gfield.gfield_error .gfield_description {
     font-size: 11px;
@@ -113,29 +113,34 @@ div[id^=gform_wrapper] {
 
 /* Global Form Default Styles
 ========================================================= */
-.gform_wrapper {
+div[id^=gform_wrapper] {
+  form {
+    div.gform_body {
 
-  .gform_body {
-
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        .gfield_label {
-          display: none;
-        }
-        input {
-
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li {
+          margin-bottom: 15px;
+          .gfield_label {
+            display: none;
+          }
+          input {
+            width: 100%;
+          }
+          textarea {
+            width: 100%;
+          }
         }
       }
-    }
   } // END body
 
-  .gform_footer {
+  div.gform_footer {
 
     button {
 
     }
   } // END footer
-  
+}
 } // END wrapper

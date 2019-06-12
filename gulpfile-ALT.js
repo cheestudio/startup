@@ -1,14 +1,15 @@
 "use strict";
 
+// THIS VERSION COMPILES CSS & JS ONLY, NO BROWSER SYNC
+// RENAME gulpfile-ALT.js to gulpfile.js to use
+
 /* Variables
 ========================================================= */
-const PROJECT_URL = 'http://localhost/framework/',
-ROOT              = './',
+const ROOT        = './',
 STYLES_MAIN       = './assets/scss/main.scss',
 STYLES_SOURCE     = './assets/scss/**/*.scss',
 JS_SOURCE         = './assets/js/src/**/*.js',
 JS_DEST           = './assets/js/',
-ALL_PHP           = './**/*.php',
 BROWSER_VERSIONS  = [
 'last 2 version',
 '> 1%',
@@ -36,8 +37,7 @@ plumber      = require('gulp-plumber'),
 rename       = require('gulp-rename'),
 concat       = require('gulp-concat'),
 lineec       = require('gulp-line-ending-corrector'),
-notify       = require('gulp-notify'),
-browsersync  = require('browser-sync').create();
+notify       = require('gulp-notify');
 
 
 /* Error Handling
@@ -81,7 +81,6 @@ function styles() {
     .pipe(cleanCSS( 'style.min.css' ))
     .pipe(plumber.stop() )
     .pipe(gulp.dest( ROOT ))
-    .pipe(browsersync.stream())
   }
 
 
@@ -95,23 +94,6 @@ function scriptsJS() {
   .pipe(uglify())
   .pipe(plumber.stop())
   .pipe(gulp.dest( JS_DEST ))
-  .pipe(browsersync.stream())
-}
-
-
-/* Browser Sync
-========================================================= */
-function browserSync(done) {
-  browsersync.init({
-    proxy: PROJECT_URL,
-    port: 3000
-  });
-  done();
-}
-
-function reload(done) {
-  browsersync.reload();
-  done();
 }
 
 
@@ -120,18 +102,16 @@ function reload(done) {
 function watchFiles() {
   gulp.watch( STYLES_SOURCE, styles );
   gulp.watch( JS_SOURCE, scriptsJS );
-  gulp.watch( ALL_PHP, reload );
 }
 
 
 /* Build
 ========================================================= */
-const watch = gulp.parallel( watchFiles, browserSync );
-const build = gulp.series( gulp.parallel(styles, scriptsJS), watch );
+const build = gulp.series( gulp.parallel(styles, scriptsJS), watchFiles );
 
 exports.styles  = styles;
 exports.js      = scriptsJS;
-exports.watch   = watch;
+exports.watch   = watchFiles;
 exports.build   = build;
 
 exports.default = build;
