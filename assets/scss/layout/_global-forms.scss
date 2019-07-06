@@ -97,12 +97,12 @@ div[id^=gform_wrapper] {
   display: none;
 }
 
-.gforms_confirmation_message {
-  background-color: transparent !important;
-  color: #666!important;
-  border: none !important;
-  font-size: 15px!important;
-  margin-bottom: 40px!important;
+.gform_confirmation_message {
+  color: #000;
+  font-size: 30px;
+  margin: 25px 0;
+  line-height: 40px;
+  text-align: center;
 }
 
 .gform_validation_container {
