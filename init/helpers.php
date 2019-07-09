@@ -154,6 +154,65 @@ function unhide_kitchensink( $args ) {
 add_filter( 'tiny_mce_before_init', 'unhide_kitchensink' );
 
 
+/* Remove Emoji scripts from head
+========================================================= */
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+
+/* Remove the additional CSS section, introduced in 4.7, from the Customizer.
+========================================================= */
+add_action( 'customize_register', 'prefix_remove_css_section', 15 );
+function prefix_remove_css_section( $wp_customize ) {
+  $wp_customize->remove_section( 'custom_css' );
+}
+
+
+/* Show Single Post/Page Content (without loop)
+========================================================= */
+function show_content(){
+ $current_page = get_queried_object();
+ $content      = apply_filters( 'the_content', $current_page->post_content );
+ echo $content;
+}
+
+
+/* Custom Wizzy Toolbar
+========================================================= */
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_custom_toolbars'  );
+function my_custom_toolbars( $toolbars )
+{
+  $toolbars['Full'] = array();
+  $toolbars['Full'][1] = array(
+    'formatselect',
+    'bold',
+    'italic',
+    'underline',
+    'forecolor',
+    'strikethrough',
+    'hr',
+    'blockquote',
+    'bullist',
+    'numlist',
+    'alignleft',
+    'aligncenter',
+    'alignright',
+    'alignjustify',
+    'link',
+    'unlink',
+    'removeformat'
+  );
+  return $toolbars;
+}
+
+
+/* Enqueue Default Editor Styles
+========================================================= */
+add_editor_style( 'editor-style.css' );
+
+
 /* ACF Global Options Page
 ========================================================= */
 if ( function_exists('acf_add_options_page') ) {
@@ -189,36 +248,6 @@ if ( function_exists('acf_add_options_page') ) {
     'parent_slug' => 'theme-settings',
   ));
 }
-
-
-/* Remove Emoji scripts from head
-========================================================= */
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
-
-
-/* Remove the additional CSS section, introduced in 4.7, from the Customizer.
-========================================================= */
-add_action( 'customize_register', 'prefix_remove_css_section', 15 );
-function prefix_remove_css_section( $wp_customize ) {
-  $wp_customize->remove_section( 'custom_css' );
-}
-
-
-/* Show Single Post/Page Content (without loop)
-========================================================= */
-function show_content(){
- $current_page = get_queried_object();
- $content      = apply_filters( 'the_content', $current_page->post_content );
- echo $content;
-}
-
-
-/* Enqueue Default Editor Styles
-========================================================= */
-add_editor_style( 'editor-style.css' );
 
 
 /* Hide Admin Panel (for launch)
