@@ -4,63 +4,48 @@
 
 /* Custom Login Screen
 ========================================================= */
+add_action( 'login_enqueue_scripts', 'custom_login_screen' );
 function custom_login_screen() { ?>
-
-<style type="text/css">
-
-#login h1 a, .login h1 a {
-    background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg); padding-bottom: 0px; background-size: 100%;  width: 170px; height: 160px;
-}
-body {
-  background: #fff !important;
-}
-#login a {
-  color: #fff !important;
-}
-#login a:hover {
-  color: #000 !important;
-}
-#wp-submit {
-    display: inline-block;
-  *display: inline;
-  zoom: 1;
-  line-height: normal;
-  white-space: nowrap;
-  vertical-align: baseline;
-  text-align: center;
-  cursor: pointer;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 2px solid #000;
-  color:#000;
-  padding: 10px 60px;
-  -webkit-transition:400ms;
-  -o-transition:400ms;
-  transition:400ms;
-  background:#fff;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: 19px;
-  font-weight: 700;
-  border-radius: 25px;
-  line-height: 0;
-  padding: 10px;
-  box-shadow: none;
-  text-shadow: none;
- </style>
+  <style type="text/css">
+    #login h1 a {
+      background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
+      padding-bottom: 0px;
+      background-size: 100%;
+      width: 100%;
+      height: 160px;
+    }
+    body {
+      background: #fff !important;
+    }
+    #login a {
+      color: #fff !important;
+    }
+    #login a:hover {
+      color: #000 !important;
+    }
+  </style>
 <?php }
 
-add_action( 'login_enqueue_scripts', 'custom_login_screen' );
+
+/* ACF - WP Admin Styles
+========================================================= */
+add_action('acf/input/admin_head', 'my_acf_admin_head');
+function my_acf_admin_head() {
+  ?>
+  <style type="text/css">
+    .acf-field.center {
+      text-align: center;
+    }
+  </style>
+  <?php
+}
 
 
 /* Gravity Forms Button Markup
 ========================================================= */
 add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
 function form_submit_button( $button, $form ) {
-    return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'><span>{$form['button']['text']}</span></button>";
+  return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'><span>{$form['button']['text']}</span></button>";
 }
 
 
@@ -92,8 +77,10 @@ function responsive_embed($html, $url, $attr) {
   return $html!=='' ? '<div class="embed-container">'.$html.'</div>' : '';
 }
 
+
 /* Add Slug to Body Class
 ========================================================= */
+add_filter( 'body_class', 'post_name_in_body_class' );
 function post_name_in_body_class( $classes ){
   if( is_singular() ) {
    global $post;
@@ -103,11 +90,12 @@ function post_name_in_body_class( $classes ){
  }
  return $classes;
 }
-add_filter( 'body_class', 'post_name_in_body_class' );
+
 
 
 /* Replace "Howdy" on Admin
 ========================================================= */
+add_filter( 'admin_bar_menu', 'replace_howdy',25 );
 function replace_howdy( $wp_admin_bar ) {
   $my_account=$wp_admin_bar->get_node('my-account');
   $newtitle = str_replace( 'Howdy,', 'Logged in as', $my_account->title );
@@ -116,42 +104,43 @@ function replace_howdy( $wp_admin_bar ) {
     'title' => $newtitle,
   ) );
 }
-add_filter( 'admin_bar_menu', 'replace_howdy',25 );
+
 
 
 /* Hide Help on Admin
 ========================================================= */
+add_action('admin_head', 'hide_help');
 function hide_help() {
   echo '<style type="text/css">
             #contextual-help-link-wrap { display: none !important; }
   </style>';
 }
-add_action('admin_head', 'hide_help');
+
 
 
 /* Custom Footer Text
 ========================================================= */
+add_filter('admin_footer_text', 'remove_footer_admin');
 function remove_footer_admin () {
   echo 'Custom WordPress Web Development by <a href="https://cheewebdevelopment.com/" title="Chee Studio Web Development" target="_blank">Chee Studio</a>';
 }
-add_filter('admin_footer_text', 'remove_footer_admin');
 
 
-/* Stop images getting wrapped up in <p> tags when they get dumped out with the_content()
+/* Stop images getting wrapped up in <p> tags when using the_content()
 ========================================================= */
+add_filter('the_content', 'remove_img_ptags');
 function remove_img_ptags($content){
   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
-add_filter('the_content', 'remove_img_ptags');
 
 
 /* Always show Kitchen Sink
 ========================================================= */
+add_filter( 'tiny_mce_before_init', 'unhide_kitchensink' );
 function unhide_kitchensink( $args ) {
   $args['wordpress_adv_hidden'] = false;
   return $args;
 }
-add_filter( 'tiny_mce_before_init', 'unhide_kitchensink' );
 
 
 /* Remove Emoji scripts from head
@@ -172,7 +161,7 @@ function prefix_remove_css_section( $wp_customize ) {
 
 /* Show Single Post/Page Content (without loop)
 ========================================================= */
-function show_content(){
+function show_content() {
  $current_page = get_queried_object();
  $content      = apply_filters( 'the_content', $current_page->post_content );
  echo $content;
