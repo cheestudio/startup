@@ -50,7 +50,7 @@
 
 /* Global Transition ( 400, all, ease-in-out )
 ========================================================= */
-@mixin trans( $duration:400, $property:all, $easing:ease-in-out ) {
+@mixin trans( $duration:600, $property:all, $easing:cubic-bezier(.23,1,.32,1)) {
 	transition: $property $duration+ms $easing;
 }
 
