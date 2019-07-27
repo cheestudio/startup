@@ -7,6 +7,9 @@
 add_action( 'login_enqueue_scripts', 'custom_login_screen' );
 function custom_login_screen() { ?>
   <style type="text/css">
+    body {
+      background: #fff !important;
+    }
     #login h1 a {
       background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
       padding-bottom: 0px;
@@ -14,14 +17,42 @@ function custom_login_screen() { ?>
       width: 100%;
       height: 160px;
     }
-    body {
-      background: #fff !important;
-    }
     #login a {
       color: #fff !important;
     }
     #login a:hover {
       color: #000 !important;
+    }
+    #wp-submit {
+      display: inline-block;
+      *display: inline;
+      zoom: 1;
+      line-height: normal;
+      white-space: nowrap;
+      vertical-align: baseline;
+      text-align: center;
+      cursor: pointer;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 2px solid #000;
+      color:#000;
+      padding: 10px 60px;
+      -webkit-transition:400ms;
+      -o-transition:400ms;
+      transition:400ms;
+      background:#fff;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-size: 19px;
+      font-weight: 700;
+      border-radius: 25px;
+      line-height: 0;
+      padding: 10px;
+      box-shadow: none;
+      text-shadow: none;
     }
   </style>
 <?php }
