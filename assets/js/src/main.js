@@ -26,7 +26,7 @@ $('.navbar-toggle').click(function() {
 
 /* Mobile Nav with Flyout Menus
 ========================================================= */
-$('.mobile-nav ul li').has('ul').prepend('<a href="#" class="expand"></a>');
+$('.mobile-nav ul li').has('ul').prepend('<a href="#" class="expand" aria-label="Expand Menu"></a>');
 $('.mobile-nav .sub-menu').prepend('<a href="#" class="close-sub"></a>');
 $('.mobile-nav ul .menu-item-has-children > a.expand').click(function(e) {
   var current = $(this);

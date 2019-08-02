@@ -82,7 +82,7 @@ function form_submit_button( $button, $form ) {
 
 /* Gravity Forms anchor creation
 ========================================================= */
-add_filter("gform_confirmation_anchor", create_function("","return false;"));
+add_filter( 'gform_confirmation_anchor', '__return_false' );
 
 /* Fix Gravity Form Tabindex Conflicts
 http://gravitywiz.com/fix-gravity-form-tabindex-conflicts
