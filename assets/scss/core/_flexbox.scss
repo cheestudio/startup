@@ -1,0 +1,52 @@
+/* Reusable Flex Classes (to mitigate prefix bloat)
+========================================================= */
+
+.flex, %flex {
+  @include for-size(tablet,up) {
+    display:flex;
+  }
+}
+
+.jcfs, %jcfs {
+  justify-content: flex-start;
+}
+
+.jcc, %jcc {
+  justify-content: center;
+}
+
+.jcsb, %jcsb {
+  justify-content: space-between;
+}
+
+.jcsa, %jcsa {
+  justify-content: space-around;
+}
+
+.aic, %aic {
+  align-items: center;
+}
+
+.aifs, %aifs {
+  align-items: flex-start;
+}
+
+.aife, %aife {
+  align-items: flex-end;
+}
+
+.asc, %asc {
+  align-self: center;
+}
+
+.asfs, %asfs {
+  align-self: flex-start;
+}
+
+.asfe, %asfe {
+  align-self: flex-end;
+}
+
+%wrap, .wrap {
+  flex-wrap:wrap;
+}
