@@ -3,11 +3,12 @@
 
 // A map of breakpoints.
 $breakpoints: (
-  phone-sm: 420px,
-  phone: 767px,
+  phone-sm: 320px,
+  phone: 540px,
   tablet: 768px,
   tablet-lg: 1024px,
-  desktop: 1025px,
+  laptop: 1366px,
+  desktop: 1440px,
   desktop-lg: 1600px
   );
 
@@ -21,9 +22,9 @@ $breakpoints: (
 // Get the breakpoint value.
 $breakpoint-value: map-get($breakpoints, $breakpoint);
 
-// Determine the direction and then write the media query.
+// Determine the direction and then write the media query. Offset for UP to avoid conflicts.
 @if $direction == up {
-  @media (min-width: $breakpoint-value) {
+  @media (min-width: $breakpoint-value + 1) {
     @content;
   }
 }
@@ -36,7 +37,7 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
 // If the breakpoint doesn't exist in the map, pass a manual breakpoint
 @else {
   @if $direction == up {
-    @media (min-width: $breakpoint) {
+    @media (min-width: $breakpoint + 1) {
       @content;
     }
   }
