@@ -28,7 +28,7 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
   }
 }
 @else if $direction == down {
-  @media (max-width: $breakpoint-value) {
+  @media (max-width: $breakpoint-value - 1) {
     @content;
   }
 }
@@ -41,7 +41,7 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
     }
   }
   @else if $direction == down {
-    @media (max-width: $breakpoint) {
+    @media (max-width: $breakpoint - 1) {
       @content;
     }
   }
