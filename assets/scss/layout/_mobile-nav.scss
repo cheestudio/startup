@@ -125,7 +125,7 @@ $current-link-color      : white;
             margin: 0;
             padding: 15px 15px 15px 25px;
             background-color: $link-background;
-            &:hover {
+            &:hover, &:focus {
               background-color: $link-hover-background;
               color: $link-hover-color;
             }
@@ -144,7 +144,7 @@ $current-link-color      : white;
             background-repeat: no-repeat;
             transform-origin: center center;
             background-color: transparent !important;
-            &:hover {
+            &:hover, &:focus {
               transform: rotate(-180deg);
             }
           }
@@ -160,7 +160,7 @@ $current-link-color      : white;
             z-index: 2000;
             @include trans;
             background-size: contain;
-            &:hover {
+            &:hover, &:focus {
               transform:translateX(-5px);
             }
           }
@@ -199,7 +199,7 @@ $current-link-color      : white;
             }
           }
           &.menu-item-has-children {
-            &:hover {
+            &:hover, &:focus {
              .sub-menu {
                &:before {
                 display: none;

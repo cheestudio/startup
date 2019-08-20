@@ -92,7 +92,7 @@ $browser-context: 16; // Default
 	background-color: $bg;
 	border: 2px solid $border;
 	color: $color;
-	&:hover {
+	&:hover, &:focus {
 		color: $bg;
 		background-color: $color;
 		border-color: $border;

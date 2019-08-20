@@ -2,7 +2,7 @@
 $footer_code = get_field('footer_code', 'option'); ?>
 </main>
 
-<footer>
+<footer role="contentinfo">
 	<div class="container">
 
    <div class="copyright">
