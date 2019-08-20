@@ -92,7 +92,7 @@ em {
 }
 a, a[href^="tel"] {
   color: inherit;
-  &:hover {
+  &:hover, &:focus {
     color: red;
   }
 }
