@@ -24,12 +24,12 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
 
 // Determine the direction and then write the media query.
 @if $direction == up {
-  @media (min-width: $breakpoint-value) {
+  @media screen and (min-width: $breakpoint-value) {
     @content;
   }
 }
 @else if $direction == down {
-  @media (max-width: $breakpoint-value) {
+  @media screen and (max-width: $breakpoint-value) {
     @content;
   }
 }
@@ -37,12 +37,12 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
 // If the breakpoint doesn't exist in the map, pass a manual breakpoint
 @else {
   @if $direction == up {
-    @media (min-width: $breakpoint) {
+    @media screen (min-width: $breakpoint) {
       @content;
     }
   }
   @else if $direction == down {
-    @media (max-width: $breakpoint) {
+    @media screen (max-width: $breakpoint) {
       @content;
     }
   }
@@ -61,13 +61,13 @@ $lower-breakpoint: map-get($breakpoints, $lower);
 $upper-breakpoint: map-get($breakpoints, $upper);
 
 // Write the media query.
-@media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint)) {
+@media screen and (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint)) {
   @content;
 }
 }
 // If the breakpoints don't exist, allow manual breakpoints
 @else {
-  @media (min-width: $lower) and (max-width: ($upper)) {
+  @media screen and (min-width: $lower) and (max-width: ($upper)) {
     @content;
   }
 }
