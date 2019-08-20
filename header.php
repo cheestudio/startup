@@ -22,7 +22,7 @@
       </a>
 
       <nav>
-        <div class="main-nav-wrap">
+        <div class="main-nav-wrap" role="navigation">
           <?php wp_nav_menu( array(
             'theme_location'  => 'primary_nav',
             'container'       => '',
@@ -35,7 +35,7 @@
           )); ?>
         </div>
 
-        <div class="mobile-nav-wrap">
+        <div class="mobile-nav-wrap" role="navigation">
           <a class="mobile-brand" href="/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/svg/logo.svg" alt="Mobile Site Logo"></a>
           <a class="navbar-toggle">
             <span class="icon-bar"></span>
@@ -60,4 +60,4 @@
   </div>
 </header>
 
-<main id="top">
+<main id="top" role="main">
