@@ -201,8 +201,7 @@ function show_content() {
 /* Remove hard-coded width on WordPress Captions
 ========================================================= */
 
-function my_img_caption_shortcode_width($width, $atts, $content)
-{
+function my_img_caption_shortcode_width($width, $atts, $content) {
     return 0;
 }
 add_filter('img_caption_shortcode_width', 'my_img_caption_shortcode_width', 10, 3);
