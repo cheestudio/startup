@@ -37,12 +37,12 @@ $breakpoint-value: map-get($breakpoints, $breakpoint);
 // If the breakpoint doesn't exist in the map, pass a manual breakpoint
 @else {
   @if $direction == up {
-    @media screen (min-width: $breakpoint) {
+    @media screen and (min-width: $breakpoint) {
       @content;
     }
   }
   @else if $direction == down {
-    @media screen (max-width: $breakpoint) {
+    @media screen and (max-width: $breakpoint) {
       @content;
     }
   }
