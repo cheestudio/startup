@@ -32,7 +32,7 @@ autoprefixer = require('gulp-autoprefixer'),
 mmq          = require('gulp-merge-media-queries'),
 cleanCSS     = require('gulp-clean-css'),
 filter       = require('gulp-filter'),
-uglify       = require('gulp-uglify'),
+terser = require('gulp-terser-js');
 plumber      = require('gulp-plumber'),
 rename       = require('gulp-rename'),
 concat       = require('gulp-concat'),
@@ -91,7 +91,7 @@ function scriptsJS() {
   .src( JS_SOURCE )
   .pipe(plumber( { errorHandler: onError } ))
   .pipe(concat( 'all.min.js' ))
-  .pipe(uglify())
+  .pipe(terser())
   .pipe(plumber.stop())
   .pipe(gulp.dest( JS_DEST ))
 }

@@ -92,7 +92,7 @@ function scriptsJS() {
   .src( JS_SOURCE )
   .pipe(plumber( { errorHandler: onError } ))
   .pipe(concat( 'all.min.js' ))
-  .pipe(terser() )
+  .pipe(terser())
   .pipe(plumber.stop())
   .pipe(gulp.dest( JS_DEST ))
   .pipe(browsersync.stream())
