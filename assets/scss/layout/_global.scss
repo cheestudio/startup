@@ -299,7 +299,7 @@ img {
   border: 1px solid #ccc;
   padding: 5px;
   text-align: center;
-  @include for-size(tablet-lg) {
+  @include for-size(desktop) {
     width: auto !important;
   }
   p {
