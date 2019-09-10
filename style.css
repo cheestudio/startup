@@ -979,7 +979,7 @@ div[id^=gform_wrapper] form div.gform_body ul li {
     top: -5px;
     right: 0;
     z-index: 1000;
-    background-image: url(assets/img/svg/Arrow_Right.svg);
+    background-image: url(assets/img/svg/nav-caret-right.svg);
     background-size: 15px 15px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -998,7 +998,7 @@ div[id^=gform_wrapper] form div.gform_body ul li {
     display: block;
     width: 50px;
     height: 20px;
-    background: url(assets/img/svg/Arrow_Left.svg) 0 0/contain no-repeat;
+    background: url(assets/img/svg/nav-arrow-left.svg) 0 0/contain no-repeat;
     background-color: transparent!important;
     position: absolute;
     top: 15px;
