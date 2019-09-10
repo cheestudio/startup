@@ -2,6 +2,7 @@
 /* HELPER FUNCTIONS
 ========================================================= */
 
+
 /* Custom Login Screen
 ========================================================= */
 add_action( 'login_enqueue_scripts', 'custom_login_screen' );
@@ -23,37 +24,6 @@ function custom_login_screen() { ?>
     #login a:hover {
       color: #000 !important;
     }
-    #wp-submit {
-      display: inline-block;
-      *display: inline;
-      zoom: 1;
-      line-height: normal;
-      white-space: nowrap;
-      vertical-align: baseline;
-      text-align: center;
-      cursor: pointer;
-      -webkit-user-drag: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      border: 2px solid #000;
-      color:#000;
-      padding: 10px 60px;
-      -webkit-transition:400ms;
-      -o-transition:400ms;
-      transition:400ms;
-      background:#fff;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      font-size: 19px;
-      font-weight: 700;
-      border-radius: 25px;
-      line-height: 0;
-      padding: 10px;
-      box-shadow: none;
-      text-shadow: none;
-    }
   </style>
 <?php }
 
@@ -67,8 +37,35 @@ function my_acf_admin_head() {
     .acf-field.center {
       text-align: center;
     }
+    .acf-field.center .image-wrap,
+    .acf-field.center .image-wrap img {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .acf-field-button-group {
+      text-align: center;
+    }
   </style>
   <?php
+}
+
+
+/* If File Exists (used to verify .svg files exist primarily)
+========================================================= */
+function url_exists( $url ) {
+  $ch = curl_init( $url );
+  curl_setopt( $ch, CURLOPT_NOBODY, true );
+  curl_exec( $ch );
+  $code = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+
+  if ( $code == 200 ) {
+    $status = true;
+  } else {
+    $status = false;
+  }
+  curl_close( $ch );
+  return $status;
 }
 
 
@@ -83,6 +80,7 @@ function form_submit_button( $button, $form ) {
 /* Gravity Forms anchor creation
 ========================================================= */
 add_filter( 'gform_confirmation_anchor', '__return_false' );
+
 
 /* Fix Gravity Form Tabindex Conflicts
 http://gravitywiz.com/fix-gravity-form-tabindex-conflicts
@@ -123,7 +121,6 @@ function post_name_in_body_class( $classes ){
 }
 
 
-
 /* Replace "Howdy" on Admin
 ========================================================= */
 add_filter( 'admin_bar_menu', 'replace_howdy',25 );
@@ -137,7 +134,6 @@ function replace_howdy( $wp_admin_bar ) {
 }
 
 
-
 /* Hide Help on Admin
 ========================================================= */
 add_action('admin_head', 'hide_help');
@@ -146,7 +142,6 @@ function hide_help() {
             #contextual-help-link-wrap { display: none !important; }
   </style>';
 }
-
 
 
 /* Custom Footer Text
@@ -198,17 +193,18 @@ function show_content() {
  echo $content;
 }
 
+
 /* Remove hard-coded width on WordPress Captions
 ========================================================= */
-
+add_filter('img_caption_shortcode_width', 'my_img_caption_shortcode_width', 10, 3);
 function my_img_caption_shortcode_width($width, $atts, $content) {
     return 0;
 }
-add_filter('img_caption_shortcode_width', 'my_img_caption_shortcode_width', 10, 3);
+
 
 /* Custom Wizzy Toolbar
 ========================================================= */
-add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_custom_toolbars'  );
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'my_custom_toolbars' );
 function my_custom_toolbars( $toolbars )
 {
   $toolbars['Full'] = array();
@@ -219,7 +215,8 @@ function my_custom_toolbars( $toolbars )
     'underline',
     'forecolor',
     'strikethrough',
-    'hr',
+    'superscript',
+    'charmap',
     'blockquote',
     'bullist',
     'numlist',
@@ -227,9 +224,11 @@ function my_custom_toolbars( $toolbars )
     'aligncenter',
     'alignright',
     'alignjustify',
+    'symbol',
     'link',
     'unlink',
-    'removeformat'
+    'removeformat',
+    'hr'
   );
   return $toolbars;
 }
@@ -238,6 +237,14 @@ function my_custom_toolbars( $toolbars )
 /* Enqueue Default Editor Styles
 ========================================================= */
 add_editor_style( 'editor-style.css' );
+
+
+/* Enqueue Gutenberg Editor Styles
+========================================================= */
+add_action('enqueue_block_editor_assets','add_block_editor_assets',10,0);
+function add_block_editor_assets(){
+  wp_enqueue_style('block_editor_css', get_stylesheet_directory_uri().'/block-styles.css');
+}
 
 
 /* ACF Global Options Page
