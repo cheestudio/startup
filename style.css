@@ -14,6 +14,12 @@ blockquote,
 q {
   quotes: none
 }
+body ol,
+body ul,
+nav ol,
+nav ul {
+  list-style: none
+}
 hr,
 input[type=search] {
   -webkit-box-sizing: content-box;
@@ -291,10 +297,16 @@ html {
 body {
   font-family: FONT-FAMILY-NAME
 }
-body main li,
-body main p {
+body li,
+body p {
   font-size: 20px;
-  line-height: 30px
+  line-height: 30px;
+  margin-bottom: 20px
+}
+body ol,
+body ul {
+  padding: 0;
+  margin: 0
 }
 body a,
 body a[href^=tel] {
@@ -307,9 +319,6 @@ body a:hover,
 body a[href^=tel]:focus,
 body a[href^=tel]:hover {
   color: red
-}
-body p {
-  margin-bottom: 20px
 }
 *,
 * * {
@@ -407,10 +416,6 @@ menu,
 ol,
 ul {
   padding: 0 0 0 40px
-}
-nav ol,
-nav ul {
-  list-style: none
 }
 img {
   border: 0;
@@ -1086,8 +1091,8 @@ div[id^=gform_wrapper] form div.gform_body ul li {
   }
 }
 @media only screen and (max-width:479px) {
-  body main li,
-  body main p {
+  body li,
+  body p {
     font-size: 16px;
     line-height: 26px
   }
