@@ -87,10 +87,11 @@ $current-link-color      : white;
     min-height: 60px;
     width: 100%;
     z-index: 3000;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
     .mobile-brand {
-      position: absolute;
-      left: 15px;
-      top: 15px;
+
       img {
         display: block;
         width: 130px;

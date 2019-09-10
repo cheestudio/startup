@@ -921,12 +921,16 @@ div[id^=gform_wrapper] form div.gform_body ul li {
     top: 0;
     min-height: 60px;
     width: 100%;
-    z-index: 3000
-  }
-  .mobile-nav-wrap .mobile-brand {
-    position: absolute;
-    left: 15px;
-    top: 15px
+    z-index: 3000;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 15px
   }
   .mobile-nav-wrap .mobile-brand img {
     display: block;
