@@ -2,9 +2,7 @@
 ========================================================= */
 
 .flex, %flex {
-  @include for-size(tablet,up) {
-    display:flex;
-  }
+  display: flex;
 }
 
 .jcfs, %jcfs {
@@ -47,6 +45,6 @@
   align-self: flex-end;
 }
 
-%wrap, .wrap {
-  flex-wrap:wrap;
+.wrap %wrap{
+  flex-wrap: wrap;
 }

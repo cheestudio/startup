@@ -1,15 +1,15 @@
+
 h1, h2, h3, h4, h5, h6 {
-  color: black;
-  line-height: 1;
+  line-height: 1.1;
   font-weight: normal;
   margin: 0 0 20px 0;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 45px;
 }
 h2 {
-  font-size: 45px;
+  font-size: 35px;
 }
 h3 {
   font-size: 30px;
@@ -24,7 +24,7 @@ h6 {
   font-size: 18px;
 }
 
-p {
+p, li {
   font-size: 16px;
   line-height: 22px;
 }

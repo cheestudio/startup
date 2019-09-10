@@ -189,6 +189,12 @@ input[type=submit] {
   -webkit-appearance: none;
   font-size: 16px
 }
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex
+}
 .jcfs {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -244,11 +250,6 @@ input[type=submit] {
   -webkit-align-self: flex-end;
       -ms-flex-item-align: end;
           align-self: flex-end
-}
-.wrap {
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap
 }
 h1,
 h2,
@@ -837,14 +838,6 @@ div[id^=gform_wrapper] form div.gform_body ul li {
       -ms-transform: rotate(0);
           transform: rotate(0);
   background-color: red
-}
-@media only screen and (min-width:768px) {
-  .flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex
-  }
 }
 @media only screen and (min-width:1025px) {
   header .container {
