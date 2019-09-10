@@ -8,17 +8,11 @@ Version: 3.11
 */
 a,
 a[href^=tel] {
-  color: inherit;
   text-decoration: none
 }
 blockquote,
 q {
   quotes: none
-}
-main ol,
-nav ol,
-nav ul {
-  list-style: none
 }
 hr,
 input[type=search] {
@@ -144,8 +138,8 @@ video {
   vertical-align: baseline
 }
 .wp-caption p,
-dfn,
-em {
+body em,
+dfn {
   font-style: italic
 }
 article,
@@ -289,28 +283,31 @@ h6 {
   font-size: 20px;
   line-height: 20px
 }
-main li,
-main p {
+body,
+html {
+  overflow-x: hidden
+}
+body {
+  font-family: FONT-FAMILY-NAME
+}
+body main li,
+body main p {
   font-size: 20px;
   line-height: 30px
 }
-main ol {
-  counter-reset: custom-counter
+body a,
+body a[href^=tel] {
+  -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
+  transition: .6s cubic-bezier(.23,1,.32,1);
+  color: inherit
 }
-main ol li {
-  counter-increment: custom-counter
-}
-main ol li:before {
-  content: counter(custom-counter) ". ";
-  font-weight: 700
-}
-a:focus,
-a:hover,
-a[href^=tel]:focus,
-a[href^=tel]:hover {
+body a:focus,
+body a:hover,
+body a[href^=tel]:focus,
+body a[href^=tel]:hover {
   color: red
 }
-p {
+body p {
   margin-bottom: 20px
 }
 *,
@@ -333,6 +330,9 @@ p {
 ::-moz-selection {
   background: #000;
   color: #fff
+}
+a[href^=tel] {
+  color: inherit
 }
 abbr[title] {
   border-bottom: 1px dotted
@@ -406,6 +406,10 @@ menu,
 ol,
 ul {
   padding: 0 0 0 40px
+}
+nav ol,
+nav ul {
+  list-style: none
 }
 img {
   border: 0;
@@ -1085,12 +1089,12 @@ div[id^=gform_wrapper] form div.gform_body ul li {
   }
 }
 @media only screen and (max-width:479px) {
-  main li,
-  main p {
+  body main li,
+  body main p {
     font-size: 16px;
     line-height: 26px
   }
-  br {
+  body br {
     display: none
   }
   .alignleft,

@@ -12,9 +12,9 @@
 
 /* Fonts
 ========================================================= */
-
-@mixin FONT { //weights e.g., 400, 500, 700
+@mixin font() {
   font-family:'FONT-FAMILY-NAME';
+  // weights e.g., 400, 500, 700
 }
 
 /* Color VARs
@@ -68,7 +68,7 @@ $browser-context: 16; // Default
 	font-style: normal;
 	font-variant: normal;
 	text-rendering: auto;
-	font-family: "Font Awesome 5 Free";
+	font-family: "Font Awesome 5 Pro";
 	font-weight: 900; // 300 also valid for Free version
 	-webkit-font-smoothing: antialiased;
 }
@@ -77,6 +77,7 @@ $browser-context: 16; // Default
 ========================================================= */
 %btn {
 	@include trans();
+	border: none;
 	cursor: pointer;
 	display: inline-block;
 	padding: 10px 40px;

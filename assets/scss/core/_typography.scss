@@ -1,14 +1,6 @@
 /* Fonts
 ========================================================= */
 
-@mixin FONT( $STYLE:style ) {
-  @if $STYLE == 'style' {
-    font-family: 'FONT_FAMILY';
-  }
-  @elseif $STYLE2 == 'style2' {
-    font-family: 'FONT_FAMILY2';
-  }
-}
 
 
 /* Headings
@@ -63,44 +55,40 @@ h6 {
 
 /* Body
 ========================================================= */
-body {
-
+body, html {
+  overflow-x: hidden;
 }
-main  {
-  p, li {
-    font-size: 20px;
-    line-height: 30px;
-    @include for-size(phone) {
-      font-size: 16px;
-      line-height: 26px;
+
+body {
+  @include font;
+
+  main  {
+    p, li {
+      font-size: 20px;
+      line-height: 30px;
+      @include for-size(phone) {
+        font-size: 16px;
+        line-height: 26px;
+      }
     }
   }
-  ol {
-    list-style: none;
-    counter-reset: custom-counter;
+
+  em {
+    font-style: italic;
   }
-  ol li {
-    counter-increment: custom-counter;
+  a, a[href^="tel"] {
+    @include trans;
+    color: inherit;
+    &:hover, &:focus {
+      color: red;
+    }
   }
-  ol li:before {
-    content: counter(custom-counter) ". ";
-    font-weight: bold;
+  p {
+    margin-bottom: 20px;
   }
-}
-em {
-  font-style: italic;
-}
-a, a[href^="tel"] {
-  color: inherit;
-  &:hover, &:focus {
-    color: red;
+  br {
+    @include for-size(phone) {
+      display: none;
+    }
   }
-}
-p {
-  margin-bottom: 20px;
-}
-br {
-  @include for-size(phone) {
-    display: none;
-  }
-}
+} // END body
