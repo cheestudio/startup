@@ -37,7 +37,7 @@ b, strong {
   font-weight: 700;
 }
 blockquote {
-  margin: 1em 40px;
+  margin: 40px;
 }
 dfn {
   font-style: italic;
@@ -106,8 +106,15 @@ img {
   -ms-interpolation-mode: bicubic;
   -webkit-backface-visibility: hidden;
 }
-svg:not(:root) {
-  overflow: hidden;
+svg {
+  display: block;
+  max-width: 100%;
+  path {
+    @include trans(400, fill);
+  }
+  &:not(:root) {
+    overflow: hidden;
+  }
 }
 figure, form {
   margin: 0;
@@ -299,7 +306,7 @@ img {
   border: 1px solid #ccc;
   padding: 5px;
   text-align: center;
-  @include for-size(tablet-lg) {
+  @include for-size(desktop) {
     width: auto !important;
   }
   p {

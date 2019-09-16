@@ -31,7 +31,7 @@ autoprefixer = require('gulp-autoprefixer'),
 mmq          = require('gulp-merge-media-queries'),
 cleanCSS     = require('gulp-clean-css'),
 filter       = require('gulp-filter'),
-terser = require('gulp-terser-js');
+terser       = require('gulp-terser-js'),
 plumber      = require('gulp-plumber'),
 rename       = require('gulp-rename'),
 concat       = require('gulp-concat'),
@@ -45,7 +45,7 @@ browsersync  = require('browser-sync').create();
 const onError = function(err) {
   notify.onError({
     title:    "Gulp Error",
-    message:  "Your code is not working! Here's why:\n\n <%= error.message %>"
+    message:  "ERROR:\n\n <%= error.message %>"
   })(err);
 };
 

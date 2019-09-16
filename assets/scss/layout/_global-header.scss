@@ -1,4 +1,5 @@
-@include for-size(desktop,up) {
+@include for-size(desktop, up) {
+  
   header {
 
     .container {
@@ -26,6 +27,12 @@
           a {
 
           }
+          &.current-menu-item,
+          &.current_page_ancestor {
+            > a {
+
+            }
+          }
 
           .sub-menu {
             display: block;
@@ -34,8 +41,13 @@
             left: 0;
             li {
               white-space: nowrap;
-              a {
+              &.current-menu-item {
 
+              }
+              a {
+                &:hover, &:focus {
+
+                }
               }
             }
           }

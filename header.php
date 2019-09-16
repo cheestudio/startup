@@ -10,6 +10,7 @@
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
 
   <?php $header_code = get_field('header_code', 'option'); ?>
+  <?php $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg'; ?>
   <?php if ( $header_code ) echo $header_code; ?>
 </head>
 
@@ -17,9 +18,14 @@
 
   <header class="main-banner" role="banner">
     <div class="container">
-      <a class="brand" href="/">
-        <img src="<?php bloginfo('template_directory'); ?>/assets/img/svg/logo.svg" alt="Site Logo">
+      <a class="brand" href="/" title="Home">
+        <?php if ( url_exists( $logo ) ) : ?>
+          <?php echo file_get_contents( $logo ); ?>
+        <?php else : ?>
+          <img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Site Logo">
+        <?php endif; ?>
       </a>
+
 
       <nav>
         <div class="main-nav-wrap" role="navigation">
@@ -36,7 +42,14 @@
         </div>
 
         <div class="mobile-nav-wrap" role="navigation">
-          <a class="mobile-brand" href="/"><img src="<?php bloginfo('template_directory'); ?>/assets/img/svg/logo.svg" alt="Mobile Site Logo"></a>
+          <a class="mobile-brand" href="/" title="Home">
+            <?php if ( url_exists( $logo ) ) : ?>
+              <?php echo file_get_contents( $logo ); ?>
+            <?php else : ?>
+              <img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Site Logo">
+            <?php endif; ?>
+          </a>
+
           <a class="navbar-toggle">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

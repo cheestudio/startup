@@ -62,7 +62,7 @@ $current-link-color      : white;
 
 /* Initiate Mobile Nav
 ========================================================= */
-@include for-size(tablet-lg) {
+@include for-size(desktop) {
 
   main {
     margin-top: 60px;
@@ -87,10 +87,11 @@ $current-link-color      : white;
     min-height: 60px;
     width: 100%;
     z-index: 3000;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
     .mobile-brand {
-      position: absolute;
-      left: 15px;
-      top: 15px;
+
       img {
         display: block;
         width: 130px;
@@ -138,7 +139,7 @@ $current-link-color      : white;
             top: -5px;
             right: 0px;
             z-index: 1000;
-            background-image: url('assets/img/svg/Arrow_Right.svg');
+            background-image: url('assets/img/svg/nav-caret-right.svg');
             background-size: 15px 15px;
             background-position: center center;
             background-repeat: no-repeat;
@@ -152,7 +153,7 @@ $current-link-color      : white;
             display: block;
             width: 50px;
             height: 20px;
-            background:url(assets/img/svg/Arrow_Left.svg) 0 0 no-repeat;
+            background:url(assets/img/svg/nav-arrow-left.svg) 0 0 no-repeat;
             background-color: transparent !important;
             position: absolute;
             top: 15px;
