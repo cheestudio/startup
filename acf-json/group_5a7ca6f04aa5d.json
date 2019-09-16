@@ -1,80 +1,82 @@
-{
-    "key": "group_5a7ca6f04aa5d",
-    "title": "Settings - Social Media",
-    "fields": [
-        {
-            "key": "field_5c4f9180693ec",
-            "label": "Social Icons",
-            "name": "social_icons",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "field_5c4f9189693ed",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "add Social Link",
-            "sub_fields": [
-                {
-                    "key": "field_5c4f9189693ed",
-                    "label": "Name",
-                    "name": "name",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+[
+    {
+        "key": "group_5a7ca6f04aa5d",
+        "title": "Settings - Social Media",
+        "fields": [
+            {
+                "key": "field_5c4f9180693ec",
+                "label": "Social Icons",
+                "name": "social_icons",
+                "type": "repeater",
+                "instructions": "Place just the name of the icon you're wanting to use. A list of icons can be found <a target=\"_blank\" href=\"https:\/\/fontawesome.com\/icons?d=gallery&s=brands&m=free\">here<\/a>.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
                 },
-                {
-                    "key": "field_5c4f9192693ee",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
+                "collapsed": "field_5c4f9189693ed",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "add Social Link",
+                "sub_fields": [
+                    {
+                        "key": "field_5c4f9189693ed",
+                        "label": "Icon Class",
+                        "name": "icon_class",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "e.g. facebook, twitter",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
                     },
-                    "default_value": "",
-                    "placeholder": "http:\/\/"
+                    {
+                        "key": "field_5c4f9192693ee",
+                        "label": "Link",
+                        "name": "link",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "http:\/\/"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-social-media"
                 }
             ]
-        }
-    ],
-    "location": [
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options-social-media"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1559170014
-}
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "modified": 1555018379
+    }
+]
