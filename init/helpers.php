@@ -284,6 +284,11 @@ if ( function_exists('acf_add_options_page') ) {
 }
 
 
+/* Disable Gutenberg
+========================================================= */
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
+
 /* Hide Admin Panel (for launch)
 ========================================================= */
 //add_filter('acf/settings/show_admin', '__return_false');
