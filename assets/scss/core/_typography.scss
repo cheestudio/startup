@@ -55,41 +55,41 @@ h6 {
 
 /* Body
 ========================================================= */
-body, html {
-  overflow-x: hidden;
-}
-
 body {
   @include font;
 
-  p, li {
-    font-size: 20px;
-    line-height: 30px;
-    margin-bottom: 20px;
-    @include for-size(phone) {
-      font-size: 16px;
-      line-height: 26px;
+  main {
+    p, li {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 20px;
+      @include for-size(phone) {
+        font-size: 16px;
+        line-height: 26px;
+      }
     }
   }
-
+  
   ul, ol {
     padding: 0;
     margin: 0;
     list-style: none;
     li {
-
+      margin-bottom: 10px;
     }
   }
 
   blockquote {
     p {
-
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
   a, a[href^="tel"] {
     @include trans;
-    color: inherit;
+    color: red;
     &:hover, &:focus {
       color: red;
     }
@@ -98,9 +98,9 @@ body {
   em {
     font-style: italic;
   }
-  
+
   br {
-    @include for-size(phone) {
+    @include for-size(tablet) {
       display: none;
     }
   }

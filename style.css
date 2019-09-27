@@ -186,7 +186,6 @@ input[type=submit] {
   display: inline-block;
   padding: 10px 40px;
   text-align: center;
-  text-transform: uppercase;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -290,15 +289,11 @@ h6 {
   font-size: 20px;
   line-height: 20px
 }
-body,
-html {
-  overflow-x: hidden
-}
 body {
   font-family: FONT-FAMILY-NAME
 }
-body li,
-body p {
+body main li,
+body main p {
   font-size: 20px;
   line-height: 30px;
   margin-bottom: 20px
@@ -308,11 +303,18 @@ body ul {
   padding: 0;
   margin: 0
 }
+body ol li,
+body ul li {
+  margin-bottom: 10px
+}
+body blockquote p:last-child {
+  margin-bottom: 0
+}
 body a,
 body a[href^=tel] {
   -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
   transition: .6s cubic-bezier(.23,1,.32,1);
-  color: inherit
+  color: red
 }
 body a:focus,
 body a:hover,
@@ -352,7 +354,7 @@ strong {
   font-weight: 700
 }
 blockquote {
-  margin: 40px
+  margin: 30px
 }
 hr {
   height: 0;
@@ -1090,14 +1092,16 @@ div[id^=gform_wrapper] form div.gform_body ul li {
     padding: 20px 0
   }
 }
-@media only screen and (max-width:479px) {
-  body li,
-  body p {
-    font-size: 16px;
-    line-height: 26px
-  }
+@media only screen and (max-width:767px) {
   body br {
     display: none
+  }
+}
+@media only screen and (max-width:479px) {
+  body main li,
+  body main p {
+    font-size: 16px;
+    line-height: 26px
   }
   .alignleft,
   .alignright {

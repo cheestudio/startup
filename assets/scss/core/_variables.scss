@@ -43,13 +43,13 @@ $browser-context: 16; // Default
 ========================================================= */
 @mixin row-padding(
 	$top-large:100,  $bottom-large:100,
-	$top-small:50,  $bottom-small:50) {
+	$top-small:50,   $bottom-small:50) {
 
 	@include for-size(tablet, up) {
 		padding-top:    $top-large + px;
 		padding-bottom: $bottom-large + px;
 	}
-	@include for-size(phone) {
+	@include for-size(tablet) {
 		padding-top:    $top-small + px;
 		padding-bottom: $bottom-small + px;
 	}
@@ -82,7 +82,6 @@ $browser-context: 16; // Default
 	display: inline-block;
 	padding: 10px 40px;
 	text-align: center;
-	text-transform: uppercase;
 	user-select: none;
 	vertical-align: baseline;
 	-webkit-appearance: none;
