@@ -3,6 +3,22 @@
     "title": "Settings - Global Settings",
     "fields": [
         {
+            "key": "field_5d8e8d21a56ec",
+            "label": "Custom Scripts",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_5b92f8a0032d6",
             "label": "Header Code",
             "name": "header_code",
@@ -58,5 +74,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1548718438
+    "modified": 1569623389
 }
