@@ -77,24 +77,24 @@ $browser-context: 16; // Default
 ========================================================= */
 %btn {
 	@include trans();
-	border: none;
+	//@include $font;
+	border: 2px solid transparent;
 	cursor: pointer;
 	display: inline-block;
 	padding: 10px 40px;
 	text-align: center;
 	user-select: none;
 	vertical-align: baseline;
-	-webkit-appearance: none;
 	font-size: 16px;
+	-webkit-appearance: none;
 }
-@mixin button($color:black, $bg:white, $border:black) {
+@mixin button( $color:black, $bg:white, $border:black ) {
 	@extend %btn;
 	background-color: $bg;
-	border: 2px solid $border;
 	color: $color;
+	border-color: $border;
 	&:hover, &:focus {
 		color: $bg;
 		background-color: $color;
-		border-color: $border;
 	}
 }

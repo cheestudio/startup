@@ -14,12 +14,6 @@ blockquote,
 q {
   quotes: none
 }
-body ol,
-body ul,
-nav ol,
-nav ul {
-  list-style: none
-}
 hr,
 input[type=search] {
   -webkit-box-sizing: content-box;
@@ -182,6 +176,7 @@ button,
 input[type=submit] {
   -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
   transition: .6s cubic-bezier(.23,1,.32,1);
+  border: 2px solid transparent;
   cursor: pointer;
   display: inline-block;
   padding: 10px 40px;
@@ -191,8 +186,8 @@ input[type=submit] {
       -ms-user-select: none;
           user-select: none;
   vertical-align: baseline;
-  -webkit-appearance: none;
-  font-size: 16px
+  font-size: 16px;
+  -webkit-appearance: none
 }
 .flex {
   display: -webkit-box;
@@ -300,7 +295,7 @@ body main p {
 }
 body ol,
 body ul {
-  padding: 0;
+  padding-left: 20px;
   margin: 0
 }
 body ol li,
@@ -419,6 +414,10 @@ ol,
 ul {
   padding: 0 0 0 40px
 }
+nav ol,
+nav ul {
+  list-style: none
+}
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
@@ -495,8 +494,8 @@ textarea {
 button,
 input[type=submit] {
   background-color: #fff;
-  border: 2px solid #000;
-  color: #000
+  color: #000;
+  border-color: #000
 }
 .button:focus,
 .button:hover,
@@ -505,8 +504,7 @@ button:hover,
 input[type=submit]:focus,
 input[type=submit]:hover {
   color: #fff;
-  background-color: #000;
-  border-color: #000
+  background-color: #000
 }
 .button::-moz-focus-inner,
 button::-moz-focus-inner {
