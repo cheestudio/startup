@@ -844,7 +844,7 @@ div[id^=gform_wrapper] form div.gform_body ul li {
           transform: rotate(0);
   background-color: red
 }
-@media only screen and (min-width:1025px) {
+@media only screen and (min-width:1367px) {
   header .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -888,7 +888,7 @@ div[id^=gform_wrapper] form div.gform_body ul li {
     white-space: nowrap
   }
 }
-@media only screen and (max-width:1024px) {
+@media only screen and (max-width:1366px) {
   .main-nav-wrap,
   .mobile-nav-wrap .mobile-nav ul li .sub-menu:before,
   .mobile-nav-wrap .mobile-nav ul li.menu-item-has-children:focus .sub-menu:before,
@@ -1090,12 +1090,12 @@ div[id^=gform_wrapper] form div.gform_body ul li {
     padding: 20px 0
   }
 }
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
   body br {
     display: none
   }
 }
-@media only screen and (max-width:479px) {
+@media only screen and (max-width:480px) {
   body main li,
   body main p {
     font-size: 16px;
