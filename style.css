@@ -30,6 +30,11 @@ svg:not(:root) {
 .post-nav .pager li.previous {
   float: left
 }
+.page-404,
+.wp-caption,
+table caption {
+  text-align: center
+}
 *,
 .button:focus,
 a:active,
@@ -38,15 +43,9 @@ a:hover,
 button:focus {
   outline: 0
 }
-.gform_confirmation_message,
-.page-404,
-.wp-caption,
-table caption {
-  text-align: center
-}
 div[id^=gform_wrapper] .top_label .gfield_error,
-div[id^=gform_wrapper] form div.gform_body ul li input,
-div[id^=gform_wrapper] form div.gform_body ul li textarea {
+div[id^=gform_wrapper] form .gform_body ul li input,
+div[id^=gform_wrapper] form .gform_body ul li textarea {
   width: 100%
 }
 a,
@@ -293,14 +292,15 @@ body main p {
   line-height: 30px;
   margin-bottom: 20px
 }
+body ol li,
+body ul li,
+div[id^=gform_wrapper] form .gform_body ul li {
+  margin-bottom: 15px
+}
 body ol,
 body ul {
   padding-left: 20px;
   margin: 0
-}
-body ol li,
-body ul li {
-  margin-bottom: 10px
 }
 body blockquote p:last-child {
   margin-bottom: 0
@@ -755,7 +755,7 @@ div[id^=gform_wrapper] .gfield_error input[type=email],
 div[id^=gform_wrapper] .gfield_error input[type=tel],
 div[id^=gform_wrapper] .gfield_error input[type=text],
 div[id^=gform_wrapper] .gfield_error textarea {
-  border: 1px solid red!important
+  border-color: red!important
 }
 div[id^=gform_wrapper] .gfield_error .gfield_label {
   color: red
@@ -776,11 +776,8 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
   font-size: 11px!important;
   display: none
 }
-.gform_confirmation_message {
-  color: #000;
-  font-size: 30px;
-  margin: 25px 0;
-  line-height: 40px
+.gform_confirmation_wrapper .gform_confirmation_message {
+  margin: 0
 }
 .gform_validation_container {
   display: none!important;
@@ -789,16 +786,13 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
 }
 .mobile-nav-wrap,
 .navbar-toggle,
-div[id^=gform_wrapper] form div.gform_body ul li .gfield_label {
+div[id^=gform_wrapper] form .gform_body ul li .gfield_label {
   display: none
 }
-div[id^=gform_wrapper] form div.gform_body ul {
+div[id^=gform_wrapper] form .gform_body ul {
   margin: 0;
   padding: 0;
-  list-style-type: none
-}
-div[id^=gform_wrapper] form div.gform_body ul li {
-  margin-bottom: 15px
+  list-style: none
 }
 .navbar-toggle {
   background: 0 0;
