@@ -1,2 +1,12 @@
 /* Misc. Text and Page Components
 ========================================================= */
+
+// 404 Page
+.page-404 {
+
+  &--content {
+    h1 {
+      margin-bottom: 50px;
+    }
+  }
+}

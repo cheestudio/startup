@@ -838,6 +838,9 @@ div[id^=gform_wrapper] form .gform_body ul {
           transform: rotate(0);
   background-color: red
 }
+.page-404--content h1 {
+  margin-bottom: 50px
+}
 @media only screen and (min-width:1367px) {
   header .container {
     display: -webkit-box;
