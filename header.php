@@ -19,11 +19,7 @@
   <header class="main-banner" role="banner">
     <div class="container">
       <a class="brand" href="/" title="Home">
-        <?php if ( url_exists( $logo ) ) : ?>
-          <?php echo file_get_contents( $logo ); ?>
-        <?php else : ?>
-          <img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Site Logo">
-        <?php endif; ?>
+        <?php svg( $logo, 'Site Logo' ); ?>
       </a>
 
 
@@ -43,11 +39,7 @@
 
         <div class="mobile-nav-wrap" role="navigation">
           <a class="mobile-brand" href="/" title="Home">
-            <?php if ( url_exists( $logo ) ) : ?>
-              <?php echo file_get_contents( $logo ); ?>
-            <?php else : ?>
-              <img src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" alt="Site Logo">
-            <?php endif; ?>
+            <?php svg( $logo, 'Mobile Site Logo' ); ?>
           </a>
 
           <a class="navbar-toggle">

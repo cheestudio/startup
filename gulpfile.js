@@ -2,7 +2,7 @@
 
 /* Variables
 ========================================================= */
-const PROJECT_URL = 'http://localhost/framework/',
+const PROJECT_URL = 'http://localhost/startup/',
 ROOT              = './',
 STYLES_MAIN       = './assets/scss/main.scss',
 STYLES_SOURCE     = './assets/scss/**/*.scss',

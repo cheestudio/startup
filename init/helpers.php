@@ -65,9 +65,23 @@ function url_exists( $url ) {
     $status = false;
   }
   curl_close( $ch );
+  
   return $status;
 }
 
+
+/* Output Inline SVG
+========================================================= */
+function svg( $path, $alt='' ) {
+  if ( url_exists( $path ) ) :
+    $ext = pathinfo( $path, PATHINFO_EXTENSION );
+      if ( $ext == 'svg' ) :
+        echo file_get_contents( $path );
+      else :
+        echo "<img src='{$path}' alt='{$alt}'>";
+      endif;
+  endif;
+}
 
 /* Gravity Forms Button Markup
 ========================================================= */
@@ -198,7 +212,7 @@ function show_content() {
 ========================================================= */
 add_filter('img_caption_shortcode_width', 'my_img_caption_shortcode_width', 10, 3);
 function my_img_caption_shortcode_width($width, $atts, $content) {
-    return 0;
+  return 0;
 }
 
 
