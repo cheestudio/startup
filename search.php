@@ -3,22 +3,26 @@
 
 <div class="search-index">
   <div class="container">
-    
+
     <?php if (have_posts()) : ?>
-      <h2>Search Results for "<em><?php the_search_query() ?></em>"</h2>
-      <?php while (have_posts()) : the_post(); ?>
-
-        <div class="search-results">
-          <h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title();?></a></h2>
+      <h2>Search Results for <em> "<?php the_search_query() ?>"</em></h2>
+      <div class="search-result-entries">
+        <?php while (have_posts()) : the_post(); ?>
+         <a href="<?php the_permalink();?>" class="search-result-entry">
+          <h5 id="post-<?php the_ID(); ?>"><?php the_title();?></h5>
           <?php the_excerpt();?>
-          <a class="button" href="<?php the_permalink();?>">View Page</a>
-        </div>
-
+        </a>
       <?php endwhile; ?>
+    </div>
 
-      <?php if (next_posts_link() || previous_posts_link()): ?>
-        <?php next_posts_link('&laquo; Older Entries') ?> | <?php previous_posts_link('Newer Entries &raquo;') ?>
-      <?php endif; ?>
+    <?php if ( $wp_query->max_num_pages > 1 ) : ?>
+      <nav aria-label="More Results">
+        <ul class="post-nav">
+          <li class="previous"><?php next_posts_link(__('&larr; Older posts')); ?></li>
+          <li class="next"><?php previous_posts_link(__('Newer posts &rarr;')); ?></li>
+        </ul>
+      </nav>
+    <?php endif; ?>
 
     <?php else : ?>
 
