@@ -9,14 +9,14 @@ add_action( 'login_enqueue_scripts', 'custom_login_screen' );
 function custom_login_screen() { ?>
   <style type="text/css">
     body {
-      background: #fff !important;
+      background: linear-gradient(to bottom, black, 85%, white) !important;
     }
     #login h1 a {
       background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
       padding-bottom: 0px;
       background-size: 100%;
-      width: 100%;
-      height: 160px;
+      width: 90%;
+      height: 100px;
     }
     #login a {
       color: #fff !important;
