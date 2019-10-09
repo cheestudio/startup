@@ -158,12 +158,9 @@ function hide_help() {
 }
 
 
-/* Custom Footer Text
+/* Remove footer branding
 ========================================================= */
-add_filter('admin_footer_text', 'remove_footer_admin');
-function remove_footer_admin () {
-  echo 'Custom WordPress Web Development by <a href="https://cheewebdevelopment.com/" title="Chee Studio Web Development" target="_blank">Chee Studio</a>';
-}
+add_filter( 'admin_footer_text', '__return_false' );
 
 
 /* Stop images getting wrapped up in <p> tags when using the_content()
