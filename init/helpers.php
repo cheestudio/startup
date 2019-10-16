@@ -38,17 +38,22 @@ function custom_login_screen() { ?>
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
-      padding: 10px 40px;
-      border:2px solid #000;
-      color:#fff;
-      transition:400ms;
-      background:#000;
-      font-size: 16px;
-      font-weight: 700;
       border-radius: 0;
       line-height: 0;
       box-shadow: none;
       text-shadow: none;
+      transition:400ms;
+      padding: 10px 40px;
+      font-size: 16px;
+      font-weight: 500;
+      border:2px solid #000;
+      color:#fff;
+      background:#000;
+    }
+    #login #wp-submit:hover {
+      border:2px solid #333;
+      color:#fff;
+      background:#333;
     }
   </style>
 <?php }
