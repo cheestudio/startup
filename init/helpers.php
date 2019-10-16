@@ -24,6 +24,32 @@ function custom_login_screen() { ?>
     #login a:hover {
       color: #000 !important;
     }
+    #login #wp-submit {
+      display: inline-block;
+      *display: inline;
+      zoom: 1;
+      line-height: normal;
+      white-space: nowrap;
+      vertical-align: baseline;
+      text-align: center;
+      cursor: pointer;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 10px 40px;
+      border:2px solid #000;
+      color:#fff;
+      transition:400ms;
+      background:#000;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 0;
+      line-height: 0;
+      box-shadow: none;
+      text-shadow: none;
+    }
   </style>
 <?php }
 
@@ -65,7 +91,7 @@ function url_exists( $url ) {
     $status = false;
   }
   curl_close( $ch );
-  
+
   return $status;
 }
 
@@ -75,11 +101,11 @@ function url_exists( $url ) {
 function svg( $path, $alt='' ) {
   if ( url_exists( $path ) ) :
     $ext = pathinfo( $path, PATHINFO_EXTENSION );
-      if ( $ext == 'svg' ) :
-        echo file_get_contents( $path );
-      else :
-        echo "<img src='{$path}' alt='{$alt}'>";
-      endif;
+    if ( $ext == 'svg' ) :
+      echo file_get_contents( $path );
+    else :
+      echo "<img src='{$path}' alt='{$alt}'>";
+    endif;
   endif;
 }
 
