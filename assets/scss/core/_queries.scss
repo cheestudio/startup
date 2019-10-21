@@ -6,9 +6,9 @@ $breakpoints: (
   phone-sm   : 320px,
   phone      : 480px,
   tablet     : 768px,
-  laptop     : 1024px,
-  desktop    : 1366px,
-  desktop-lg : 1680px
+  tablet-lg  : 1024px,
+  laptop     : 1366px,
+  desktop    : 1680px
   );
 
 
@@ -20,7 +20,7 @@ $breakpoints: (
   @if map-has-key( $breakpoints, $breakpoint ) {
 
     $breakpoint-value: map-get( $breakpoints, $breakpoint );
-    
+
     // Offset UP by +1 to avoid conflicts
     @if $direction == up {
       @media only screen and (min-width: $breakpoint-value + 1) { @content; }
