@@ -62,7 +62,7 @@ $current-link-color      : white;
 
 /* Initiate Mobile Nav
 ========================================================= */
-@include for-size(desktop) {
+@include for-size(tablet-lg) {
 
   main {
     margin-top: 60px;

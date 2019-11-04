@@ -21,7 +21,7 @@
         <?php svg( $logo, 'Site Logo' ); ?>
       </a>
 
-      <nav>
+      <nav role="navigation">
         <?php include( locate_template('partials/nav-desktop.php') ); ?>
         <?php include( locate_template('partials/nav-mobile.php') ); ?>
       </nav>
