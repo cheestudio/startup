@@ -841,7 +841,7 @@ div[id^=gform_wrapper] form .gform_body ul {
 .page-404--content h1 {
   margin-bottom: 50px
 }
-@media only screen and (min-width:1367px) {
+@media only screen and (min-width:1681px) {
   header .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -885,14 +885,12 @@ div[id^=gform_wrapper] form .gform_body ul {
     white-space: nowrap
   }
 }
-@media only screen and (max-width:1366px) {
-  .main-nav-wrap,
-  .mobile-nav-wrap .mobile-nav ul li .sub-menu:before,
-  .mobile-nav-wrap .mobile-nav ul li.menu-item-has-children:focus .sub-menu:before,
-  .mobile-nav-wrap .mobile-nav ul li.menu-item-has-children:hover .sub-menu:before,
-  header .brand {
-    display: none
+@media only screen and (max-width:1680px) {
+  .wp-caption {
+    width: auto!important
   }
+}
+@media only screen and (max-width:1024px) {
   .mobile-nav-wrap .mobile-nav ul li > a:focus,
   .mobile-nav-wrap .mobile-nav ul li > a:hover,
   .mobile-nav-wrap .mobile-nav ul li.current-menu-item > a,
@@ -900,8 +898,26 @@ div[id^=gform_wrapper] form .gform_body ul {
     background-color: #000;
     color: #fff
   }
-  .wp-caption {
-    width: auto!important
+  body main li,
+  body main p {
+    font-size: 16px;
+    line-height: 26px
+  }
+  body br {
+    display: none
+  }
+  .alignleft,
+  .alignright {
+    float: none;
+    margin: 15px auto;
+    display: block
+  }
+  .main-nav-wrap,
+  .mobile-nav-wrap .mobile-nav ul li .sub-menu:before,
+  .mobile-nav-wrap .mobile-nav ul li.menu-item-has-children:focus .sub-menu:before,
+  .mobile-nav-wrap .mobile-nav ul li.menu-item-has-children:hover .sub-menu:before,
+  header .brand {
+    display: none
   }
   main {
     margin-top: 60px
@@ -1085,23 +1101,5 @@ div[id^=gform_wrapper] form .gform_body ul {
     font-weight: 500;
     background-color: #eee;
     padding: 20px 0
-  }
-}
-@media only screen and (max-width:768px) {
-  body br {
-    display: none
-  }
-}
-@media only screen and (max-width:480px) {
-  body main li,
-  body main p {
-    font-size: 16px;
-    line-height: 26px
-  }
-  .alignleft,
-  .alignright {
-    float: none;
-    margin: 15px auto;
-    display: block
   }
 }

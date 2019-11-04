@@ -286,7 +286,7 @@ img {
 .alignleft {
   float: left;
   margin: 0 15px 15px 0;
-  @include for-size(phone) {
+  @include for-size(tablet) {
     float: none;
     margin: 15px auto;
     display: block;
@@ -295,7 +295,7 @@ img {
 .alignright {
   float: right;
   margin: 0 0 15px 15px;
-  @include for-size(phone) {
+  @include for-size(tablet) {
     float: none;
     margin: 15px auto;
     display: block;
