@@ -65,6 +65,9 @@ function styles() {
     .pipe(cleanCSS({
       format: 'beautify',
       level: {
+        1: {
+          roundingPrecision: 'em=2, px=2'
+        },
         2: {
           all: true,
           mergeNonAdjacentRules: false,
