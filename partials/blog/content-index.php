@@ -7,7 +7,7 @@
 
     <?php if ( has_post_thumbnail() ) : ?>
       <div class="featured-image">
-        <a href="<?php the_permalink();?>"><?php the_post_thumbnail('featured-main' ); ?></a>
+        <a href="<?php the_permalink();?>"><?php the_post_thumbnail('medium_large' ); ?></a>
       </div>
     <?php endif; ?>
 

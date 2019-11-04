@@ -14,8 +14,8 @@ add_theme_support('post-thumbnails', array('post'));
 
 /* Custom Image Sizes
 ========================================================= */
-if (function_exists('add_image_size')) {
-//add_image_size('NAME', X, Y, $crop);
+if ( function_exists('add_image_size') ) {
+  //add_image_size('NAME', X, Y, true);
 }
 add_filter('image_size_names_choose', 'insert_custom_image_sizes');
 function insert_custom_image_sizes($sizes) {
