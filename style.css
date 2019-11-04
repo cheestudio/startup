@@ -22,10 +22,6 @@ input[type=search] {
 table {
   border-spacing: 0
 }
-.post-nav,
-svg:not(:root) {
-  overflow: hidden
-}
 .alignleft,
 .post-nav .pager li.previous {
   float: left
@@ -424,13 +420,16 @@ img {
   -ms-interpolation-mode: bicubic;
   -webkit-backface-visibility: hidden
 }
+iframe {
+  max-width: 100%
+}
 svg {
   display: block;
   max-width: 100%
 }
 svg path {
-  -webkit-transition: fill .4s cubic-bezier(.23,1,.32,1);
-  transition: fill .4s cubic-bezier(.23,1,.32,1)
+  -webkit-transition: .4s cubic-bezier(.23,1,.32,1);
+  transition: .4s cubic-bezier(.23,1,.32,1)
 }
 figure,
 form {
@@ -601,6 +600,7 @@ table td {
   font-size: 11px
 }
 .post-nav {
+  overflow: hidden;
   margin: 0 0 25px;
   float: none
 }

@@ -106,14 +106,14 @@ img {
   -ms-interpolation-mode: bicubic;
   -webkit-backface-visibility: hidden;
 }
+iframe {
+  max-width: 100%;
+}
 svg {
   display: block;
   max-width: 100%;
   path {
-    @include trans(400, fill);
-  }
-  &:not(:root) {
-    overflow: hidden;
+    @include trans(400);
   }
 }
 figure, form {
