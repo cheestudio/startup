@@ -6,6 +6,14 @@ Author: Chee Studio
 Author URI: https://cheewebdevelopment.com/
 Version: 4.0
 */
+body a,
+body a:focus,
+body a:hover,
+body a[href^=tel],
+body a[href^=tel]:focus,
+body a[href^=tel]:hover {
+  color: red
+}
 a,
 a[href^=tel] {
   text-decoration: none
@@ -26,11 +34,6 @@ table {
 .post-nav .pager li.previous {
   float: left
 }
-.page-404,
-.wp-caption,
-table caption {
-  text-align: center
-}
 *,
 .button:focus,
 a:active,
@@ -43,6 +46,25 @@ div[id^=gform_wrapper] .top_label .gfield_error,
 div[id^=gform_wrapper] form .gform_body ul li input,
 div[id^=gform_wrapper] form .gform_body ul li textarea {
   width: 100%
+}
+.page-404,
+.wp-caption,
+body.search-results h2,
+table caption {
+  text-align: center
+}
+.button,
+.navbar-toggle .icon-bar,
+.navbar-toggle .icon-bar:first-child,
+.navbar-toggle .icon-bar:last-child,
+.search-result-entry,
+.search-result-entry *,
+body a,
+body a[href^=tel],
+button,
+input[type=submit] {
+  -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
+  transition: .6s cubic-bezier(.23,1,.32,1)
 }
 a,
 abbr,
@@ -169,8 +191,6 @@ q:before {
 .button,
 button,
 input[type=submit] {
-  -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
-  transition: .6s cubic-bezier(.23,1,.32,1);
   border: 2px solid transparent;
   cursor: pointer;
   display: inline-block;
@@ -302,18 +322,6 @@ body ul {
 body blockquote p:last-child {
   margin-bottom: 0
 }
-body a,
-body a[href^=tel] {
-  -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
-  transition: .6s cubic-bezier(.23,1,.32,1);
-  color: red
-}
-body a:focus,
-body a:hover,
-body a[href^=tel]:focus,
-body a[href^=tel]:hover {
-  color: red
-}
 *,
 * * {
   -webkit-box-sizing: border-box;
@@ -438,7 +446,7 @@ form {
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: .35em .625em .75em
+  padding: .35em .63em .75em
 }
 legend {
   border: 0;
@@ -777,6 +785,12 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
   font-size: 11px!important;
   display: none
 }
+.search-result-entry,
+.search-result-entry:hover .view-result,
+.search-result-entry:hover h5,
+body.search-results h2 em {
+  color: #000
+}
 .gform_confirmation_wrapper .gform_confirmation_message {
   margin: 0
 }
@@ -809,14 +823,10 @@ div[id^=gform_wrapper] form .gform_body ul {
   display: block;
   height: 4px;
   margin-bottom: 7px;
-  width: 32px;
-  -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
-  transition: .6s cubic-bezier(.23,1,.32,1)
+  width: 32px
 }
 .navbar-toggle .icon-bar:first-child,
 .navbar-toggle .icon-bar:last-child {
-  -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
-  transition: .6s cubic-bezier(.23,1,.32,1);
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
           transform: translate(0)
@@ -841,6 +851,69 @@ div[id^=gform_wrapper] form .gform_body ul {
 }
 .page-404--content h1 {
   margin-bottom: 50px
+}
+body.search-results .container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 15px
+}
+.search-index {
+  padding: 100px 0
+}
+.search-result-entry {
+  display: block;
+  border: 1px solid #eee;
+  margin: 25px 10px;
+  padding: 15px;
+  -webkit-box-shadow: 0 0 10px rgba(204,204,204,.4);
+          box-shadow: 0 0 10px rgba(204,204,204,.4)
+}
+.search-result-entry:hover {
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+          box-shadow: 0 0 10px rgba(0,0,0,.4)
+}
+.search-result-entry h2 {
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 700
+}
+.search-result-entry p {
+  font-size: 14px;
+  line-height: 24px
+}
+.search-result-entry a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center
+}
+@media only screen and (min-width:1025px) {
+  .search-result-entries {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap
+  }
+  .search-result-entry {
+    width: 23%
+  }
 }
 @media only screen and (min-width:1681px) {
   header .container {
