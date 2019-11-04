@@ -74,7 +74,7 @@ function my_acf_admin_head() {
       margin-left: auto;
       margin-right: auto;
     }
-    .acf-field-button-group {
+    .acf-field-button-group.center {
       text-align: center;
     }
   </style>
