@@ -898,24 +898,6 @@ body.search-results .container {
           align-items: center
 }
 @media only screen and (min-width:1025px) {
-  .search-result-entries {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap
-  }
-  .search-result-entry {
-    width: 23%
-  }
-}
-@media only screen and (min-width:1681px) {
   header .container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -958,10 +940,21 @@ body.search-results .container {
   header nav ul li .sub-menu li {
     white-space: nowrap
   }
-}
-@media only screen and (max-width:1680px) {
-  .wp-caption {
-    width: auto!important
+  .search-result-entries {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap
+  }
+  .search-result-entry {
+    width: 23%
   }
 }
 @media only screen and (max-width:1024px) {
@@ -992,6 +985,9 @@ body.search-results .container {
   .mobile-nav-wrap .mobile-nav ul li.menu-item-has-children:hover .sub-menu:before,
   header .brand {
     display: none
+  }
+  .wp-caption {
+    width: auto!important
   }
   main {
     margin-top: 60px

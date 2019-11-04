@@ -306,7 +306,7 @@ img {
   border: 1px solid #ccc;
   padding: 5px;
   text-align: center;
-  @include for-size(desktop) {
+  @include for-size(tablet) {
     width: auto !important;
   }
   p {
