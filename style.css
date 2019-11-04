@@ -186,6 +186,7 @@ input[type=submit] {
           user-select: none;
   vertical-align: baseline;
   font-size: 16px;
+  line-height: 1;
   -webkit-appearance: none
 }
 .flex {
