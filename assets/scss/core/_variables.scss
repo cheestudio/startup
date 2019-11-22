@@ -98,3 +98,24 @@ $browser-context: 16; // Default
 		background-color: $color;
 	}
 }
+
+/* Additional Helpers
+========================================================= */
+
+@mixin list-reset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@mixin vertical-center ($position:relative) {
+	position: $position;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin flex-center {
+	display: flex;
+	justify-content:center;
+	align-items:center;
+}
