@@ -12,10 +12,16 @@
 
 /* Fonts
 ========================================================= */
-@mixin font() {
-  font-family:'FONT-FAMILY-NAME';
-  // weights e.g., 400, 500, 700
+@mixin font( $style:'') {
+	@if ( $style == '' ) {
+		// font-family here
+		// available font weights
+	}
+	@elseif ( $style == '' ) {
+		// font-family here
+	}
 }
+
 
 /* Color VARs
 ========================================================= */
@@ -99,23 +105,27 @@ $browser-context: 16; // Default
 	}
 }
 
-/* Additional Helpers
+/* Additional Helper Mixins
 ========================================================= */
-
 @mixin list-reset {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-@mixin vertical-center ($position:relative) {
-	position: $position;
+@mixin vertical-center ( $pos:relative ) {
+	position: $pos;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
 @mixin flex-center {
 	display: flex;
-	justify-content:center;
-	align-items:center;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin margin-center {
+	margin-left: auto;
+	margin-right: auto;
 }
