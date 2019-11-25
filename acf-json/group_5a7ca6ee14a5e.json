@@ -55,7 +55,7 @@
             "default_value": "",
             "placeholder": "",
             "maxlength": "",
-            "rows": 3,
+            "rows": 4,
             "new_lines": "br"
         }
     ],
