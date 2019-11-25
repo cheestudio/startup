@@ -43,15 +43,15 @@ body.search-results {
     }
   }
   h2 {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: em(18);
+    line-height: 1.4;
     text-transform: uppercase;
     color: black;
     font-weight: 700;
   }
   p {
-    font-size: 14px;
-    line-height: 24px;
+    font-size: em(14);
+    line-height: 1.4;
   }
   a {
    display: flex;

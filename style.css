@@ -201,8 +201,8 @@ input[type=submit] {
       -ms-user-select: none;
           user-select: none;
   vertical-align: baseline;
-  font-size: 16px;
-  line-height: 1;
+  font-size: 1.13em;
+  line-height: 1.2;
   -webkit-appearance: none
 }
 .flex {
@@ -274,39 +274,34 @@ h4,
 h5,
 h6 {
   color: #000;
+  line-height: 1.2;
   margin: 0 0 20px
 }
 h1 {
-  font-size: 60px;
-  line-height: 60px
+  font-size: 3.75em
 }
 h2 {
-  font-size: 50px;
-  line-height: 50px
+  font-size: 3.13em
 }
 h3 {
-  font-size: 40px;
-  line-height: 40px
+  font-size: 2.5em
 }
 h4 {
-  font-size: 30px;
-  line-height: 30px
+  font-size: 1.88em
 }
 h5 {
-  font-size: 25px;
-  line-height: 25px
+  font-size: 1.56em
 }
 h6 {
-  font-size: 20px;
-  line-height: 20px
+  font-size: 1.25em
 }
 body {
   font-family: FONT-FAMILY-NAME
 }
 body main li,
 body main p {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1.25em;
+  line-height: 1.2;
   margin-bottom: 20px
 }
 body ol li,
@@ -605,7 +600,7 @@ table td {
   padding: 5px
 }
 .wp-caption p {
-  font-size: 11px
+  font-size: .75em
 }
 .post-nav {
   overflow: hidden;
@@ -873,15 +868,15 @@ body.search-results .container {
           box-shadow: 0 0 10px rgba(0,0,0,.4)
 }
 .search-result-entry h2 {
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 1.13em;
+  line-height: 1.4;
   text-transform: uppercase;
   color: #000;
   font-weight: 700
 }
 .search-result-entry p {
-  font-size: 14px;
-  line-height: 24px
+  font-size: .88em;
+  line-height: 1.4
 }
 .search-result-entry a {
   display: -webkit-box;
@@ -1039,7 +1034,8 @@ body.search-results .container {
     transition: .4s cubic-bezier(.23,1,.32,1);
     color: #000;
     display: block;
-    font-size: 15px;
+    font-size: 1em;
+    line-height: 1.2;
     font-weight: 500;
     letter-spacing: .45px;
     margin: 0;
@@ -1118,7 +1114,7 @@ body.search-results .container {
   .mobile-nav-wrap .mobile-nav ul li .sub-menu li a {
     border: none;
     display: block;
-    font-size: 16px;
+    font-size: 1em;
     letter-spacing: 1px;
     text-transform: none
   }
@@ -1162,7 +1158,7 @@ body.search-results .container {
     left: 0;
     right: 0;
     text-align: center;
-    font-size: 17px;
+    font-size: 1em;
     font-weight: 500;
     background-color: #eee;
     padding: 20px 0
@@ -1171,7 +1167,6 @@ body.search-results .container {
 @media only screen and (max-width:768px) {
   body main li,
   body main p {
-    font-size: 16px;
-    line-height: 26px
+    font-size: 1em
   }
 }

@@ -120,7 +120,8 @@ $current-link-color      : white;
             @include trans(400);
             color: $link-color;
             display: block;
-            font-size: 15px;
+            font-size: em(16);
+            line-height: 1.2;
             font-weight: 500;
             letter-spacing: 0.45px;
             margin: 0;
@@ -193,7 +194,7 @@ $current-link-color      : white;
               a {
                 border: none;
                 display: block;
-                font-size: 16px;
+                font-size: em(16);
                 letter-spacing: 1px;
                 text-transform: none;
               }
@@ -257,7 +258,7 @@ $current-link-color      : white;
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 17px;
+  font-size: em(16);
   font-weight: 500;
   background-color: #eee;
   padding: 20px 0;
