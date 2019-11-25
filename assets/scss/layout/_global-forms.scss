@@ -15,7 +15,7 @@ $input-border-radius: 0px;
 $input-box-shadow: none;
 
 form input[type=text], form input[type=password], form input[type=email], form input[type=url], form input[type=date], form input[type=month], form input[type=time], form input[type=datetime], form input[type=datetime-local], form input[type=week], form input[type=number], form input[type=search], form input[type=tel], form input[type=color], form select, form textarea {
-  @include trans(300, linear);
+  @include trans( $easing:linear );
   padding: 10px 40px;
   display: inline-block;
   border: 2px solid $input-border-color;

@@ -117,7 +117,7 @@ $current-link-color      : white;
           margin: 0;
           border-bottom: 1px solid $link-border-color;
           > a {
-            @include trans(400);
+            @include trans;
             color: $link-color;
             display: block;
             font-size: em(16);
@@ -133,7 +133,7 @@ $current-link-color      : white;
             }
           }
           .expand {
-            @include trans(400);
+            @include trans;
             display: block;
             padding: 27px 27px 27px 36px;
             position: absolute;

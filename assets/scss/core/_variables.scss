@@ -63,7 +63,7 @@ $browser-context: 16; // Default
 
 /* Global Transition ( 400, all, ease-in-out )
 ========================================================= */
-@mixin trans( $duration:600, $property:all, $easing:cubic-bezier(.23,1,.32,1)) {
+@mixin trans( $property:all, $duration:600, $easing:cubic-bezier(.23,1,.32,1) ) {
 	transition: $property $duration+ms $easing;
 }
 
@@ -82,7 +82,7 @@ $browser-context: 16; // Default
 /* Button ( color, background, border )
 ========================================================= */
 %btn {
-	@include trans();
+	@include trans;
 	border: 2px solid transparent;
 	cursor: pointer;
 	display: inline-block;
