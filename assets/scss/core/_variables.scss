@@ -45,11 +45,11 @@ $browser-context: 16; // Default
 	$top-large:100,  $bottom-large:100,
 	$top-small:50,   $bottom-small:50) {
 
-	@include for-size(tablet, up) {
+	@include for-size(tablet-sm, up) {
 		padding-top:    $top-large + px;
 		padding-bottom: $bottom-large + px;
 	}
-	@include for-size(tablet) {
+	@include for-size(tablet-sm) {
 		padding-top:    $top-small + px;
 		padding-bottom: $bottom-small + px;
 	}

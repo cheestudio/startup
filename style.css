@@ -965,11 +965,6 @@ body.search-results .container {
     background-color: #000;
     color: #fff
   }
-  body main li,
-  body main p {
-    font-size: 16px;
-    line-height: 26px
-  }
   body br {
     display: none
   }
@@ -1171,5 +1166,12 @@ body.search-results .container {
     font-weight: 500;
     background-color: #eee;
     padding: 20px 0
+  }
+}
+@media only screen and (max-width:768px) {
+  body main li,
+  body main p {
+    font-size: 16px;
+    line-height: 26px
   }
 }
