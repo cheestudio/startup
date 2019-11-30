@@ -15,6 +15,7 @@
     'theme_location'  => 'primary_nav',
     'container'       => '',
     'container_class' => '',
+    'menu_id' => 'mobile-menu',
     'menu_class'      => '',
     'echo'            => true,
     'fallback_cb'     => 'wp_page_menu',
