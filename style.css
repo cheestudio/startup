@@ -299,7 +299,10 @@ h6 {
 body main li,
 body main p {
   font-size: 1.25em;
-  line-height: 1.2;
+  line-height: 1.2
+}
+body main li:not(:last-of-type),
+body main p:not(:last-of-type) {
   margin-bottom: 20px
 }
 body main ol,

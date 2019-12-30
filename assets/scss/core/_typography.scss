@@ -56,9 +56,11 @@ body {
     p, li {
       font-size: em(20);
       line-height: 1.2;
-      margin-bottom: 20px;
       @include for-size(tablet-sm) {
         font-size: em(16);
+      }
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
       }
     }
     ul, ol {
