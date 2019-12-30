@@ -302,13 +302,8 @@ body main p {
   line-height: 1.2;
   margin-bottom: 20px
 }
-body ol li,
-body ul li,
-div[id^=gform_wrapper] form .gform_body ul li {
-  margin-bottom: 15px
-}
-body ol,
-body ul {
+body main ol,
+body main ul {
   padding-left: 20px;
   margin: 0
 }
@@ -800,6 +795,9 @@ div[id^=gform_wrapper] form .gform_body ul {
   padding: 0;
   list-style: none
 }
+div[id^=gform_wrapper] form .gform_body ul li {
+  margin-bottom: 15px
+}
 .navbar-toggle {
   background: 0 0;
   border: none;
@@ -955,9 +953,6 @@ body.search-results .container {
   .mobile-nav-wrap .mobile-nav ul li.current-page-ancestor > a {
     background-color: #000;
     color: #fff
-  }
-  body br {
-    display: none
   }
   .alignleft,
   .alignright {
@@ -1164,5 +1159,8 @@ body.search-results .container {
   body main li,
   body main p {
     font-size: 1em
+  }
+  body br {
+    display: none
   }
 }
