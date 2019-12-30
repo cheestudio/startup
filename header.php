@@ -13,7 +13,7 @@
   <?php if ( $header_code ) echo $header_code; ?>
 </head>
 
-<body <?php body_class(); ?> >
+<body <?php body_class(); ?> id="top">
 
   <header class="main-banner" role="banner">
     <div class="container">
@@ -29,4 +29,4 @@
     </div>
   </header>
 
-  <main id="top" role="main">
+  <main role="main">
