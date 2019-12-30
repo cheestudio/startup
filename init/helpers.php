@@ -15,8 +15,7 @@ function custom_login_screen() { ?>
       background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
       padding-bottom: 0px;
       background-size: 100%;
-      width: 90%;
-      height: 100px;
+      width: 320px;
     }
     #login a {
       color: #fff !important;
