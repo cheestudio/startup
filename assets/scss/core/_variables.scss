@@ -66,9 +66,6 @@ $browser-context: 16; // Default
 	}
 }
 
-.DELETE-ME {
-	@include row-padding(200, 200);
-}
 /* Global Transition ( 400, all, ease-in-out )
 ========================================================= */
 @mixin trans( $property:all, $duration:600, $easing:cubic-bezier(.23,1,.32,1) ) {
