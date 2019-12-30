@@ -54,7 +54,7 @@ $breakpoints: (
     $upper-breakpoint: map-get( $breakpoints, $upper );
 
     // Write the media query
-    @media only screen and (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint)) { @content; }
+    @media only screen and (min-width: $lower-breakpoint + 1) and (max-width: ($upper-breakpoint)) { @content; }
   }
 
   // If the breakpoints don't exist, allow manual breakpoints

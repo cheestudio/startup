@@ -1,12 +1,12 @@
 /* Containers
 ========================================================= */
 @mixin content-container( $width: 1130px ) {
-  max-width: $width;
-  margin: 0 auto;
-  padding: 0 15px;
+	max-width: $width;
+	margin: 0 auto;
+	padding: 0 15px;
 }
 .container {
-  @include content-container;
+	@include content-container;
 }
 
 
@@ -32,7 +32,7 @@
 ========================================================= */
 $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
-    @return #{$pixels/$context}em;
+	@return #{$pixels/$context}em;
 }
 
 /* BG Image
@@ -48,12 +48,17 @@ $browser-context: 16; // Default
 /* Global Row Padding
 ========================================================= */
 @mixin row-padding(
-	$top-large:100,  $bottom-large:100,
-	$top-small:50,   $bottom-small:50) {
+	$top-large:100, $bottom-large:100,
+	$top-medium:50, $bottom-medium:50,
+	$top-small:$top-medium, $bottom-small:$bottom-medium) {
 
-	@include for-size(tablet-sm, up) {
+	@include for-size(tablet, up) {
 		padding-top:    $top-large + px;
 		padding-bottom: $bottom-large + px;
+	}
+	@include between-sizes(tablet-sm, tablet) {
+		padding-top:    $top-medium + px;
+		padding-bottom: $bottom-medium + px;
 	}
 	@include for-size(tablet-sm) {
 		padding-top:    $top-small + px;
@@ -61,6 +66,9 @@ $browser-context: 16; // Default
 	}
 }
 
+.DELETE-ME {
+	@include row-padding(200, 200);
+}
 /* Global Transition ( 400, all, ease-in-out )
 ========================================================= */
 @mixin trans( $property:all, $duration:600, $easing:cubic-bezier(.23,1,.32,1) ) {
