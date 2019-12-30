@@ -1,12 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="4998.439 80.439 8.803 13.365">
-  <defs>
-    <style>
-      .caret-1 {
-        fill: none;
-        stroke: #000000;
-        stroke-width: 3px;
-      }
-    </style>
-  </defs>
-  <path id="carrot_right" data-name="carrot right" class="caret-1" d="M4559.461,22.168l-5.622,5.622,5.622,5.622" transform="translate(9558.961 114.911) rotate(180)"/>
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="nav-caret-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
+    <path fill="none" stroke="RED" stroke-width="3" d="M4.7,13.1l5.6-5.6L4.7,1.9" />
 </svg>

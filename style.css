@@ -810,12 +810,12 @@ div[id^=gform_wrapper] form .gform_body ul li {
   z-index: 10000
 }
 .navbar-toggle .icon-bar {
+  display: block;
   background: #000;
   border-radius: 5px;
-  display: block;
   height: 4px;
-  margin-bottom: 7px;
-  width: 32px
+  width: 32px;
+  margin-bottom: 7px
 }
 .navbar-toggle .icon-bar:first-child,
 .navbar-toggle .icon-bar:last-child {
@@ -828,14 +828,14 @@ div[id^=gform_wrapper] form .gform_body ul li {
   -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
   transition: .6s cubic-bezier(.23,1,.32,1);
   content: '';
+  position: absolute;
   display: block;
   border-radius: 5px;
   height: 4px;
+  top: 34%;
   left: 0;
   margin-bottom: 7px;
   opacity: 0;
-  position: absolute;
-  top: 34%;
   -webkit-transform: rotate(0);
       -ms-transform: rotate(0);
           transform: rotate(0);
@@ -1033,26 +1033,20 @@ body.search-results .container {
     font-weight: 500;
     letter-spacing: .45px;
     margin: 0;
-    padding: 15px 15px 15px 25px;
+    padding: 15px 25px;
     background-color: #fff
   }
   .mobile-nav-wrap .mobile-nav ul li .expand {
     -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
     transition: .6s cubic-bezier(.23,1,.32,1);
     display: block;
-    padding: 27px 27px 27px 36px;
     position: absolute;
-    top: -5px;
+    top: 0;
     right: 0;
-    z-index: 1000;
-    background-image: url(assets/img/svg/nav-caret-right.svg);
-    background-size: 15px 15px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
-            transform-origin: center center;
-    background-color: transparent!important
+    padding: 25px;
+    background: url(assets/img/svg/nav-caret-right.svg) center no-repeat;
+    background-color: transparent!important;
+    z-index: 1000
   }
   .mobile-nav-wrap .mobile-nav ul li .expand:focus,
   .mobile-nav-wrap .mobile-nav ul li .expand:hover {
@@ -1061,17 +1055,16 @@ body.search-results .container {
             transform: rotate(-180deg)
   }
   .mobile-nav-wrap .mobile-nav ul li .close-sub {
-    display: block;
-    width: 50px;
-    height: 20px;
-    background: url(assets/img/svg/nav-arrow-left.svg) 0 0/contain no-repeat;
-    background-color: transparent!important;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 2000;
     -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
-    transition: .6s cubic-bezier(.23,1,.32,1)
+    transition: .6s cubic-bezier(.23,1,.32,1);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    background: url(assets/img/svg/nav-arrow-left.svg) center no-repeat;
+    background-color: transparent!important;
+    z-index: 2000
   }
   .mobile-nav-wrap .mobile-nav ul li .close-sub:focus,
   .mobile-nav-wrap .mobile-nav ul li .close-sub:hover {
@@ -1080,14 +1073,14 @@ body.search-results .container {
             transform: translateX(-5px)
   }
   .mobile-nav-wrap .mobile-nav ul li .sub-menu {
+    -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
+    transition: .6s cubic-bezier(.23,1,.32,1);
     background-color: #fff;
     position: fixed;
     border: none;
     opacity: 0;
     visibility: hidden;
     text-align: center;
-    -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
-    transition: .6s cubic-bezier(.23,1,.32,1);
     width: 100%;
     height: 100%;
     padding-top: 60px;
@@ -1147,6 +1140,18 @@ body.search-results .container {
   }
   .sub-menu-title {
     position: absolute;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     z-index: 100;
     top: 0;
     left: 0;
@@ -1155,7 +1160,7 @@ body.search-results .container {
     font-size: 1em;
     font-weight: 500;
     background-color: #eee;
-    padding: 20px 0
+    min-height: 60px
   }
 }
 @media only screen and (max-width:768px) {
