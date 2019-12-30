@@ -330,6 +330,11 @@ if ( function_exists('acf_add_options_page') ) {
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
 
+/* Disable Image Side scaling on upload
+========================================================= */
+add_filter( 'big_image_size_threshold', 3840 );
+
+
 /* Hide Admin Panel (for launch)
 ========================================================= */
 //add_filter('acf/settings/show_admin', '__return_false');
