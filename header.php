@@ -22,8 +22,8 @@
       </a>
 
       <nav role="navigation">
-        <?php include( locate_template('partials/nav-desktop.php') ); ?>
-        <?php include( locate_template('partials/nav-mobile.php') ); ?>
+        <?php include( locate_template('partials/navs/nav-desktop.php') ); ?>
+        <?php include( locate_template('partials/navs/nav-mobile.php') ); ?>
       </nav>
 
     </div>
