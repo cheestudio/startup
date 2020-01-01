@@ -135,6 +135,7 @@ button, input, select, textarea {
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle;
+  font-family: inherit;
 }
 button, input {
   line-height: normal;
