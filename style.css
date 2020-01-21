@@ -212,6 +212,11 @@ input[type=submit] {
   display: -ms-flexbox;
   display: flex
 }
+.wrap {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap
+}
 .jcfs {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -446,7 +451,8 @@ select,
 textarea {
   font-size: 100%;
   margin: 0;
-  vertical-align: baseline
+  vertical-align: baseline;
+  font-family: inherit
 }
 button,
 input {
