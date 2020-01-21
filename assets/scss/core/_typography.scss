@@ -81,7 +81,7 @@ body {
   a, a[href^="tel"] {
     @include trans;
     color: red;
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
       color: red;
     }
   }

@@ -127,7 +127,7 @@ $current-link-color      : white;
             margin: 0;
             padding: 15px 25px;
             background-color: $link-background;
-            &:hover, &:focus {
+            &:hover, &:focus, &:active {
               background-color: $link-hover-background;
               color: $link-hover-color;
             }
@@ -142,7 +142,7 @@ $current-link-color      : white;
             background: url('assets/img/svg/nav-caret-right.svg') center no-repeat;
             background-color: transparent !important;
             z-index: 1000;
-            &:hover, &:focus {
+            &:hover, &:focus, &:active {
               transform: rotate(-180deg);
             }
           }
@@ -156,7 +156,7 @@ $current-link-color      : white;
             background: url(assets/img/svg/nav-arrow-left.svg) center no-repeat;
             background-color: transparent !important;
             z-index: 2000;
-            &:hover, &:focus {
+            &:hover, &:focus, &:active {
               transform: translateX(-5px);
             }
           }
@@ -194,7 +194,7 @@ $current-link-color      : white;
             }
           }
           &.menu-item-has-children {
-            &:hover, &:focus {
+            &:hover, &:focus, &:active {
              .sub-menu {
                &:before {
                 display: none;
