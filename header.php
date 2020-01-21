@@ -8,9 +8,13 @@
   <meta name="theme-color" content="#00704a">
   <?php wp_head(); ?>
   <link rel="alternate" type="application/rss+xml" title="<?php echo get_bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
-  <?php $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg'; ?>
-  <?php $header_code = get_field('header_code', 'option'); ?>
-  <?php if ( $header_code ) echo $header_code; ?>
+
+  <?php // Site Logo & optional ACF code
+  if ( function_exists('get_field') ) :
+    $header_code = get_field('header_code', 'option');
+    if ( isset($header_code) ) echo $header_code;
+  endif;
+  $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg'; ?>
 </head>
 
 <body <?php body_class(); ?> id="top">
