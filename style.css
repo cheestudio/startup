@@ -64,8 +64,7 @@ table caption {
 body a,
 body a[href^=tel],
 button,
-input[type=submit],
-svg path {
+input[type=submit] {
   -webkit-transition: .6s cubic-bezier(.23,1,.32,1);
   transition: .6s cubic-bezier(.23,1,.32,1)
 }
@@ -361,7 +360,8 @@ hr {
   margin: 25px 0
 }
 .embed-container,
-img {
+img,
+svg {
   height: auto;
   max-width: 100%
 }
@@ -430,8 +430,7 @@ iframe {
   max-width: 100%
 }
 svg {
-  display: block;
-  max-width: 100%
+  display: block
 }
 figure,
 form {

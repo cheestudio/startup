@@ -111,10 +111,8 @@ iframe {
 }
 svg {
   display: block;
+  height: auto;
   max-width: 100%;
-  path {
-    @include trans;
-  }
 }
 figure, form {
   margin: 0;
