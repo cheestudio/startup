@@ -28,10 +28,10 @@
       <?php if ($the_query->max_num_pages > 1) :  ?>
         <nav class="prev-next-posts">
           <div class="prev-posts-link">
-            <?php echo get_next_posts_link( 'Older Entries', $the_query->max_num_pages ); ?>
+            <?= get_next_posts_link( 'Older Entries', $the_query->max_num_pages ); ?>
           </div>
           <div class="next-posts-link">
-            <?php echo get_previous_posts_link( 'Newer Entries' ); ?>
+            <?= get_previous_posts_link( 'Newer Entries' ); ?>
           </div>
         </nav>
       <?php endif; ?>

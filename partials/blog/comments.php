@@ -53,24 +53,24 @@ if ( have_comments() ) : ?>
       <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
         <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url(get_permalink())); ?></p>
       <?php else : ?>
-        <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+        <form action="<?= get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
           <?php if (is_user_logged_in()) : ?>
             <p>
               <?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.'), get_option('siteurl'), $user_identity); ?>
-              <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account'); ?>"><?php _e('Log out &raquo;'); ?></a>
+              <a href="<?= wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account'); ?>"><?php _e('Log out &raquo;'); ?></a>
             </p>
           <?php else : ?>
 <div class="comment-form-field">
   <label for="author"><?php _e('Name'); if ($req) _e(' (required)'); ?></label>
-  <input type="text" class="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
+  <input type="text" class="text" name="author" id="author" value="<?= esc_attr($comment_author); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
 </div>
 <div class="comment-form-field">
   <label for="email"><?php _e('Email (will not be published)'); if ($req) _e(' (required)'); ?></label>
-  <input type="email" class="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
+  <input type="email" class="text" name="email" id="email" value="<?= esc_attr($comment_author_email); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
 </div>
 <div class="comment-form-field">
   <label for="url"><?php _e('Website'); ?></label>
-  <input type="url" class="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22">
+  <input type="url" class="text" name="url" id="url" value="<?= esc_attr($comment_author_url); ?>" size="22">
 </div>
           <?php endif; ?>
 <div class="comment-form-field">

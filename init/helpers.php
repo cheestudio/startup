@@ -12,7 +12,7 @@ function custom_login_screen() { ?>
       background: linear-gradient(to bottom, black, 85%, white) !important;
     }
     #login h1 a {
-      background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
+      background-image: url(<?= get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
       padding-bottom: 0px;
       background-size: 100%;
       width: 320px;

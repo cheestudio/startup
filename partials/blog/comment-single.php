@@ -1,9 +1,9 @@
 <div class="comment-entry">
 
   <div class="comment-header">
-    <?php echo get_avatar($comment, $size = '64'); ?>
-    <p class="comment-author"><?php echo get_comment_author_link(); ?></p>
-    <div class="comment-time"><time datetime="<?php echo comment_date('c'); ?>"><?php printf(__('%1$s'), get_comment_date(),  get_comment_time()); ?></time>
+    <?= get_avatar($comment, $size = '64'); ?>
+    <p class="comment-author"><?= get_comment_author_link(); ?></p>
+    <div class="comment-time"><time datetime="<?= comment_date('c'); ?>"><?php printf(__('%1$s'), get_comment_date(),  get_comment_time()); ?></time>
       <?php edit_comment_link(__('(Edit)'), '', ''); ?></div>
     </div>
 

@@ -2,14 +2,14 @@
   if ( function_exists('get_field') ) :
     $footer_code = get_field('footer_code', 'option'); 
   endif; ?>
-  
+
 </main>
 
 <footer role="contentinfo">
 	<div class="container">
 
    <div class="copyright">
-     <p>&copy; <?php echo date('Y'); ?></p>
+     <p>&copy; <?= date('Y'); ?></p>
    </div>
 
  </div>
