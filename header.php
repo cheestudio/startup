@@ -19,13 +19,13 @@
 
 <body <?php body_class(); ?> id="top">
 
-  <header class="main-banner" role="banner">
+  <header class="main-banner">
     <div class="container">
       <a class="brand" href="/" title="Home">
         <?php svg( $logo, 'Site Logo' ); ?>
       </a>
 
-      <nav role="navigation">
+      <nav>
         <?php include( locate_template('partials/navs/nav-desktop.php') ); ?>
         <?php include( locate_template('partials/navs/nav-mobile.php') ); ?>
       </nav>
@@ -33,4 +33,4 @@
     </div>
   </header>
 
-  <main role="main">
+  <main>

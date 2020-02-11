@@ -5,7 +5,7 @@
 
 </main>
 
-<footer role="contentinfo">
+<footer>
 	<div class="container">
 
    <div class="copyright">
