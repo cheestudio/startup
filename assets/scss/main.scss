@@ -8,35 +8,25 @@ Version: 4.0
 */
 
 
-/* Site Styles
+/* Core
 ========================================================= */
-@import "core/queries";
 @import "core/reset";
+@import "core/queries";
 @import "core/variables";
 @import "core/flexbox";
 @import "core/typography";
 
 
-/* Global Styles
+/* Global
 ========================================================= */
-@import "layout/global";
-@import "layout/global-forms";
-@import "layout/mobile-nav";
+@import "layout/**/*.scss";
 
 
-/* Header & Footer
+/* Elements / Components
 ========================================================= */
-@import "layout/global-header";
-@import "layout/global-footer";
-
-
-/* Text Elements and Page Components
-========================================================= */
-@import "elements/misc";
+@import "elements/**/*.scss";
 
 
 /* Pages
 ========================================================= */
-@import "pages/search";
-@import "pages/blog-index";
-@import "pages/blog-single";
+@import "pages/**/*.scss";

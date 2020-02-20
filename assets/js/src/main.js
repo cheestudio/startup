@@ -39,8 +39,8 @@ $('.close-sub').click(function(e){
   $(this).parent().removeClass('sub-open');
 });
 
-/* Sub Navigation Titles on Mobile Nav */
-
+/* Sub Navigation Titles on Mobile Nav
+========================================================= */
 $('.mobile-nav ul li.menu-item-has-children').each(function(){
   var navSectionTitle = $(this).find('.expand').next().html();
   $(this).find('.sub-menu').prepend('<div class="sub-menu-title">' + navSectionTitle + '</div>');
