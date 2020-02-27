@@ -61,15 +61,11 @@ body {
         font-size: em(16);
       }
     }
-    ul, ol {
-      padding-left: 20px;
-      margin: 0;
-    }
   }
 
   blockquote {
     p {
-      &:last-child {
+      &:last-of-type {
         margin-bottom: 0;
       }
     }
