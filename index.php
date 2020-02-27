@@ -1,33 +1,34 @@
 <?php get_header(); ?>
 
 
-<div class="blog-index">
+<section class="posts-index">
   <div class="container">
+    
+    <div class="posts-index--title">
+      <h1>Blog</h1>
+    </div>
 
-    <?php if ( !have_posts() ) : ?>
-      <div class="alert">
-        <h2>Sorry, no results were found.</h2>
+    <div class="posts-index--grid">
+      <div class="flex">
+        <?php if ( have_posts() ) : ?>
+          <?php while ( have_posts() ) : the_post(); ?>
+            <?php include( locate_template('partials/posts/post-entry.php') ); ?>
+          <?php endwhile; ?>
+
+        <?php else :  ?>
+          <h2>No Posts Found</h2>
+          <?php get_search_form(); ?>
+
+        <?php endif; ?>
       </div>
-      <?php get_search_form(); ?>
-    <?php endif; ?>
+    </div>
 
-    <section class="post-grid">
-      <?php while ( have_posts() ) : the_post(); ?>
-        <?php get_template_part('partials/blog/content-index'); ?>
-      <?php endwhile; ?>
-    </section>
-
-    <?php if ( $wp_query->max_num_pages > 1 ) : ?>
-      <nav class="post-nav">
-        <ul class="pager">
-          <li class="previous"><?php next_posts_link(__('&larr; Older posts')); ?></li>
-          <li class="next"><?php previous_posts_link(__('Newer posts &rarr;')); ?></li>
-        </ul>
-      </nav>
-    <?php endif; ?>
+    <div class="posts-index--pagination">
+      <?php include( locate_template('partials/posts/post-pagination.php') ); ?>
+    </div>
 
   </div>
-</div>
+</section>
 
 
 <?php get_footer(); ?>

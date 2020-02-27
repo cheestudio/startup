@@ -1,0 +1,51 @@
+/* POST - Index
+========================================================= */
+
+.posts-index {
+  @include row-padding();
+
+  &--title {
+    text-align: center;
+  }
+
+  &--grid {
+    @include margin-center;
+    max-width: 1030px;
+    .flex {
+      flex-wrap: wrap;
+      @include for-size(tablet-sm) {
+        flex-direction: column;
+      }
+    }
+
+    .post-entry {
+      border: 2px solid black;
+      flex: 0 1 calc(33.333% - 20px);
+      margin: 10px;
+      padding: 20px;
+      text-align: center;
+      @include for-size(tablet) {
+        flex-basis: calc(50% - 20px);
+      }
+      @include for-size(tablet-sm) {
+        @include margin-center;
+        max-width: 500px;
+      }
+
+      &__title {}
+
+      &__image {
+        a, img {
+          @include margin-center;
+          display: block;
+        }
+      }
+
+      &__meta {
+        .post-meta {}
+      }
+
+      &__excerpt {}
+    }
+  }
+}

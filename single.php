@@ -1,15 +1,19 @@
 <?php get_header(); ?>
 
 
-<div class="blog-single">
-  <div class="container">
+<?php if ( have_posts() ) : ?>
+  <div class="post-single">
+    <div class="container">
 
-    <?php while ( have_posts() ) : the_post();?>
-      <?php get_template_part('partials/blog/content-single'); ?>
-    <?php endwhile; ?>
+      <div class="post-single--content">
+        <?php while ( have_posts() ) : the_post();?>
+          <?php include( locate_template('partials/posts/post-single.php') ); ?>
+        <?php endwhile; ?>
+      </div>
 
+    </div>
   </div>
-</div>
+<?php endif; ?>
 
 
 <?php get_footer(); ?>

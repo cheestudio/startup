@@ -224,18 +224,10 @@ h6 {
 body main li,
 body main p {
   font-size: 1.25em;
-  line-height: 1.2
-}
-body main li:not(:last-of-type),
-body main p:not(:last-of-type) {
+  line-height: 1.2;
   margin-bottom: 20px
 }
-body main ol,
-body main ul {
-  padding-left: 20px;
-  margin: 0
-}
-body blockquote p:last-child {
+body blockquote p:last-of-type {
   margin-bottom: 0
 }
 body a,
@@ -539,15 +531,11 @@ dl,
 menu,
 ol,
 ul {
-  margin: 10px 0
+  margin: 0;
+  padding: 20px
 }
 dd {
-  margin: 0 0 0 40px
-}
-menu,
-ol,
-ul {
-  padding: 0 0 0 40px
+  margin: 0 0 0 20px
 }
 nav ol,
 nav ul {
@@ -824,8 +812,45 @@ img {
 .navbar-toggle {
   display: none
 }
-.page-404--content h1 {
-  margin-bottom: 50px
+.post-meta {
+  margin-bottom: 25px
+}
+.post-meta p {
+  margin-bottom: 0
+}
+.posts-index--title {
+  text-align: center
+}
+.posts-index--grid {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1030px
+}
+.posts-index--grid .flex {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+.posts-index--grid .post-entry {
+  border: 2px solid #000;
+  -ms-flex: 0 1 calc(33.333% - 20px);
+  flex: 0 1 calc(33.333% - 20px);
+  margin: 10px;
+  padding: 20px;
+  text-align: center
+}
+.posts-index--grid .post-entry__image a,
+.posts-index--grid .post-entry__image img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block
+}
+.post-single--content .article-single__title h1 {
+  text-align: center
+}
+.post-single--content .article-single__image img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block
 }
 body.search-results .container {
   max-width: 1150px;
@@ -879,6 +904,13 @@ body.search-results h2 em {
   -ms-flex-align: center;
   align-items: center
 }
+@media only screen and (min-width:768px) and (max-width:1024px) {
+  .post-single,
+  .posts-index {
+    padding-top: 50px;
+    padding-bottom: 50px
+  }
+}
 @media only screen and (min-width:1025px) {
   header .container {
     display: -ms-flexbox;
@@ -913,6 +945,11 @@ body.search-results h2 em {
   }
   header nav ul li .sub-menu li {
     white-space: nowrap
+  }
+  .post-single,
+  .posts-index {
+    padding-top: 100px;
+    padding-bottom: 100px
   }
   .search-result-entries {
     display: -ms-flexbox;
@@ -1128,6 +1165,10 @@ body.search-results h2 em {
     background-color: #eee;
     min-height: 60px
   }
+  .posts-index--grid .post-entry {
+    -ms-flex-preferred-size: calc(50% - 20px);
+    flex-basis: calc(50% - 20px)
+  }
 }
 @media only screen and (max-width:767px) {
   body main li,
@@ -1136,5 +1177,22 @@ body.search-results h2 em {
   }
   body br {
     display: none
+  }
+  .posts-index {
+    padding-top: 50px;
+    padding-bottom: 50px
+  }
+  .posts-index--grid .flex {
+    -ms-flex-direction: column;
+    flex-direction: column
+  }
+  .posts-index--grid .post-entry {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px
+  }
+  .post-single {
+    padding-top: 50px;
+    padding-bottom: 50px
   }
 }

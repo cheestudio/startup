@@ -19,3 +19,4 @@
     </div>
 
     <?php comment_reply_link(array_merge(array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+  </div>

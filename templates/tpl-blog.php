@@ -4,44 +4,44 @@
 <?php get_header(); ?>
 
 
-<section class="blog-index">
+<section class="posts-index">
   <div class="container">
 
-    <?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+    <div class="posts-index--title">
+      <h1>Blog</h1>
+    </div>
 
-    $args = array(
+    <?php // WP_Query Loop
+    $paged = ( get_query_var('paged') ) ? intval( get_query_var('paged') ) : 1;
+    $args  = array(
       'post_type'      => 'post',
       'posts_per_page' => 6,
       'paged'          => $paged
     );
+    $wp_query = new WP_Query( $args ); ?>
 
-    $query = new WP_Query( $args ); ?>
+    <div class="posts-index--grid">
+      <div class="flex">
+        <?php if ( $wp_query->have_posts() ) : ?>
+          <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+            <?php include( locate_template('partials/posts/post-entry.php') ); ?>
+          <?php endwhile; ?>
 
-    <?php if ( $query->have_posts() ) : ?>
+        <?php else :  ?>
+          <h2>No Posts Found</h2>
+          <?php get_search_form(); ?>
 
-      <section class="post-grid">
-        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-          <?php get_template_part('partials/blog/content-index'); ?>
-        <?php endwhile; ?>
-      </section>
+        <?php endif; ?>
+      </div>
+    </div>
 
-      <?php if ($the_query->max_num_pages > 1) :  ?>
-        <nav class="prev-next-posts">
-          <div class="prev-posts-link">
-            <?= get_next_posts_link( 'Older Entries', $the_query->max_num_pages ); ?>
-          </div>
-          <div class="next-posts-link">
-            <?= get_previous_posts_link( 'Newer Entries' ); ?>
-          </div>
-        </nav>
-      <?php endif; ?>
-
-
-      <?php wp_reset_postdata(); ?>
-
-    <?php else :  ?>
-      <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+    <?php if ( $wp_query->max_num_pages > 1 ) : $max = $wp_query->max_num_pages; ?>
+      <div class="posts-index--pagination">
+        <?php include( locate_template('partials/posts/post-pagination.php') ); ?>
+      </div>
     <?php endif; ?>
+
+    <?php wp_reset_postdata(); ?>
 
   </div>
 </section>
