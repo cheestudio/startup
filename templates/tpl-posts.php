@@ -1,6 +1,7 @@
 <?php
-/* Template Name: Blog
+/* Template Name: Posts Index
 ========================================================= */ ?>
+
 <?php get_header(); ?>
 
 
@@ -8,7 +9,7 @@
   <div class="container">
 
     <div class="posts-index--title">
-      <h1>Blog</h1>
+      <h1>Posts Index Page</h1>
     </div>
 
     <?php // WP_Query Loop
@@ -20,22 +21,24 @@
     );
     $wp_query = new WP_Query( $args ); ?>
 
-    <div class="posts-index--grid">
-      <div class="flex">
-        <?php if ( $wp_query->have_posts() ) : ?>
-          <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-            <?php include( locate_template('partials/posts/post-entry.php') ); ?>
-          <?php endwhile; ?>
+    <div class="posts-index--content">
+      <?php if ( $wp_query->have_posts() ) : ?>
+        <div class="posts-grid">
+          <div class="flex">
+            <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+              <?php include( locate_template('partials/posts/post-entry.php') ); ?>
+            <?php endwhile; ?>
+          </div>
+        </div>
 
-        <?php else :  ?>
-          <h2>No Posts Found</h2>
-          <?php get_search_form(); ?>
+      <?php else :  ?>
+        <h2>No Posts Found</h2>
+        <?php get_search_form(); ?>
 
-        <?php endif; ?>
-      </div>
+      <?php endif; ?>
     </div>
 
-    <?php if ( $wp_query->max_num_pages > 1 ) : $max = $wp_query->max_num_pages; ?>
+    <?php if ( $wp_query->max_num_pages > 1 ) : ?>
       <div class="posts-index--pagination">
         <?php include( locate_template('partials/posts/post-pagination.php') ); ?>
       </div>

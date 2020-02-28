@@ -1,5 +1,20 @@
-<form role="search" method="get" id="searchform" class="form-search" action="<?= home_url('/'); ?>">
-  <label class="hide" for="s">Search for: </label>
-  <input type="text" value="<?php if (is_search()) { echo get_search_query(); } ?>" name="s" id="s" class="search-query" placeholder="Search...">
-  <button type="submit" id="searchsubmit" class="button">Search...</button>
-</form>
+<?php // Search Form
+$value = is_search() ? get_search_query() : ''; ?>
+
+<div class="search-form">
+  <form 
+  id     = "searchform" 
+  role   = "search"
+  method = "get"
+  action = "<?= home_url(); ?>"
+  >
+    <input 
+    type        = "text"
+    value       = "<?= $value; ?>"
+    name        = "s"
+    id          = "searchinput"
+    placeholder = "Search..."
+    >
+    <button type="submit" id="searchsubmit">Search...</button>
+  </form>
+</div>

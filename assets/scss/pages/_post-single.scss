@@ -2,10 +2,9 @@
 ========================================================= */
 
 .post-single {
-  @include row-padding();
+  @include row-padding;
 
   &--content {
-
     .article-single {
 
       &__title {
@@ -21,13 +20,9 @@
         }
       }
 
-      &__meta {
+      &__meta {}
 
-      }
-
-      &__content {
-
-      }
+      &__content {}
     }
   }
 }

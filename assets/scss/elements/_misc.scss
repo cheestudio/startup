@@ -1,14 +1,15 @@
-/* Misc. Text and Page Components
-========================================================= */
 
-// Post Meta
-.post-meta {
-  margin-bottom: 25px;
-  p {
-    margin-bottom: 0;
-  }
-  .date {}
-  .categories {}
-  .tags {}
-  .author {}
+/* Default Page (shared)
+========================================================= */
+.default-page {
+  @include row-padding;
+
+  &--content {}
+}
+
+
+/* 404 Page
+========================================================= */
+body.error404 {
+  .default-page {}
 }

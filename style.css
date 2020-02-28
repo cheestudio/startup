@@ -123,7 +123,7 @@ q:before {
   content: none
 }
 .container {
-  max-width: 1130px;
+  max-width: 1470px;
   margin: 0 auto;
   padding: 0 15px
 }
@@ -812,37 +812,41 @@ img {
 .navbar-toggle {
   display: none
 }
+.posts-grid .flex {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+.posts-grid .post-entry {
+  transition: box-shadow .6s cubic-bezier(.23,1,.32,1);
+  -ms-flex: 0 1 calc(25% - 20px);
+  flex: 0 1 calc(25% - 20px);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(204,204,204,.4)
+}
+.posts-grid .post-entry:active,
+.posts-grid .post-entry:focus,
+.posts-grid .post-entry:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,.4)
+}
+.posts-grid .post-entry__image a,
+.posts-grid .post-entry__image img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block
+}
 .post-meta {
   margin-bottom: 25px
 }
 .post-meta p {
   margin-bottom: 0
 }
-.posts-index--title {
-  text-align: center
-}
-.posts-index--grid {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1030px
-}
-.posts-index--grid .flex {
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap
-}
-.posts-index--grid .post-entry {
-  border: 2px solid #000;
-  -ms-flex: 0 1 calc(33.333% - 20px);
-  flex: 0 1 calc(33.333% - 20px);
-  margin: 10px;
-  padding: 20px;
-  text-align: center
-}
-.posts-index--grid .post-entry__image a,
-.posts-index--grid .post-entry__image img {
-  margin-left: auto;
-  margin-right: auto;
-  display: block
+.archive-index--title,
+.posts-index--title,
+.search-index--title {
+  text-align: center;
+  margin-bottom: 50px
 }
 .post-single--content .article-single__title h1 {
   text-align: center
@@ -852,61 +856,12 @@ img {
   margin-right: auto;
   display: block
 }
-body.search-results .container {
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 0 15px
-}
-body.search-results h2 {
-  text-align: center
-}
-body.search-results h2 em {
-  color: #000
-}
-.search-index {
-  padding: 100px 0
-}
-.search-result-entry {
-  transition: .6s cubic-bezier(.23,1,.32,1);
-  color: #000;
-  display: block;
-  border: 1px solid #eee;
-  margin: 25px 10px;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(204,204,204,.4)
-}
-.search-result-entry * {
-  transition: .6s cubic-bezier(.23,1,.32,1)
-}
-.search-result-entry:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,.4)
-}
-.search-result-entry:hover .view-result,
-.search-result-entry:hover h5 {
-  color: #000
-}
-.search-result-entry h2 {
-  font-size: 1.125em;
-  line-height: 1.4;
-  text-transform: uppercase;
-  color: #000;
-  font-weight: 700
-}
-.search-result-entry p {
-  font-size: .875em;
-  line-height: 1.4
-}
-.search-result-entry a {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -ms-flex-align: center;
-  align-items: center
-}
 @media only screen and (min-width:768px) and (max-width:1024px) {
+  .archive-index,
+  .default-page,
   .post-single,
-  .posts-index {
+  .posts-index,
+  .search-index {
     padding-top: 50px;
     padding-bottom: 50px
   }
@@ -946,21 +901,19 @@ body.search-results h2 em {
   header nav ul li .sub-menu li {
     white-space: nowrap
   }
+  .archive-index,
+  .default-page,
   .post-single,
-  .posts-index {
+  .posts-index,
+  .search-index {
     padding-top: 100px;
     padding-bottom: 100px
   }
-  .search-result-entries {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap
-  }
-  .search-result-entry {
-    width: 23%
+}
+@media only screen and (max-width:1366px) {
+  .posts-grid .post-entry {
+    -ms-flex-preferred-size: calc(33.333% - 20px);
+    flex-basis: calc(33.333% - 20px)
   }
 }
 @media only screen and (max-width:1024px) {
@@ -1165,7 +1118,7 @@ body.search-results h2 em {
     background-color: #eee;
     min-height: 60px
   }
-  .posts-index--grid .post-entry {
+  .posts-grid .post-entry {
     -ms-flex-preferred-size: calc(50% - 20px);
     flex-basis: calc(50% - 20px)
   }
@@ -1178,20 +1131,23 @@ body.search-results h2 em {
   body br {
     display: none
   }
-  .posts-index {
+  .default-page {
     padding-top: 50px;
     padding-bottom: 50px
   }
-  .posts-index--grid .flex {
+  .posts-grid .flex {
     -ms-flex-direction: column;
     flex-direction: column
   }
-  .posts-index--grid .post-entry {
+  .posts-grid .post-entry {
     margin-left: auto;
     margin-right: auto;
     max-width: 500px
   }
-  .post-single {
+  .archive-index,
+  .post-single,
+  .posts-index,
+  .search-index {
     padding-top: 50px;
     padding-bottom: 50px
   }
