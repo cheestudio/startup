@@ -1,7 +1,10 @@
 <?php // VARs & optional ACF code
-  if ( function_exists('get_field') ) :
-    $footer_code = get_field('footer_code', 'option'); 
-  endif; ?>
+if ( function_exists('get_field') ) :
+  $footer_code = get_field('footer_code', 'option');
+  $phone       = get_field('company_phone', 'option');
+  $email       = get_field('company_email', 'option');
+  $address     = get_field('company_address', 'option');
+endif; ?>
 
 </main>
 
