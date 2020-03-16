@@ -34,8 +34,7 @@
   "browserslist": [
     "> 0.5% or last 2 versions",
     "not dead",
-    "IE >= 10",
-    "safari >= 6.1",
+    "IE 11",
     "Firefox ESR"
   ]
 }
