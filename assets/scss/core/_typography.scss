@@ -58,7 +58,7 @@ body {
       line-height: 1.2;
       margin-bottom: 20px;
       @include for-size(tablet-sm) {
-        font-size: em(16);
+        font-size: 1em;
       }
     }
   }
