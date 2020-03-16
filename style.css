@@ -1091,6 +1091,9 @@ img {
   }
 }
 @media only screen and (max-width:767px) {
+  .flex {
+    flex-direction: column
+  }
   body main li,
   body main p {
     font-size: 1em

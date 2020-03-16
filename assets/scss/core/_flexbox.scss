@@ -4,7 +4,11 @@
 // Global
 .flex, %flex {
   display: flex;
+  @include for-size(tablet-sm) {
+    flex-direction: column;
+  }
 }
+
 .wrap, %wrap {
   flex-wrap: wrap;
 }
