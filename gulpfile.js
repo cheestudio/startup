@@ -4,7 +4,7 @@
 /* Project VARs
 ========================================================= */
 const
-PROJECT_NAME   = 'STARTUP',
+PROJECT_NAME   = 'aircfo',
 DEVELOPER_MODE = true,
 
 ROOT           = './',
