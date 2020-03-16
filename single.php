@@ -2,7 +2,7 @@
 
 
 <?php if ( have_posts() ) : ?>
-  <div class="post-single">
+  <section class="post-single">
     <div class="container">
 
       <div class="post-single--content">
@@ -12,7 +12,7 @@
       </div>
 
     </div>
-  </div>
+  </section>
 <?php endif; ?>
 
 
