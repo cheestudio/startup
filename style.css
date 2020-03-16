@@ -146,51 +146,39 @@ input[type=submit] {
   -webkit-appearance: none
 }
 .flex {
-  display: -ms-flexbox;
   display: flex
 }
 .wrap {
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap
 }
 .jcfs {
-  -ms-flex-pack: start;
   justify-content: flex-start
 }
 .jcc {
-  -ms-flex-pack: center;
   justify-content: center
 }
 .jcsb {
-  -ms-flex-pack: justify;
   justify-content: space-between
 }
 .jcsa {
-  -ms-flex-pack: distribute;
   justify-content: space-around
 }
 .aic {
-  -ms-flex-align: center;
   align-items: center
 }
 .aifs {
-  -ms-flex-align: start;
   align-items: flex-start
 }
 .aife {
-  -ms-flex-align: end;
   align-items: flex-end
 }
 .asc {
-  -ms-flex-item-align: center;
   align-self: center
 }
 .asfs {
-  -ms-flex-item-align: start;
   align-self: flex-start
 }
 .asfe {
-  -ms-flex-item-align: end;
   align-self: flex-end
 }
 h1,
@@ -790,7 +778,6 @@ img {
 .navbar-toggle .icon-bar:first-child,
 .navbar-toggle .icon-bar:last-child {
   transition: .6s cubic-bezier(.23,1,.32,1);
-  -ms-transform: translate(0);
   transform: translate(0)
 }
 .navbar-toggle .icon-bar:nth-child(2):after,
@@ -805,7 +792,6 @@ img {
   left: 0;
   margin-bottom: 7px;
   opacity: 0;
-  -ms-transform: rotate(0);
   transform: rotate(0);
   background-color: red
 }
@@ -813,12 +799,10 @@ img {
   display: none
 }
 .posts-grid .flex {
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap
 }
 .posts-grid .post-entry {
   transition: box-shadow .6s cubic-bezier(.23,1,.32,1);
-  -ms-flex: 0 1 calc(25% - 20px);
   flex: 0 1 calc(25% - 20px);
   margin: 10px;
   padding: 20px;
@@ -868,9 +852,7 @@ img {
 }
 @media only screen and (min-width:1025px) {
   header .container {
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
     align-items: center
   }
   header .brand {
@@ -882,9 +864,7 @@ img {
   header nav ul {
     margin: 0;
     padding: 0;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
     align-items: center
   }
   header nav ul li {
@@ -912,7 +892,6 @@ img {
 }
 @media only screen and (max-width:1366px) {
   .posts-grid .post-entry {
-    -ms-flex-preferred-size: calc(33.333% - 20px);
     flex-basis: calc(33.333% - 20px)
   }
 }
@@ -943,9 +922,7 @@ img {
     min-height: 60px;
     width: 100%;
     z-index: 3000;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
     align-items: center;
     padding-left: 15px
   }
@@ -1007,7 +984,6 @@ img {
   .mobile-nav-wrap .mobile-nav ul li .expand:active,
   .mobile-nav-wrap .mobile-nav ul li .expand:focus,
   .mobile-nav-wrap .mobile-nav ul li .expand:hover {
-    -ms-transform: rotate(-180deg);
     transform: rotate(-180deg)
   }
   .mobile-nav-wrap .mobile-nav ul li .close-sub {
@@ -1024,7 +1000,6 @@ img {
   .mobile-nav-wrap .mobile-nav ul li .close-sub:active,
   .mobile-nav-wrap .mobile-nav ul li .close-sub:focus,
   .mobile-nav-wrap .mobile-nav ul li .close-sub:hover {
-    -ms-transform: translateX(-5px);
     transform: translateX(-5px)
   }
   .mobile-nav-wrap .mobile-nav ul li .sub-menu {
@@ -1044,7 +1019,6 @@ img {
   .mobile-nav-wrap .mobile-nav ul li .sub-menu.sub-open {
     opacity: 1;
     visibility: visible;
-    -ms-transform: translateX(0);
     transform: translateX(0)
   }
   .mobile-nav-wrap .mobile-nav ul li .sub-menu:before {
@@ -1083,17 +1057,14 @@ img {
     width: 32px
   }
   .mobile-nav-wrap.open a .icon-bar:first-child {
-    -ms-transform: translate(0,12px) rotate(46deg);
     transform: translate(0,12px) rotate(46deg)
   }
   .mobile-nav-wrap.open a .icon-bar:last-child {
-    -ms-transform: translate(0,-10px) rotate(-46deg);
     transform: translate(0,-10px) rotate(-46deg)
   }
   .mobile-nav-wrap.open a .icon-bar:nth-child(2n) {
     background: 0 0;
     opacity: 0;
-    -ms-transform: scale(0);
     transform: scale(0)
   }
   .navbar-toggle {
@@ -1102,11 +1073,8 @@ img {
   }
   .sub-menu-title {
     position: absolute;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: center;
     justify-content: center;
     z-index: 100;
     top: 0;
@@ -1119,7 +1087,6 @@ img {
     min-height: 60px
   }
   .posts-grid .post-entry {
-    -ms-flex-preferred-size: calc(50% - 20px);
     flex-basis: calc(50% - 20px)
   }
 }
@@ -1136,7 +1103,6 @@ img {
     padding-bottom: 50px
   }
   .posts-grid .flex {
-    -ms-flex-direction: column;
     flex-direction: column
   }
   .posts-grid .post-entry {

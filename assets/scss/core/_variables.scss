@@ -134,3 +134,20 @@ $browser-context: 16; // Default
 	margin-left: auto;
 	margin-right: auto;
 }
+
+@mixin no-margin-last {
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+@mixin display( $state:show ) {
+	@if $state == 'show' {
+		opacity: 1;
+		visibility: visible;
+	}
+	@elseif $state == 'hide' {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
