@@ -21,7 +21,7 @@
 
   <header class="main-banner">
     <div class="container">
-      <a class="brand" href="/" title="Home">
+      <a class="brand" href="<?= home_url(); ?>" title="Home">
         <?php svg( $logo, 'Site Logo' ); ?>
       </a>
 

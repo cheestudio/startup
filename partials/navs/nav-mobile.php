@@ -1,6 +1,6 @@
 <div class="mobile-nav-wrap">
 
-  <a class="mobile-brand" href="/" title="Home">
+  <a class="mobile-brand" href="<?= home_url(); ?>" title="Home">
     <?php svg( $logo, 'Mobile Site Logo' ); ?>
   </a>
 
