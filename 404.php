@@ -16,7 +16,7 @@ $errorPage = new WP_Query(array(
           <h1><?php the_title(); ?></h1>
           <?php the_content(); ?>
         <?php endwhile; ?>
-        <?php wp_reset_query(); ?>
+        <?php wp_reset_postdata(); ?>
 
       <?php else : ?>
         <h1>404 - Page Not Found</h1>
