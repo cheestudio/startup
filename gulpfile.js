@@ -4,7 +4,7 @@
 /* Project VARs
 ========================================================= */
 const
-PROJECT_NAME   = 'aircfo',
+PROJECT_NAME   = 'PROJECT_NAME',
 DEVELOPER_MODE = true,
 
 ROOT           = './',
@@ -107,10 +107,10 @@ function svgo() {
     { removeXMLNS: true },
     { inlineStyles: false },
     { minifyStyles: false },
-    { cleanupIDs: 
+    { cleanupIDs:
       { force: true }
     },
-    { cleanupListOfValues: 
+    { cleanupListOfValues:
       { floatPrecision: 0 }
     },
     { convertColors: false },
