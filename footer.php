@@ -15,6 +15,10 @@ endif; ?>
      <p>&copy; <?= date('Y'); ?></p>
    </div>
 
+  <div class="social-icons">
+    <?php include( locate_template('partials/social-icons.php') ); ?>
+  </div>
+
  </div>
 </footer>
 

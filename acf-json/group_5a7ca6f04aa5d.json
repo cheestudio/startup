@@ -3,11 +3,11 @@
     "title": "Settings - Social Media",
     "fields": [
         {
-            "key": "field_5c4f9180693ec",
-            "label": "Social Icons",
-            "name": "social_icons",
-            "type": "repeater",
-            "instructions": "Place just the name of the icon you're wanting to use. A list of icons can be found <a target=\"_blank\" href=\"https:\/\/fontawesome.com\/icons?d=gallery&s=brands&m=free\">here<\/a>.",
+            "key": "field_5e95ed7fc61d4",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,16 +15,33 @@
                 "class": "",
                 "id": ""
             },
+            "message": "If using FontAwesome icons: <br>\r\nCopy\/paste the class name of the icon you're wanting to use. <br>\r\nA list of valid icons can be found <a target=\"_blank\" href=\"https:\/\/fontawesome.com\/icons?d=gallery&s=brands&m=free\">HERE<\/a>. <br>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5c4f9180693ec",
+            "label": "Social Icons",
+            "name": "social_icons_rep",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "heading",
+                "id": ""
+            },
             "collapsed": "field_5c4f9189693ed",
             "min": 0,
             "max": 0,
-            "layout": "block",
+            "layout": "table",
             "button_label": "add Social Link",
             "sub_fields": [
                 {
-                    "key": "field_5c4f9189693ed",
-                    "label": "Icon Class",
-                    "name": "icon_class",
+                    "key": "field_5e95ec8fb8973",
+                    "label": "Title",
+                    "name": "title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -35,7 +52,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "e.g. facebook, twitter",
+                    "placeholder": "",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
@@ -55,6 +72,25 @@
                     },
                     "default_value": "",
                     "placeholder": "http:\/\/"
+                },
+                {
+                    "key": "field_5c4f9189693ed",
+                    "label": "Icon Class",
+                    "name": "class",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "<i class=\"fab fa-facebook-square\"><\/i>",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -70,11 +106,11 @@
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "default",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "modified": 1555018379
+    "modified": 1586885004
 }
