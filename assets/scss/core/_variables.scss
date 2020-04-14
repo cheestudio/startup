@@ -118,12 +118,6 @@ $browser-context: 16; // Default
 	list-style: none;
 }
 
-@mixin vertical-center( $pos:relative ) {
-	position: $pos;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
 @mixin flex-center {
 	display: flex;
 	justify-content: center;
@@ -138,6 +132,18 @@ $browser-context: 16; // Default
 @mixin no-margin-last {
 	&:last-of-type {
 		margin-bottom: 0;
+	}
+}
+
+@mixin center-hack( $dir:vert, $pos:relative ) {
+	position: $pos;
+	@if $dir == 'vert' {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@elseif $dir == 'horiz' {
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
 
