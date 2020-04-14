@@ -76,6 +76,27 @@ function my_acf_admin_head() {
     .acf-field-button-group.center {
       text-align: center;
     }
+    table.acf-table th.acf-th {
+      text-align: center;
+      font-weight: bold;
+    }
+    table.acf-table th.acf-th .description {
+      font-weight: normal;
+    }
+    .acf-field.heading > .acf-label label {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+    .acf-flexible-content .layout .acf-fc-layout-handle,
+    .acf-accordion-title > label {
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .acf-field-flexible-content .acf-field.heading > .acf-label {
+      visibility: hidden;
+    }
   </style>
   <?php
 }
