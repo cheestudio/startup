@@ -8,9 +8,13 @@
     flex-direction: column;
   }
 }
-
 .wrap, %wrap {
   flex-wrap: wrap;
+}
+.reverse, %reverse {
+  @include for-size(tablet-sm, up) {
+    flex-direction: row-reverse;
+  }
 }
 
 // Justify Content
