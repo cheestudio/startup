@@ -9,15 +9,21 @@
   <?php wp_head(); ?>
   <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= home_url(); ?>/feed/">
 
-  <?php // Site Logo & optional ACF code
+  <?php // Site Logo & Optional ACF code
+  $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg';
   if ( function_exists('get_field') ) :
     $header_code = get_field('header_code', 'option');
     if ( isset($header_code) ) echo $header_code;
-  endif;
-  $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg'; ?>
+  endif; ?>
 </head>
 
 <body <?php body_class(); ?> id="top">
+  
+  <?php // Optional ACF code
+  if ( function_exists('get_field') ) :
+    $body_code = get_field('body_code', 'option');
+    if ( isset($body_code) ) echo $body_code;
+  endif; ?>
 
   <header class="main-banner">
     <div class="container">

@@ -23,7 +23,26 @@
             "label": "Header Code",
             "name": "header_code",
             "type": "textarea",
-            "instructions": "Paste optional JS code here to include in Header.",
+            "instructions": "Paste optional JS code here to include in the Header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5eab61eea2f6e",
+            "label": "Body Code",
+            "name": "body_code",
+            "type": "textarea",
+            "instructions": "Paste optional JS code here to include in the Body",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -42,7 +61,7 @@
             "label": "Footer Code",
             "name": "footer_code",
             "type": "textarea",
-            "instructions": "Paste optional JS code here to include in Footer.",
+            "instructions": "Paste optional JS code here to include in the Footer",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -74,5 +93,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1569623389
+    "modified": 1588290061
 }
