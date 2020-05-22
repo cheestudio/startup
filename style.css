@@ -234,118 +234,39 @@ body a[href^=tel]:hover {
 body em {
   font-style: italic
 }
-form input[type=color],
-form input[type=date],
-form input[type=datetime-local],
-form input[type=datetime],
-form input[type=email],
-form input[type=month],
-form input[type=number],
-form input[type=password],
-form input[type=search],
-form input[type=tel],
-form input[type=text],
-form input[type=time],
-form input[type=url],
-form input[type=week],
+form input[type],
 form select,
 form textarea {
   transition: .6s linear;
-  padding: 10px 40px;
   display: inline-block;
   border: 2px solid #000;
   box-shadow: none;
   border-radius: 0;
-  padding-left: 15px!important;
+  padding: 10px 15px!important;
   font-family: inherit;
-  color: red
+  color: #000
 }
-form input[type=color]::-webkit-input-placeholder,
-form input[type=date]::-webkit-input-placeholder,
-form input[type=datetime-local]::-webkit-input-placeholder,
-form input[type=datetime]::-webkit-input-placeholder,
-form input[type=email]::-webkit-input-placeholder,
-form input[type=month]::-webkit-input-placeholder,
-form input[type=number]::-webkit-input-placeholder,
-form input[type=password]::-webkit-input-placeholder,
-form input[type=search]::-webkit-input-placeholder,
-form input[type=tel]::-webkit-input-placeholder,
-form input[type=text]::-webkit-input-placeholder,
-form input[type=time]::-webkit-input-placeholder,
-form input[type=url]::-webkit-input-placeholder,
-form input[type=week]::-webkit-input-placeholder,
+form input[type]::-webkit-input-placeholder,
 form select::-webkit-input-placeholder,
 form textarea::-webkit-input-placeholder {
-  color: red
+  color: #000
 }
-form input[type=color]:-moz-placeholder,
-form input[type=date]:-moz-placeholder,
-form input[type=datetime-local]:-moz-placeholder,
-form input[type=datetime]:-moz-placeholder,
-form input[type=email]:-moz-placeholder,
-form input[type=month]:-moz-placeholder,
-form input[type=number]:-moz-placeholder,
-form input[type=password]:-moz-placeholder,
-form input[type=search]:-moz-placeholder,
-form input[type=tel]:-moz-placeholder,
-form input[type=text]:-moz-placeholder,
-form input[type=time]:-moz-placeholder,
-form input[type=url]:-moz-placeholder,
-form input[type=week]:-moz-placeholder,
+form input[type]:-moz-placeholder,
 form select:-moz-placeholder,
 form textarea:-moz-placeholder {
-  color: red
+  color: #000
 }
-form input[type=color]::-moz-placeholder,
-form input[type=date]::-moz-placeholder,
-form input[type=datetime-local]::-moz-placeholder,
-form input[type=datetime]::-moz-placeholder,
-form input[type=email]::-moz-placeholder,
-form input[type=month]::-moz-placeholder,
-form input[type=number]::-moz-placeholder,
-form input[type=password]::-moz-placeholder,
-form input[type=search]::-moz-placeholder,
-form input[type=tel]::-moz-placeholder,
-form input[type=text]::-moz-placeholder,
-form input[type=time]::-moz-placeholder,
-form input[type=url]::-moz-placeholder,
-form input[type=week]::-moz-placeholder,
+form input[type]::-moz-placeholder,
 form select::-moz-placeholder,
 form textarea::-moz-placeholder {
-  color: red
+  color: #000
 }
-form input[type=color]:-ms-input-placeholder,
-form input[type=date]:-ms-input-placeholder,
-form input[type=datetime-local]:-ms-input-placeholder,
-form input[type=datetime]:-ms-input-placeholder,
-form input[type=email]:-ms-input-placeholder,
-form input[type=month]:-ms-input-placeholder,
-form input[type=number]:-ms-input-placeholder,
-form input[type=password]:-ms-input-placeholder,
-form input[type=search]:-ms-input-placeholder,
-form input[type=tel]:-ms-input-placeholder,
-form input[type=text]:-ms-input-placeholder,
-form input[type=time]:-ms-input-placeholder,
-form input[type=url]:-ms-input-placeholder,
-form input[type=week]:-ms-input-placeholder,
+form input[type]:-ms-input-placeholder,
 form select:-ms-input-placeholder,
 form textarea:-ms-input-placeholder {
-  color: red
+  color: #000
 }
-form input[type=color]:focus,
-form input[type=date]:focus,
-form input[type=datetime-local]:focus,
-form input[type=datetime]:focus,
-form input[type=email]:focus,
-form input[type=month]:focus,
-form input[type=number]:focus,
-form input[type=password]:focus,
-form input[type=search]:focus,
-form input[type=tel]:focus,
-form input[type=text]:focus,
-form input[type=time]:focus,
-form input[type=url]:focus,
-form input[type=week]:focus,
+form input[type]:focus,
 form select:focus,
 form textarea:focus {
   outline: 0;
@@ -356,47 +277,48 @@ form input[type=file]:focus,
 form input[type=radio]:focus {
   outline: red auto 1px
 }
-div[id^=gform_wrapper] .validation_message,
-div[id^=gform_wrapper] li.gfield.gfield_error .gfield_description {
-  font-size: 11px;
+.gform_wrapper.gform_validation_error .validation_message,
+.gform_wrapper.gform_validation_error li.gfield.gfield_error .gfield_description {
+  font-size: 12px;
   font-weight: 400;
   display: none
 }
-div[id^=gform_wrapper] li.gfield.gfield_error,
-div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+.gform_wrapper.gform_validation_error li.gfield.gfield_error,
+.gform_wrapper.gform_validation_error li.gfield_contains_required.gfield_creditcard_warning {
   background-color: transparent!important;
   border: none!important;
-  margin-bottom: 0!important;
-  padding: 6px 6px 4px 0!important
+  padding: 0
 }
-div[id^=gform_wrapper] .top_label .gfield_error {
-  width: 100%
+.gform_wrapper.gform_validation_error li.gfield.gfield_error.gfield_contains_required label.gfield_label,
+.gform_wrapper.gform_validation_error li.gfield_contains_required.gfield_creditcard_warning.gfield_contains_required label.gfield_label {
+  margin-top: 0
 }
-div[id^=gform_wrapper] .top_label .gfield_error .ginput_container {
-  max-width: 100%
-}
-div[id^=gform_wrapper] .gfield_error input[type=email],
-div[id^=gform_wrapper] .gfield_error input[type=tel],
-div[id^=gform_wrapper] .gfield_error input[type=text],
-div[id^=gform_wrapper] .gfield_error textarea {
+.gform_wrapper.gform_validation_error li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+  border: 2px solid #000;
   border-color: red!important
 }
-div[id^=gform_wrapper] .gfield_error .gfield_label {
+.gform_wrapper.gform_validation_error .top_label .gfield_error {
+  width: 100%
+}
+.gform_wrapper.gform_validation_error .top_label .gfield_error.ginput_container {
+  max-width: 100%
+}
+.gform_wrapper.gform_validation_error .gfield_error input[type=email],
+.gform_wrapper.gform_validation_error .gfield_error input[type=tel],
+.gform_wrapper.gform_validation_error .gfield_error input[type=text],
+.gform_wrapper.gform_validation_error .gfield_error textarea {
+  border-color: red!important
+}
+.gform_wrapper.gform_validation_error .gfield_error .gfield_label {
   color: red
 }
-div[id^=gform_wrapper] .gfield_required {
-  color: #d2722d!important
-}
-div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required div.ginput_container,
-div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required label.gfield_label {
-  color: red!important;
-  padding: 0!important
-}
-div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
-  padding: 0!important
+.gform_wrapper.gform_validation_error .gfield_required,
+.gform_wrapper.gform_validation_error li.gfield.gfield_error.gfield_contains_required div.ginput_container,
+.gform_wrapper.gform_validation_error li.gfield.gfield_error.gfield_contains_required label.gfield_label {
+  color: red!important
 }
 .validation_error {
-  color: #df1c1c!important;
+  color: red!important;
   font-size: 11px!important;
   display: none
 }
@@ -408,20 +330,31 @@ div[id^=gform_wrapper] li.gfield.gfield_error.gfield_contains_required {
   left: -9000px;
   position: absolute!important
 }
-div[id^=gform_wrapper] form .gform_body ul {
+.gform_wrapper {
+  margin: 0
+}
+.gform_wrapper form .gform_body ul {
   margin: 0;
   padding: 0;
   list-style: none
 }
-div[id^=gform_wrapper] form .gform_body ul li {
+.gform_wrapper form .gform_body ul li {
   margin-bottom: 15px
 }
-div[id^=gform_wrapper] form .gform_body ul li .gfield_label {
-  display: none
+.gform_wrapper form .gform_body ul li .gfield_label .gfield_required {
+  color: red
 }
-div[id^=gform_wrapper] form .gform_body ul li input,
-div[id^=gform_wrapper] form .gform_body ul li textarea {
+.gform_wrapper form .gform_body ul li input,
+.gform_wrapper form .gform_body ul li textarea {
   width: 100%
+}
+.gform_wrapper form .gform_body ul li .ginput_container_consent {
+  display: flex;
+  align-items: center
+}
+.gform_wrapper form .gform_body ul li .ginput_container_consent input {
+  width: auto;
+  margin-right: 20px
 }
 *,
 * * {
