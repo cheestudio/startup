@@ -74,14 +74,19 @@ $browser-context: 16; // Default
 
 /* Font Awesome 5 ( needs content specified )
 ========================================================= */
-@mixin fa {
+@mixin fa( $type:free, $weight:900 ) {
 	display: inline-block;
 	font-style: normal;
 	font-variant: normal;
 	text-rendering: auto;
-	font-family: "Font Awesome 5 Pro";
-	font-weight: 900; // 300 also valid for Free version
 	-webkit-font-smoothing: antialiased;
+	@if ( $type == 'free' ) {
+		font-family: "Font Awesome 5 Free";
+		font-weight: $weight;
+	}
+	@elseif ( $type == 'brands' ) {
+		font-family: "Font Awesome 5 Brands";
+	}
 }
 
 /* Button ( color, background, border )
@@ -135,7 +140,7 @@ $browser-context: 16; // Default
 	}
 }
 
-@mixin center-hack( $dir:vert, $pos:relative ) {
+@mixin center( $dir:vert, $pos:relative ) {
 	position: $pos;
 	@if $dir == 'vert' {
 		top: 50%;
