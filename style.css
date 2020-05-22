@@ -145,6 +145,9 @@ input[type=submit] {
   line-height: 1.2;
   -webkit-appearance: none
 }
+.grid {
+  display: grid
+}
 .flex {
   display: flex
 }
@@ -1031,6 +1034,9 @@ img {
 @media only screen and (max-width:767px) {
   .flex {
     flex-direction: column
+  }
+  .flex > div {
+    flex-basis: auto!important
   }
   body main li,
   body main p {

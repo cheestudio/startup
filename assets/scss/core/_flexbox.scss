@@ -2,10 +2,17 @@
 ========================================================= */
 
 // Global
+.grid {
+  display: grid;
+}
+
 .flex, %flex {
   display: flex;
   @include for-size(tablet-sm) {
     flex-direction: column;
+    > div {
+      flex-basis: auto !important;
+    }
   }
 }
 .wrap, %wrap {
