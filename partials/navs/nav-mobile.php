@@ -1,14 +1,16 @@
 <div class="mobile-nav-wrap">
 
-  <a class="mobile-brand" href="<?= home_url(); ?>" title="Home">
-    <?php svg( $logo, 'Mobile Site Logo' ); ?>
-  </a>
+  <div class="mobile-nav-header">
+    <a class="mobile-brand" href="<?= home_url(); ?>" title="Tap to Go Home">
+      <?php svg( $logo, 'Company Logo' ); ?>
+    </a>
 
-  <a class="navbar-toggle">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-  </a>
+    <a class="navbar-toggle" title="Tap to Open Menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </a>
+  </div>
 
   <div class="mobile-nav">
     <?php wp_nav_menu( array(

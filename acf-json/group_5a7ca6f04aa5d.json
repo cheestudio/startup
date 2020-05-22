@@ -12,7 +12,7 @@
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "",
+                "class": "center",
                 "id": ""
             },
             "message": "If using FontAwesome icons: <br>\r\nCopy\/paste the class name of the icon you're wanting to use. <br>\r\nA list of valid icons can be found <a target=\"_blank\" href=\"https:\/\/fontawesome.com\/icons?d=gallery&s=brands&m=free\">HERE<\/a>. <br>",
@@ -112,5 +112,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1586885004
+    "modified": 1590110247
 }

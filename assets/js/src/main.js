@@ -19,7 +19,7 @@ function setCookie(name, value, days) {
 ========================================================= */
 $('.navbar-toggle').click(function() {
   $('.mobile-nav').fadeToggle();
-  $(this).parent().toggleClass('open');
+  $(this).parents('.mobile-nav-wrap').toggleClass('open');
   $('.sub-menu').removeClass('sub-open');
   return false;
 });
