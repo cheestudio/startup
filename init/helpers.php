@@ -76,6 +76,10 @@ function my_acf_admin_head() {
     .acf-field-button-group.center {
       text-align: center;
     }
+    .acf-link .link-wrap span,
+    .acf-link .link-wrap .link-url {
+      display: block;
+    }
     table.acf-table th.acf-th {
       text-align: center;
       font-weight: bold;
