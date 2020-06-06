@@ -53,14 +53,13 @@ body {
   @include font;
 }
 
-  main {
-    p, li {
-      font-size: em(20);
-      line-height: 1.2;
-      margin-bottom: 20px;
-      @include for-size(tablet-sm) {
-        font-size: 1em;
-      }
+main {
+  p, li {
+    font-size: em(20);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    @include for-size(tablet-sm) {
+      font-size: 1em;
     }
   }
 
@@ -89,3 +88,4 @@ body {
       display: none;
     }
   }
+}
