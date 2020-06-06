@@ -9,6 +9,11 @@ h1, h2, h3, h4, h5, h6 {
   color: black;
   line-height: 1.2;
   margin: 0 0 20px 0;
+  br {
+    @include for-size(tablet-sm) {
+      display: none;
+    }
+  }
 }
 h1 {
   font-size: em(60);
@@ -83,9 +88,4 @@ main {
     font-style: italic;
   }
 
-  br {
-    @include for-size(tablet-sm) {
-      display: none;
-    }
-  }
 }
