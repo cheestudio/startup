@@ -12,8 +12,7 @@ STYLES_MAIN    = './assets/scss/main.scss',
 STYLES_SOURCE  = './assets/scss/**/*.scss',
 JS_SOURCE      = './assets/js/src/**/*.js',
 JS_DEST        = './assets/js/',
-SVG_SOURCE     = './assets/img/svg/src/*.svg',
-SVG_DEST       = './assets/img/svg/',
+SVG_SOURCE     = './assets/img/svg/*.svg',
 ALL_IMAGES     = './assets/img/*.{png,jpg,jpeg,gif}',
 ALL_PHP        = './**/*.php';
 
@@ -34,8 +33,6 @@ sass         = require('gulp-sass'),
 sassglob     = require('gulp-sass-glob'),
 gulpif       = require('gulp-if'),
 terser       = require('gulp-terser-js'),
-svgmin       = require('gulp-svgmin'),
-changed      = require('gulp-changed'),
 browsersync  = require('browser-sync').create();
 
 
@@ -96,48 +93,6 @@ function scriptsJS() {
 }
 
 
-/* SVGo
-========================================================= */
-function svgo() {
-  return src( SVG_SOURCE )
-  .pipe( plumber( { errorHandler: onError } ) )
-  .pipe( changed( SVG_DEST, { hasChanged: changed.compareContents } ) )
-  .pipe( svgmin( {
-    plugins: [
-    { removeXMLNS: true },
-    { inlineStyles: false },
-    { minifyStyles: false },
-    { cleanupIDs:
-      { force: true }
-    },
-    { cleanupListOfValues:
-      { floatPrecision: 0 }
-    },
-    { convertColors: false },
-    { removeViewBox: false },
-    { collapseGroups: false },
-    { convertPathData: false },
-    { mergePaths: false },
-    { removeTitle: false },
-    { removeDimensions: false },
-    { removeAttrs:
-      { attrs: ['role', 'version', 'itemprop', 'x', 'y', 'data.*', 'xml.*'] }
-    },
-    { removeScriptElement: true },
-    { addAttributesToSVGElement:
-      { attributes: ['xmlns="http://www.w3.org/2000/svg"', 'role="img"'] }
-    },
-    { sortAttrs:
-      { order: ['id', 'viewBox', 'width', 'height', 'fill', 'stroke', 'xmlns', 'role'] }
-    }
-    ],
-    js2svg: { pretty: true }
-  }))
-  .pipe( plumber.stop() )
-  .pipe( dest( SVG_DEST ) )
-}
-
-
 /* BrowserSync
 ========================================================= */
 function browserSyncInit(done) {
@@ -163,11 +118,11 @@ function watchFiles(done) {
     watch( ALL_PHP, reload );
     watch( ALL_IMAGES, reload );
     watch( JS_SOURCE, series(scriptsJS, reload) );
-    watch( SVG_SOURCE, { events: ['add', 'change'] }, series(svgo, reload) );
+    watch( SVG_SOURCE, { events: ['add', 'change'] }, reload );
   }
   else {
     watch( JS_SOURCE, scriptsJS );
-    watch( SVG_SOURCE, { events: ['add', 'change'] }, svgo );
+    watch( SVG_SOURCE, { events: ['add', 'change'] } );
   }
   done();
 }
