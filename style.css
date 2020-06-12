@@ -212,29 +212,29 @@ h5 {
 h6 {
   font-size: 1.25em
 }
-body main li,
-body main p {
+main li,
+main p {
   font-size: 1.25em;
   line-height: 1.2;
   margin-bottom: 20px
 }
-body blockquote p:last-of-type {
+main blockquote p:last-of-type {
   margin-bottom: 0
 }
-body a,
-body a[href^=tel] {
+main a,
+main a[href^=tel] {
   transition: .6s cubic-bezier(.23,1,.32,1);
   color: red
 }
-body a:active,
-body a:focus,
-body a:hover,
-body a[href^=tel]:active,
-body a[href^=tel]:focus,
-body a[href^=tel]:hover {
+main a:active,
+main a:focus,
+main a:hover,
+main a[href^=tel]:active,
+main a[href^=tel]:focus,
+main a[href^=tel]:hover {
   color: red
 }
-body em {
+main em {
   font-style: italic
 }
 form input[type],
@@ -475,7 +475,8 @@ iframe {
 }
 svg {
   display: block;
-  max-width: 100%
+  max-width: 100%;
+  height: auto
 }
 figure,
 form {
@@ -1032,12 +1033,17 @@ img {
   .flex > div {
     flex-basis: auto!important
   }
-  body main li,
-  body main p {
-    font-size: 1em
-  }
-  body br {
+  h1 br,
+  h2 br,
+  h3 br,
+  h4 br,
+  h5 br,
+  h6 br {
     display: none
+  }
+  main li,
+  main p {
+    font-size: 1em
   }
   .default-page {
     padding-top: 50px;
