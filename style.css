@@ -123,7 +123,7 @@ q:before {
   content: none
 }
 .container {
-  max-width: 1470px;
+  max-width: calc(1440px + $padding*2);
   margin: 0 auto;
   padding: 0 15px
 }
@@ -144,45 +144,6 @@ input[type=submit] {
   font-size: 1.125em;
   line-height: 1.2;
   -webkit-appearance: none
-}
-.grid {
-  display: grid
-}
-.flex {
-  display: flex
-}
-.wrap {
-  flex-wrap: wrap
-}
-.jcfs {
-  justify-content: flex-start
-}
-.jcc {
-  justify-content: center
-}
-.jcsb {
-  justify-content: space-between
-}
-.jcsa {
-  justify-content: space-around
-}
-.aic {
-  align-items: center
-}
-.aifs {
-  align-items: flex-start
-}
-.aife {
-  align-items: flex-end
-}
-.asc {
-  align-self: center
-}
-.asfs {
-  align-self: flex-start
-}
-.asfe {
-  align-self: flex-end
 }
 h1,
 h2,
@@ -236,6 +197,16 @@ main a[href^=tel]:hover {
 }
 main em {
   font-style: italic
+}
+.grid {
+  display: grid;
+  grid-gap: 20px
+}
+.flex {
+  display: flex
+}
+.flex.wrap {
+  flex-wrap: wrap
 }
 form input[type],
 form select,
@@ -737,7 +708,7 @@ img {
   display: block
 }
 @media only screen and (min-width:768px) {
-  .reverse {
+  .flex.reverse {
     flex-direction: row-reverse
   }
 }
@@ -1027,12 +998,6 @@ img {
   }
 }
 @media only screen and (max-width:767px) {
-  .flex {
-    flex-direction: column
-  }
-  .flex > div {
-    flex-basis: auto!important
-  }
   h1 br,
   h2 br,
   h3 br,
@@ -1044,6 +1009,12 @@ img {
   main li,
   main p {
     font-size: 1em
+  }
+  .flex {
+    flex-direction: column
+  }
+  .flex > div {
+    flex-basis: auto!important
   }
   .default-page {
     padding-top: 50px;
@@ -1063,5 +1034,15 @@ img {
   .search-index {
     padding-top: 50px;
     padding-bottom: 50px
+  }
+}
+@media only screen and (max-width:480px) {
+  .archive-index,
+  .default-page,
+  .post-single,
+  .posts-index,
+  .search-index {
+    padding-top: 25px;
+    padding-bottom: 25px
   }
 }

@@ -1,0 +1,38 @@
+/* Reusable Flex & Grid Classes
+========================================================= */
+
+// Grid Function
+@function grid( $columns:12, $addPadding:false ) {
+  $result : ( $col-width * $columns ) + ( $col-gutter * ($columns - 1) );
+  @if ( $addPadding === true ) {
+    $result : $result + ($padding * 2);
+  }
+  @return $result + px;
+}
+
+
+// Classes
+.grid {
+  display: grid;
+  grid-gap: $gap + px;
+}
+
+.flex {
+  display: flex;
+  @include for-size(tablet-sm) {
+    flex-direction: column;
+    > div {
+      flex-basis: auto !important;
+    }
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.reverse {
+    @include for-size(tablet-sm, up) {
+      flex-direction: row-reverse;
+    }
+  }
+}

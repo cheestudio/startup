@@ -1,9 +1,18 @@
+
+/* Grid & Padding
+========================================================= */
+$col-width  : 80;
+$col-gutter : 20;
+$gap        : 20;
+$padding    : 15;
+
+
 /* Containers
 ========================================================= */
-@mixin content-container( $width: 1470px ) {
+@mixin content-container( $width: calc(1440px + $padding*2) ) {
 	max-width: $width;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 #{$padding}px;
 }
 .container {
 	@include content-container;
@@ -12,12 +21,11 @@
 
 /* Fonts
 ========================================================= */
-@mixin font( $style:'') {
-	@if ( $style == '' ) {
+@mixin font( $style:'body' ) {
+	@if ( $style == 'body' ) {
 		// font-family here
-		// available font weights
 	}
-	@elseif ( $style == '' ) {
+	@elseif ( $style == 'heading' ) {
 		// font-family here
 	}
 }
@@ -47,10 +55,11 @@ $browser-context: 16; // Default
 
 /* Global Row Padding
 ========================================================= */
-@mixin row-padding(
-	$top-large:100, $bottom-large:100,
-	$top-medium:50, $bottom-medium:50,
-	$top-small:$top-medium, $bottom-small:$bottom-medium) {
+@mixin row-padding (
+	$top-large:100,         $bottom-large:100,
+	$top-medium:50,         $bottom-medium:50,
+	$top-small:$top-medium, $bottom-small:$bottom-medium,
+	$top-x-small:25,        $bottom-x-small:25) {
 
 	@include for-size(tablet, up) {
 		padding-top:    $top-large + px;
@@ -63,6 +72,19 @@ $browser-context: 16; // Default
 	@include for-size(tablet-sm) {
 		padding-top:    $top-small + px;
 		padding-bottom: $bottom-small + px;
+	}
+	@include for-size(phone) {
+		padding-top:    $top-x-small + px;
+		padding-bottom: $bottom-x-small + px;
+	}
+}
+
+@mixin section-padding {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@include for-size(tablet-sm) {
+		padding-top: 25px;
+		padding-bottom: 25px;
 	}
 }
 
@@ -138,6 +160,11 @@ $browser-context: 16; // Default
 	&:last-of-type {
 		margin-bottom: 0;
 	}
+}
+
+@mixin padding-remove {
+	margin-left: -#{$padding}px;
+	margin-right: -#{$padding}px;
 }
 
 @mixin center( $dir:vert, $pos:relative ) {
