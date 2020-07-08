@@ -24,7 +24,7 @@
     <div class="posts-index--content">
       <?php if ( $wp_query->have_posts() ) : ?>
         <div class="posts-grid">
-          <div class="flex">
+          <div class="grid">
             <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
               <?php include( locate_template('partials/posts/post-entry.php') ); ?>
             <?php endwhile; ?>

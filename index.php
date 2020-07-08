@@ -11,7 +11,7 @@
     <div class="posts-index--content">
       <?php if ( have_posts() ) : ?>
         <div class="posts-grid">
-          <div class="flex">
+          <div class="grid">
             <?php while ( have_posts() ) : the_post(); ?>
               <?php include( locate_template('partials/posts/post-entry.php') ); ?>
             <?php endwhile; ?>

@@ -2,33 +2,14 @@
 /* Post Grid Index (shared)
 ========================================================= */
 .posts-grid {
-  .flex {
-    flex-wrap: wrap;
-    @include for-size(tablet-sm) {
-      flex-direction: column;
-    }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    justify-content: center;
   }
 
   .post-entry {
-    @include trans(box-shadow);
-    flex: 0 1 calc(25% - 20px);
-    margin: 10px;
     padding: 20px;
-    text-align: center;
-    box-shadow: 0px 0px 10px rgba(#ccc, 0.4);
-    &:hover, &:focus, &:active {
-      box-shadow: 0px 0px 10px rgba(black, 0.4);
-    }
-    @include for-size(laptop) {
-      flex-basis: calc(33.333% - 20px);
-    }
-    @include for-size(tablet) {
-      flex-basis: calc(50% - 20px);
-    }
-    @include for-size(tablet-sm) {
-      @include margin-center;
-      max-width: 500px;
-    }
+    border: 1px solid black;
 
     &__title {}
 
