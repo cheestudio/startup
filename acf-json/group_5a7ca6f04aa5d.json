@@ -87,7 +87,7 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "<i class=\"fab fa-facebook-square\"><\/i>",
+                    "placeholder": "<span class=\"fab fa-facebook-square\"><\/span>",
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
@@ -112,5 +112,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590110247
+    "modified": 1594171091
 }
