@@ -1,9 +1,15 @@
+
+<?php // Mobile Nav
+$logo = get_field('logo_mobile', 'option'); ?>
+
 <div class="mobile-nav-wrap">
 
   <div class="mobile-nav-header">
-    <a class="mobile-brand" href="<?= home_url(); ?>" title="Tap to Go Home">
-      <?php svg( $logo, 'Company Logo' ); ?>
-    </a>
+    <?php if ( $logo ) : ?>
+      <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home">
+        <?php svg( $logo['sizes']['thumbnail'], 'Site Logo' ); ?>
+      </a>
+    <?php endif; ?>
 
     <a class="navbar-toggle" title="Tap to Open Menu">
       <span class="icon-bar"></span>

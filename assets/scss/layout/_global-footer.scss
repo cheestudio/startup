@@ -1,3 +1,14 @@
-footer {
-  
+.footer {
+
+  &--menu {}
+
+  &--copyright {}
+
+  &--social {}
+
+  &--logo {
+    a, img {
+      display: block;
+    }
+  }
 }

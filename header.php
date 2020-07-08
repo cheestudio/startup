@@ -8,26 +8,20 @@
   <?php wp_head(); ?>
   <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= home_url(); ?>/feed/">
 
-  <?php // Site Logo & Optional ACF code
-  $logo = get_template_directory_uri() . '/assets/img/svg/logo.svg';
-  if ( function_exists('get_field') ) :
-    $header_code = get_field('header_code', 'option');
-    if ( isset($header_code) ) echo $header_code;
-  endif; ?>
+  <?php // Logos & Optional ACF code
+  $header_logo = get_field('logo_desktop', 'option');
+  $header_code = get_field('header_code', 'option');
+  $body_code   = get_field('body_code', 'option');
+  if ( isset( $header_code ) ) echo $header_code; ?>
 </head>
 
-<body <?php body_class(); ?> id="top">
-  
-  <?php // Optional ACF code
-  if ( function_exists('get_field') ) :
-    $body_code = get_field('body_code', 'option');
-    if ( isset($body_code) ) echo $body_code;
-  endif; ?>
+<body <?php body_class(); ?> id="top-of-page">
+  <?php if ( isset($body_code) ) echo $body_code; ?>
 
   <header class="main-banner">
     <div class="container">
-      <a class="brand" href="<?= home_url(); ?>" title="Home">
-        <?php svg( $logo, 'Site Logo' ); ?>
+      <a href="<?= home_url(); ?>" class="brand" title="Home">
+        <?php svg( $header_logo['sizes']['medium'], 'Site Logo' ); ?>
       </a>
 
       <nav>
