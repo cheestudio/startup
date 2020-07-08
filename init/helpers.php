@@ -98,6 +98,10 @@ function my_acf_admin_head() {
       text-transform: uppercase;
       font-weight: bold;
     }
+    .acf-link.-value .link-wrap {
+      display: block;
+      text-align: center;
+    }
     .acf-field-flexible-content .acf-field.heading > .acf-label {
       visibility: hidden;
     }
@@ -287,6 +291,7 @@ function my_custom_toolbars( $toolbars )
     'link',
     'unlink',
     'removeformat',
+    'fullscreen',
     'hr'
   );
   return $toolbars;
@@ -351,3 +356,38 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
 /* Disable Image Side scaling on upload
 ========================================================= */
 add_filter( 'big_image_size_threshold', 3840 );
+
+
+/* Numerical Pagination
+========================================================= */
+function post_pagination( $pages = '', $range = 2 ) {
+  $showitems = ( $range * 2 ) + 1;
+  global $paged;
+
+  if ( empty($paged) ) $paged = 1;
+  if ( $pages == '' ) {
+    global $wp_query;
+    $pages = $wp_query->max_num_pages;
+    if ( !$pages ) {
+      $pages = 1;
+    }
+  }
+
+  if ( 1 != $pages ) {
+    if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) 
+      echo "<a class='first-link' href='" . get_pagenum_link(1) . "' title='Go to First Page'><<</a>";
+    if ( $paged > 1 && $showitems < $pages ) 
+      echo "<a class='prev-link' href='" . get_pagenum_link($paged - 1) . "' title='Go to Previous Page'><</a>";
+
+    for ( $i = 1; $i <= $pages; $i++ ) {
+      if ( 1 != $pages && ( !($i >= $paged+$range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems ) ) {
+        echo ($paged == $i) ? "<span class='current'>{$i}</span>" : "<a href='" . get_pagenum_link($i) . "' class='inactive' title='Go to Page {$i}'>{$i}</a>";
+      }
+    }
+
+    if ( $paged < $pages && $showitems < $pages ) 
+      echo "<a class='next-link' href='" . get_pagenum_link($paged + 1) . "' title='Go to Next Page'>></a>";
+    if ( $paged < $pages - 1 &&  $paged + $range - 1 < $pages && $showitems < $pages ) 
+      echo "<a class='last-link' href='" . get_pagenum_link($pages) . "' title='Go to Last Page'>>></a>";
+  }
+}
