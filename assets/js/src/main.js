@@ -7,7 +7,6 @@ function getCookie(name) {
   return v ? v[2] : null;
 }
 
-
 /* Set Cookie function
 ========================================================= */
 function setCookie(name, value, days) {
@@ -16,16 +15,14 @@ function setCookie(name, value, days) {
   document.cookie = name + "=" + value + ";path=/;expires=" + d.toGMTString();
 }
 
-
 /* Mobile Nav Toggle
 ========================================================= */
-$('.navbar-toggle').click(function() {
+$('.navbar-toggle').click( function() {
   $('.mobile-nav').fadeToggle();
   $(this).parents('.mobile-nav-wrap').toggleClass('open');
   $('.sub-menu').removeClass('sub-open');
   return false;
 });
-
 
 /* Mobile Nav with Flyout Menus
 ========================================================= */
@@ -42,14 +39,12 @@ $('.close-sub').click(function(e){
   $(this).parent().removeClass('sub-open');
 });
 
-
 /* Sub Navigation Titles on Mobile Nav
 ========================================================= */
-$('.mobile-nav ul li.menu-item-has-children').each(function(){
+$('.mobile-nav ul li.menu-item-has-children').each( function(){
   var navSectionTitle = $(this).find('.expand').next().html();
   $(this).find('.sub-menu').prepend('<div class="sub-menu-title">' + navSectionTitle + '</div>');
 });
-
 
 /* Smooth Internal Links
 ========================================================= */
@@ -65,6 +60,7 @@ $('a[href*="#"]').not('[href="#"]').click( function(event) {
     }
   }
 });
+
 
 
 }); // End Document Ready
