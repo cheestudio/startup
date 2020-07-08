@@ -2,7 +2,6 @@
 
 [chee.studio](https://cheewebdevelopment.com)
 
-<br>
 
 ### Setup gulpfile.js
 
@@ -16,10 +15,12 @@
 
 ### Compile Styles & JS
 
-1. `.scss` files found in `assets/scss/`. The `core` folder is loaded in a specific order controlled by `main.scss`. Any additional files added to the `core` folder need to be manually added.
-2. All other `.scss` files found in other folders, such as `elements, layout, pages` are compiled automatically and do not need to be added to `main.scss`
-2. All `.scss` files will compile to `style.css` (easy to read format) and `style.min.css` (only this minified version is used)
-3. All `.js` files from `assets/js/src/` compile to `all.min.js` (only this minified version is used)
+**Note:** `.scss` files are found in `assets/scss/`
+
+1. The `core` folder is loaded in a specific order controlled by `main.scss`. Any additional files added to the `core` folder will need to be manually added to `main.scss` or they will not be included when compiled
+2. All other `.scss` files found in other folders, such as `elements, layout, pages` are automatically included when compiled and do not need to be added to `main.scss`
+3. All `.scss` files will compile to `style.css` (easy to read format for dev only) and `style.min.css`
+4. All `.js` files from `assets/js/src/` compile to `all.min.js`
 
 
 
