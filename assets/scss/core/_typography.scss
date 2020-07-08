@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+
 h1 {
   font-size: em(60);
   @include for-size(tablet-sm) {
@@ -60,6 +61,7 @@ body {
 
 main {
   p, li {
+    @include no-margin-last;
     font-size: em(20);
     line-height: 1.2;
     margin-bottom: 20px;
@@ -70,22 +72,16 @@ main {
 
   blockquote {
     p {
-      &:last-of-type {
-        margin-bottom: 0;
-      }
+      @include no-margin-last;
     }
   }
 
-  a, a[href^="tel"] {
+  a, a[href^="tel"], a[href^="mailto"] {
     @include trans;
     color: red;
     &:hover, &:focus, &:active {
       color: red;
     }
-  }
-
-  em {
-    font-style: italic;
   }
 
 }

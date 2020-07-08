@@ -39,7 +39,7 @@ b, strong {
 blockquote {
   margin: 30px;
 }
-dfn {
+dfn, em {
   font-style: italic;
 }
 hr {
@@ -89,8 +89,8 @@ sub {
   bottom: -0.25em;
 }
 dl, menu, ol, ul {
-  margin: 0;
-  padding: 20px;
+  margin: 25px;
+  padding: 0;
 }
 dd {
   margin: 0 0 0 20px;

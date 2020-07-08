@@ -179,10 +179,13 @@ main p {
   line-height: 1.2;
   margin-bottom: 20px
 }
-main blockquote p:last-of-type {
+main blockquote p:last-of-type,
+main li:last-of-type,
+main p:last-of-type {
   margin-bottom: 0
 }
 main a,
+main a[href^=mailto],
 main a[href^=tel] {
   transition: .6s cubic-bezier(.23,1,.32,1);
   color: red
@@ -190,13 +193,13 @@ main a[href^=tel] {
 main a:active,
 main a:focus,
 main a:hover,
+main a[href^=mailto]:active,
+main a[href^=mailto]:focus,
+main a[href^=mailto]:hover,
 main a[href^=tel]:active,
 main a[href^=tel]:focus,
 main a[href^=tel]:hover {
   color: red
-}
-main em {
-  font-style: italic
 }
 .grid {
   display: grid;
@@ -373,7 +376,8 @@ strong {
 blockquote {
   margin: 30px
 }
-dfn {
+dfn,
+em {
   font-style: italic
 }
 hr {
@@ -430,8 +434,8 @@ dl,
 menu,
 ol,
 ul {
-  margin: 0;
-  padding: 20px
+  margin: 25px;
+  padding: 0
 }
 dd {
   margin: 0 0 0 20px
@@ -669,6 +673,9 @@ img {
 .mobile-nav-wrap {
   display: none
 }
+.button-wrap {
+  margin-top: 50px
+}
 .posts-grid .flex {
   flex-wrap: wrap
 }
@@ -718,7 +725,6 @@ img {
 }
 @media only screen and (min-width:768px) and (max-width:1024px) {
   .archive-index,
-  .default-page,
   .post-single,
   .posts-index,
   .search-index {
@@ -758,7 +764,6 @@ img {
     white-space: nowrap
   }
   .archive-index,
-  .default-page,
   .post-single,
   .posts-index,
   .search-index {
@@ -1020,10 +1025,6 @@ img {
   .flex > div {
     flex-basis: auto!important
   }
-  .default-page {
-    padding-top: 50px;
-    padding-bottom: 50px
-  }
   .posts-grid .flex {
     flex-direction: column
   }
@@ -1042,7 +1043,6 @@ img {
 }
 @media only screen and (max-width:480px) {
   .archive-index,
-  .default-page,
   .post-single,
   .posts-index,
   .search-index {

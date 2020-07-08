@@ -1,15 +1,6 @@
 
-/* Default Page (shared)
+/* Button Wrap
 ========================================================= */
-.default-page {
-  @include row-padding;
-
-  &--content {}
-}
-
-
-/* 404 Page
-========================================================= */
-body.error404 {
-  .default-page {}
+.button-wrap {
+  margin-top: 50px;
 }
