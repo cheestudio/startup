@@ -4,7 +4,7 @@
 // Grid Function
 @function grid( $columns:12, $addPadding:false ) {
   $result : ( $col-width * $columns ) + ( $col-gutter * ($columns - 1) );
-  @if ( $addPadding === true ) {
+  @if ( $addPadding == true ) {
     $result : $result + ($padding * 2);
   }
   @return $result + px;

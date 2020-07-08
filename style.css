@@ -123,7 +123,7 @@ q:before {
   content: none
 }
 .container {
-  max-width: calc(1440px + $padding*2);
+  max-width: 1470px;
   margin: 0 auto;
   padding: 0 15px
 }
@@ -207,6 +207,10 @@ main em {
 }
 .flex.wrap {
   flex-wrap: wrap
+}
+.footer--logo a,
+.footer--logo img {
+  display: block
 }
 form input[type],
 form select,
@@ -780,7 +784,7 @@ img {
   main {
     margin-top: 60px
   }
-  .main-nav-wrap,
+  .desktop-nav-wrap,
   header .brand {
     display: none
   }

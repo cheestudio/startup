@@ -9,8 +9,8 @@ $padding    : 15;
 
 /* Containers
 ========================================================= */
-@mixin content-container( $width: calc(1440px + $padding*2) ) {
-	max-width: $width;
+@mixin content-container( $width: 1440 + ($padding * 2) ) {
+	max-width: $width+px;
 	margin: 0 auto;
 	padding: 0 #{$padding}px;
 }
@@ -143,12 +143,6 @@ $browser-context: 16; // Default
 	margin: 0;
 	padding: 0;
 	list-style: none;
-}
-
-@mixin flex-center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 @mixin margin-center {
