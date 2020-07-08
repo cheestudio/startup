@@ -4,7 +4,7 @@
 /* Project VARs
 ========================================================= */
 const
-PROJECT_NAME   = 'startup',
+PROJECT_NAME   = 'FOLDERNAME',
 DEVELOPER_MODE = true,
 
 ROOT           = './',
