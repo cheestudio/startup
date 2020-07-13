@@ -1006,9 +1006,6 @@ img {
   .flex {
     flex-direction: column
   }
-  .flex > div {
-    flex-basis: auto!important
-  }
   .archive-index,
   .post-single,
   .posts-index,
