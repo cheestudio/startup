@@ -1,16 +1,19 @@
 <?php
+
+/* Add Title Tag Support to wp_head();
+========================================================= */
+add_theme_support( 'title-tag' );
+
+/* Add Post Thumbnails (add CPT, page, etc to array as needed)
+========================================================= */
+add_theme_support('post-thumbnails', array('post'));
+
 /* Register NAV Menus
 ========================================================= */
 register_nav_menus(array(
   'primary_nav' => __('Primary Navigation'),
   'footer_nav'  => __('Footer Navigation'),
 ));
-
-
-/* Add Post Thumbnails (add CPT, page, etc to array as needed)
-========================================================= */
-add_theme_support('post-thumbnails', array('post'));
-
 
 /* Custom Image Sizes
 ========================================================= */
