@@ -105,6 +105,11 @@ function my_acf_admin_head() {
     .acf-field-flexible-content .acf-field.heading > .acf-label {
       visibility: hidden;
     }
+    .acf-field-oembed {
+      max-width: 640px;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
   </style>
   <?php
 }
