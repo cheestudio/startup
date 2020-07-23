@@ -1,17 +1,22 @@
 /* Mobile NAV
 ========================================================= */
 $menu-background         : white;
-$menu-border-color       : white;
-$resting-toggle-color    : black;
-$active-toggle-color     : black;
+$menu-background-open    : white;
 $menu-dropdown-color     : white;
-$link-color              : black;
+$sub-menu-background     : #eee;
+
+$toggle-resting-color    : black;
+$toggle-active-color     : black;
+
 $link-background         : white;
-$link-hover-color        : white;
-$link-hover-background   : black;
+$link-color              : black;
 $link-border-color       : #eee;
-$current-link-background : black;
-$current-link-color      : white;
+
+$link-hover-background   : black;
+$link-hover-color        : white;
+
+$link-current-background : black;
+$link-current-color      : white;
 
 
 /* Initiate Mobile Nav
@@ -51,10 +56,12 @@ $current-link-color      : white;
       width: 100%;
       .mobile-brand {
         img, svg {
-
+          width: 60px;
+          display: block;
         }
       }
       .navbar-toggle {
+        padding: 0;
         cursor: pointer;
         background: none;
         border: none;
@@ -62,7 +69,7 @@ $current-link-color      : white;
         .icon-bar {
           @include trans;
           display: block;
-          background: $resting-toggle-color;
+          background: $toggle-resting-color;
           border-radius: 5px;
           height: 4px;
           width: 32px;
@@ -80,7 +87,7 @@ $current-link-color      : white;
             content:'';
             position: absolute;
             display: block;
-            background-color: $active-toggle-color;
+            background-color: $toggle-active-color;
             border-radius: 5px;
             height: 4px;
             top: 34%;
@@ -94,7 +101,7 @@ $current-link-color      : white;
     }
 
     .mobile-nav {
-      background: $menu-background;
+      background: $menu-dropdown-color;
       clear: both;
       display: none;
       left: 0;
@@ -200,19 +207,19 @@ $current-link-color      : white;
         &.current-menu-item,
         &.current-page-ancestor {
           > a {
-            background-color: $current-link-background;
-            color: $current-link-color;
+            background-color: $link-current-background;
+            color: $link-current-color;
           }
         }
       }
     }
   }
   &.open {
-    background-color: #fff;
+    background-color: $menu-background-open;
     .navbar-toggle {
       .icon-bar {
         @include trans;
-        background: $active-toggle-color;
+        background: $toggle-active-color;
         width: 32px;
         &:first-child {
           transform: translate(0,12px) rotate(46deg);
@@ -242,7 +249,7 @@ $current-link-color      : white;
   text-align: center;
   font-size: 1em;
   font-weight: 500;
-  background-color: #eee;
+  background-color: $sub-menu-background;
   min-height: 60px;
 }
 }

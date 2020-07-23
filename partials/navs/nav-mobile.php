@@ -11,11 +11,11 @@ $logo = get_field('logo_mobile', 'option'); ?>
       </a>
     <?php endif; ?>
 
-    <a class="navbar-toggle" title="Tap to Open Menu">
+    <button class="navbar-toggle" title="Tap to Open Menu">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
-    </a>
+    </button>
   </div>
 
   <div class="mobile-nav">

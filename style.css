@@ -800,7 +800,13 @@ img {
     justify-content: space-between;
     width: 100%
   }
+  .mobile-nav-wrap .mobile-nav-header .mobile-brand img,
+  .mobile-nav-wrap .mobile-nav-header .mobile-brand svg {
+    width: 60px;
+    display: block
+  }
   .mobile-nav-wrap .mobile-nav-header .navbar-toggle {
+    padding: 0;
     cursor: pointer;
     background: 0 0;
     border: none;
