@@ -4,7 +4,7 @@ if ( !is_search() ) : ?>
   <div class="post-meta">
 
     <p class="date">
-      <time datetime="<?= get_the_time( 'c' ); ?>" pubdate><?= get_the_date(); ?></time>
+      <time datetime="<?= get_the_time( 'c' ); ?>"><?= get_the_date(); ?></time>
     </p>
 
     <?php // Categories
