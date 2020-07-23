@@ -3,7 +3,6 @@ $value = is_search() ? get_search_query() : ''; ?>
 
 <div class="search-form">
   <form 
-  id     = "searchform" 
   role   = "search"
   method = "get"
   action = "<?= home_url(); ?>"
@@ -11,10 +10,9 @@ $value = is_search() ? get_search_query() : ''; ?>
     <input 
     type        = "text"
     value       = "<?= $value; ?>"
-    name        = "s"
-    id          = "searchinput"
     placeholder = "Search..."
+    aria-label  = "Enter search term"
     >
-    <button type="submit" id="searchsubmit">Search...</button>
+    <button type="submit" class="search-button">Search</button>
   </form>
 </div>
