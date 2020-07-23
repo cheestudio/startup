@@ -3,7 +3,7 @@
 
 <?php // Look for a page slug "error-404"
 $errorPage = new WP_Query(array( 
- 'post_type' => 'post',
+ 'post_type' => 'page',
  'name'      => 'error-404'
 )); ?>
 
