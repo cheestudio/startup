@@ -122,7 +122,6 @@ function watchFiles(done) {
   }
   else {
     watch( JS_SOURCE, scriptsJS );
-    watch( SVG_SOURCE, { events: ['add', 'change'] } );
   }
   done();
 }
