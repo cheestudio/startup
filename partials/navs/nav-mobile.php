@@ -1,13 +1,13 @@
 
 <?php // Mobile Nav
-$logo = get_field('logo_mobile', 'option'); ?>
+$mobile_logo = get_field('logo_mobile', 'option') ? get_field('logo_mobile', 'option') : get_field('logo_desktop', 'option'); ?>
 
 <div class="mobile-nav-wrap">
 
   <div class="mobile-nav-header">
-    <?php if ( $logo ) : ?>
+    <?php if ( $mobile_logo ) : ?>
       <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home">
-        <?php svg( $logo['sizes']['thumbnail'], 'Site Logo' ); ?>
+        <?php svg( $mobile_logo['sizes']['medium'], 'Site Logo' ); ?>
       </a>
     <?php endif; ?>
 
