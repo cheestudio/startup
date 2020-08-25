@@ -1,9 +1,8 @@
-
 /* Grid & Padding
 ========================================================= */
 $col-width  : 80;
 $col-gutter : 20;
-$gap        : 20;
+$grid-gap   : 20;
 $padding    : 15;
 
 
@@ -79,6 +78,8 @@ $browser-context: 16; // Default
 	}
 }
 
+/* Shared Section Padding
+========================================================= */
 @mixin section-padding {
 	padding-top: 50px;
 	padding-bottom: 50px;
