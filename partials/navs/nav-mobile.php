@@ -6,12 +6,12 @@ $mobile_logo = get_field('logo_mobile', 'option') ? get_field('logo_mobile', 'op
 
   <div class="mobile-nav-header">
     <?php if ( $mobile_logo ) : ?>
-      <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home">
+      <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home" aria-label="Go Home">
         <?php svg( $mobile_logo['sizes']['medium'], 'Site Logo' ); ?>
       </a>
     <?php endif; ?>
 
-    <button class="navbar-toggle" title="Tap to Open Menu">
+    <button class="navbar-toggle" title="Tap to Open Menu" aria-label="Open Menu">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
