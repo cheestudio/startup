@@ -1,4 +1,4 @@
-## Chee Studio - Custom Wordpress Theme Framework
+## Chee Studio - Startup Theme
 
 [chee.studio](https://cheewebdevelopment.com)
 
