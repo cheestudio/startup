@@ -1,13 +1,12 @@
 
-<?php // Mobile Nav
-$mobile_logo = get_field('logo_mobile', 'option') ? get_field('logo_mobile', 'option') : get_field('logo_desktop', 'option'); ?>
-
+<?php // Assign custom mobile logo path, or will use Desktop instead
+$logo = url_exists( $logo_path . 'logo-mobile.svg' ) ? $logo_path . 'logo-mobile.svg' : $logo_desktop; ?>
 <div class="mobile-nav-wrap">
 
   <div class="mobile-nav-header">
-    <?php if ( $mobile_logo ) : ?>
+    <?php if ( $logo ) : ?>
       <a href="<?= home_url(); ?>" class="mobile-brand" title="Tap to Go Home" aria-label="Go Home">
-        <?php svg( $mobile_logo['sizes']['medium'], 'Site Logo' ); ?>
+        <?php svg( $logo, 'Home' ); ?>
       </a>
     <?php endif; ?>
 
@@ -19,8 +18,11 @@ $mobile_logo = get_field('logo_mobile', 'option') ? get_field('logo_mobile', 'op
   </div>
 
   <div class="mobile-nav">
-    <?php wp_nav_menu( array(
-      'theme_location'  => 'primary_nav',
+
+    <?php // Use custom mobile nav if assigned, or will use desktop instead
+    $theme_location = has_nav_menu( 'mobile_nav' ) ? 'mobile_nav' : 'primary_nav';
+    wp_nav_menu( array(
+      'theme_location'  => $theme_location,
       'container'       => '',
       'container_class' => '',
       'menu_id'         => '',

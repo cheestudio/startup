@@ -12,7 +12,8 @@ add_theme_support('post-thumbnails', array('post'));
 ========================================================= */
 register_nav_menus(array(
   'primary_nav' => __('Primary Navigation'),
-  'footer_nav'  => __('Footer Navigation'),
+  'mobile_nav'  => __('Mobile Navigation'),
+  'footer_nav'  => __('Footer Navigation')
 ));
 
 /* Custom Image Sizes

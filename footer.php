@@ -1,20 +1,20 @@
 <?php // VARs & optional ACF code
-$footer_code = get_field('footer_code', 'option');
-$footer_logo = get_field('logo_footer', 'option') ? get_field('logo_footer', 'option') : get_field('logo_desktop', 'option');
+$logo        = get_template_directory_uri() . '/assets/img/svg/logo.svg';
 $phone       = get_field('company_phone', 'option');
 $email       = get_field('company_email', 'option');
 $address     = get_field('company_address', 'option');
-$copyright   = get_field('company_copyright', 'option'); ?>
+$copyright   = get_field('company_copyright', 'option');
+$footer_code = get_field('footer_code', 'option'); ?>
 
 </main>
 
 <footer class="footer">
   <div class="container">
 
-    <?php if ( $footer_logo ) : ?>
+    <?php if ( $logo ) : ?>
       <div class="footer--logo">
         <a href="#top-of-page" class="footer-brand" title="Go to Top of Page">
-          <?php svg( $footer_logo['sizes']['medium'], 'Site Logo' ); ?>
+          <?php svg( $logo, 'Home' ); ?>
         </a>
       </div>
     <?php endif; ?>

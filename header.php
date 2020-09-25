@@ -9,9 +9,10 @@
   <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= home_url(); ?>/feed/">
 
   <?php // Logos & Optional ACF code
-  $header_logo = get_field('logo_desktop', 'option');
-  $header_code = get_field('header_code', 'option');
-  $body_code   = get_field('body_code', 'option');
+  $logo_path    = get_template_directory_uri() . '/assets/img/svg/';
+  $logo_desktop = $logo_path . 'logo.svg';
+  $header_code  = get_field('header_code', 'option');
+  $body_code    = get_field('body_code', 'option');
   if ( isset( $header_code ) ) echo $header_code; ?>
 </head>
 
@@ -20,9 +21,11 @@
 
   <header class="main-banner">
     <div class="container">
-      <a href="<?= home_url(); ?>" class="brand" title="Home">
-        <?php svg( $header_logo['sizes']['medium'], 'Site Logo' ); ?>
-      </a>
+      <?php if ( $logo_desktop ) : ?>
+        <a href="<?= home_url(); ?>" class="brand" title="Home">
+          <?php svg( $logo_desktop, 'Home' ); ?>
+        </a>
+      <?php endif; ?>
 
       <nav>
         <?php include( locate_template('partials/navs/nav-desktop.php') ); ?>
