@@ -18,41 +18,40 @@ function custom_login_screen() { ?>
       width: 320px;
     }
     #login a {
-      color: #fff !important;
+      transition: .6s cubic-bezier(.23,1,.32,1);
+      color: white !important;
     }
     #login a:hover {
-      color: #000 !important;
+      color: black !important;
     }
     #login #wp-submit {
-      display: inline-block;
-      *display: inline;
-      zoom: 1;
-      line-height: normal;
-      white-space: nowrap;
-      vertical-align: baseline;
-      text-align: center;
+      background: black;
+      border-radius: 0;
+      border: 2px solid black;
+      box-shadow: none;
+      color: white;
       cursor: pointer;
-      -webkit-user-drag: none;
-      -webkit-user-select: none;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1;
+      padding: 10px 30px;
+      text-align: center;
+      text-shadow: none;
+      transition: .6s cubic-bezier(.23,1,.32,1);
+      user-select: none;
+      vertical-align: baseline;
+      white-space: nowrap;
+      zoom: 1;
       -moz-user-select: none;
       -ms-user-select: none;
-      user-select: none;
-      border-radius: 0;
-      line-height: 0;
-      box-shadow: none;
-      text-shadow: none;
-      transition:400ms;
-      padding: 10px 40px;
-      font-size: 16px;
-      font-weight: 500;
-      border:2px solid #000;
-      color:#fff;
-      background:#000;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
     }
     #login #wp-submit:hover {
-      border:2px solid #333;
-      color:#fff;
-      background:#333;
+      border-color: black;
+      color: black;
+      background: white;
     }
   </style>
 <?php }
