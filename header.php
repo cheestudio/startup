@@ -11,9 +11,9 @@
   <?php // Logos & Optional ACF code
   $logo_path    = get_template_directory_uri() . '/assets/img/svg/';
   $logo_desktop = $logo_path . 'logo.svg';
-  $header_code  = get_field('header_code', 'option');
+  $head_code    = get_field('head_code', 'option');
   $body_code    = get_field('body_code', 'option');
-  if ( isset( $header_code ) ) echo $header_code; ?>
+  if ( isset( $head_code ) ) echo $head_code; ?>
 </head>
 
 <body <?php body_class(); ?> id="top-of-page">
