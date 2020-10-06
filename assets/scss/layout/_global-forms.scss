@@ -9,11 +9,12 @@
   &:-ms-input-placeholder      { @content; }
 }
 
-$input-border-width: 2;
-$input-border-color: black;
-$input-border-active-color: red;
-$input-border-radius: 0;
-$input-box-shadow: none;
+$input-border-width        : 2;
+$input-border-color        : black;
+$input-border-active-color : red;
+$input-border-error-color  : red;
+$input-border-radius       : 0;
+$input-box-shadow          : none;
 
 form input[type], form select, form textarea {
   @include trans( $easing:linear );
@@ -56,8 +57,7 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
     }
   }
   li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-    border: $input-border-width+px solid $input-border-color;
-    border-color: red !important;
+    border-color: $input-border-error-color !important;
   }
   .top_label .gfield_error {
     width: 100%;
@@ -67,24 +67,24 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
   }
   .gfield_error {
     input[type="text"], input[type="email"], input[type="tel"], textarea {
-      border-color: red !important;
+      border-color: $input-border-error-color !important;
     }
     .gfield_label {
-      color: red;
+      color: $input-border-error-color;
     }
   }
   .gfield_required {
-    color: red !important;
+    color: $input-border-error-color !important;
   }
   li.gfield.gfield_error.gfield_contains_required {
     label.gfield_label, div.ginput_container {
-      color: red !important;
+      color: $input-border-error-color !important;
     }
   }
 }
 .validation_error {
-  color: red !important;
-  font-size: 11px !important;
+  color: $input-border-error-color !important;
+  font-size: 12px !important;
   display: none;
 }
 .gform_confirmation_wrapper {
