@@ -1,3 +1,4 @@
+
 <?php // Social Icons
 $icons = get_field('social_icons_rep', 'option'); ?>
 
@@ -13,7 +14,7 @@ $icons = get_field('social_icons_rep', 'option'); ?>
           <a 
           href   = "<?= $link; ?>"
           class  = "icon"
-          title  = "Link to <?= $title; ?>"
+          title  = "Link to <?= $title; ?> in new tab"
           target = "_blank"
           ><?= $class; ?></a>
         </li>

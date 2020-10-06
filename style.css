@@ -687,6 +687,19 @@ img {
 .button-wrap {
   margin-top: 30px
 }
+.social-icons ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex
+}
+.social-icons ul li:not(:last-child) {
+  margin-right: 20px
+}
+.social-icons ul li a {
+  transition: .6s cubic-bezier(.23,1,.32,1);
+  font-size: 1.25em
+}
 .posts-grid .grid {
   grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
   justify-content: center
@@ -1022,6 +1035,9 @@ img {
   }
   .flex {
     flex-direction: column
+  }
+  .social-icons ul {
+    justify-content: center
   }
   .archive-index,
   .post-single,
