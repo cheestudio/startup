@@ -1,6 +1,6 @@
 
 <?php // Assign custom mobile logo path, or will use Desktop instead
-$logo = url_exists( $logo_path . 'logo-mobile.svg' ) ? $logo_path . 'logo-mobile.svg' : $logo_desktop; ?>
+$logo = url_exists( $logo_path . 'logo-mobile.svg' ) ?: $logo_desktop; ?>
 <div class="mobile-nav-wrap">
 
   <div class="mobile-nav-header">
