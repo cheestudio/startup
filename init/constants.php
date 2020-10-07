@@ -8,6 +8,11 @@ add_theme_support( 'title-tag' );
 ========================================================= */
 add_theme_support('post-thumbnails');
 
+/* Additional Gutenberg Alignment Classes
+========================================================= */
+add_theme_support('align-wide');
+add_theme_support('align-full');
+
 /* Register NAV Menus
 ========================================================= */
 register_nav_menus(array(
