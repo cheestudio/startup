@@ -6,7 +6,7 @@ add_theme_support( 'title-tag' );
 
 /* Add Post Thumbnails (add CPT, page, etc to array as needed)
 ========================================================= */
-add_theme_support('post-thumbnails', array('post'));
+add_theme_support('post-thumbnails');
 
 /* Register NAV Menus
 ========================================================= */
