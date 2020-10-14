@@ -1,34 +1,3 @@
-/* Grid & Padding Sizes
-========================================================= */
-$col-width  : 80;
-$col-gutter : 20;
-$grid-gap   : 20;
-$padding    : 15;
-
-
-/* Grid Function
-========================================================= */
-@function grid( $columns:12, $addPadding:false ) {
-  $result : ( $col-width * $columns ) + ( $col-gutter * ($columns - 1) );
-  @if ( $addPadding == true ) {
-    $result : $result + ($padding * 2);
-  }
-  @return $result + px;
-}
-
-
-/* Containers
-========================================================= */
-@mixin content-container( $width: 1440 + ($padding * 2) ) {
-	max-width: $width+px;
-	margin: 0 auto;
-	padding: 0 #{$padding}px;
-}
-.container {
-	@include content-container;
-}
-
-
 /* Fonts
 ========================================================= */
 @mixin font( $style:'body' ) {
@@ -44,6 +13,36 @@ $padding    : 15;
 /* Color VARs
 ========================================================= */
 
+
+/* Grid & Padding Sizes
+========================================================= */
+$col-width  : 80;
+$col-gutter : 20;
+$grid-gap   : 20;
+$padding    : 15;
+
+
+/* Grid Function
+========================================================= */
+@function grid( $columns:12, $addPadding:false ) {
+	$result : ( $col-width * $columns ) + ( $col-gutter * ($columns - 1) );
+	@if ( $addPadding == true ) {
+		$result : $result + ($padding * 2);
+	}
+	@return $result + px;
+}
+
+
+/* Containers
+========================================================= */
+@mixin content-container( $width: 1440 + ($padding * 2) ) {
+	max-width: $width+px;
+	margin: 0 auto;
+	padding: 0 #{$padding}px;
+}
+.container {
+	@include content-container;
+}
 
 
 /* EM to PX
@@ -63,7 +62,7 @@ $browser-context: 16; // Default
 	}
 }
 
-/* Global Row Padding
+/* Padding - Global Rows
 ========================================================= */
 @mixin row-padding (
 	$top-large:100,         $bottom-large:100,
@@ -84,16 +83,6 @@ $browser-context: 16; // Default
 	}
 }
 
-/* Shared Section Padding
-========================================================= */
-@mixin section-padding {
-	padding-top: 50px;
-	padding-bottom: 50px;
-	@include for-size(tablet-sm) {
-		padding-top: 25px;
-		padding-bottom: 25px;
-	}
-}
 
 /* Global Transition ( property, duration, easing )
 ========================================================= */
@@ -118,31 +107,6 @@ $browser-context: 16; // Default
 	}
 }
 
-/* Button ( color, background, border )
-========================================================= */
-%btn {
-	@include trans;
-	border: 2px solid transparent;
-	cursor: pointer;
-	display: inline-block;
-	padding: 10px 40px;
-	text-align: center;
-	user-select: none;
-	vertical-align: baseline;
-	font-size: em(18);
-	line-height: 1.2;
-	-webkit-appearance: none;
-}
-@mixin button( $color:black, $bg:white, $border:black ) {
-	@extend %btn;
-	background-color: $bg;
-	color: $color;
-	border-color: $border;
-	&:hover, &:focus, &:active {
-		color: $bg;
-		background-color: $color;
-	}
-}
 
 /* Additional Helper Mixins
 ========================================================= */
@@ -187,5 +151,32 @@ $browser-context: 16; // Default
 	@elseif $state == hide {
 		opacity: 0;
 		visibility: hidden;
+	}
+}
+
+
+/* Button ( color, background, border )
+========================================================= */
+%btn {
+	@include trans;
+	border: 2px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px 40px;
+	text-align: center;
+	user-select: none;
+	vertical-align: baseline;
+	font-size: em(18);
+	line-height: 1.2;
+	-webkit-appearance: none;
+}
+@mixin button( $color:black, $bg:white, $border:black ) {
+	@extend %btn;
+	background-color: $bg;
+	color: $color;
+	border-color: $border;
+	&:hover, &:focus, &:active {
+		color: $bg;
+		background-color: $color;
 	}
 }
