@@ -68,8 +68,7 @@ $browser-context: 16; // Default
 @mixin row-padding (
 	$top-large:100,         $bottom-large:100,
 	$top-medium:50,         $bottom-medium:50,
-	$top-small:$top-medium, $bottom-small:$bottom-medium,
-	$top-x-small:25,        $bottom-x-small:25) {
+	$top-small:$top-medium, $bottom-small:$bottom-medium) {
 
 	@include for-size(tablet, up) {
 		padding-top:    $top-large + px;
@@ -82,10 +81,6 @@ $browser-context: 16; // Default
 	@include for-size(tablet-sm) {
 		padding-top:    $top-small + px;
 		padding-bottom: $bottom-small + px;
-	}
-	@include for-size(phone) {
-		padding-top:    $top-x-small + px;
-		padding-bottom: $bottom-x-small + px;
 	}
 }
 

@@ -1046,12 +1046,3 @@ img {
     padding-bottom: 50px
   }
 }
-@media only screen and (max-width:480px) {
-  .archive-index,
-  .post-single,
-  .posts-index,
-  .search-index {
-    padding-top: 25px;
-    padding-bottom: 25px
-  }
-}
