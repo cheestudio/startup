@@ -1,9 +1,20 @@
-/* Grid & Padding
+/* Grid & Padding Sizes
 ========================================================= */
 $col-width  : 80;
 $col-gutter : 20;
 $grid-gap   : 20;
 $padding    : 15;
+
+
+/* Grid Function
+========================================================= */
+@function grid( $columns:12, $addPadding:false ) {
+  $result : ( $col-width * $columns ) + ( $col-gutter * ($columns - 1) );
+  @if ( $addPadding == true ) {
+    $result : $result + ($padding * 2);
+  }
+  @return $result + px;
+}
 
 
 /* Containers
