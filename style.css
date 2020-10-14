@@ -179,27 +179,34 @@ main p {
   line-height: 1.2;
   margin-bottom: 20px
 }
-main blockquote p:last-of-type,
 main li:last-of-type,
 main p:last-of-type {
   margin-bottom: 0
 }
-main a,
-main a[href^=mailto],
-main a[href^=tel] {
+main li a,
+main li a[href^=tel],
+main p a,
+main p a[href^=tel] {
   transition: .6s cubic-bezier(.23,1,.32,1);
+  color: red;
+  text-decoration: underline
+}
+main li a:active,
+main li a:focus,
+main li a:hover,
+main li a[href^=tel]:active,
+main li a[href^=tel]:focus,
+main li a[href^=tel]:hover,
+main p a:active,
+main p a:focus,
+main p a:hover,
+main p a[href^=tel]:active,
+main p a[href^=tel]:focus,
+main p a[href^=tel]:hover {
   color: red
 }
-main a:active,
-main a:focus,
-main a:hover,
-main a[href^=mailto]:active,
-main a[href^=mailto]:focus,
-main a[href^=mailto]:hover,
-main a[href^=tel]:active,
-main a[href^=tel]:focus,
-main a[href^=tel]:hover {
-  color: red
+main blockquote p:last-of-type {
+  margin-bottom: 0
 }
 .grid {
   display: grid;
