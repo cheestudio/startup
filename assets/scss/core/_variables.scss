@@ -168,24 +168,23 @@ $browser-context: 16; // Default
 	margin-right: -#{$padding}px;
 }
 
-@mixin center( $dir:vert, $pos:relative ) {
-	position: $pos;
-	@if $dir == 'vert' {
+@mixin center( $dir:vert ) {
+	@if $dir == vert {
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	@elseif $dir == 'horiz' {
+	@elseif $dir == horiz {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 }
 
 @mixin display( $state:show ) {
-	@if $state == 'show' {
+	@if $state == show {
 		opacity: 1;
 		visibility: visible;
 	}
-	@elseif $state == 'hide' {
+	@elseif $state == hide {
 		opacity: 0;
 		visibility: hidden;
 	}
