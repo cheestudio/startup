@@ -1,5 +1,5 @@
 @include for-size(tablet, up) {
-  
+
   header {
 
     .container {
@@ -14,7 +14,6 @@
     }
 
     nav {
-
       ul {
         margin: 0;
         padding: 0;
@@ -27,6 +26,13 @@
           a {
 
           }
+          &.menu-item-has-children {
+            &:hover, &:focus, &:active {
+              .sub-menu {
+                @include display(show);
+              }
+            }
+          }
           &.current-menu-item,
           &.current_page_ancestor {
             > a {
@@ -35,13 +41,16 @@
           }
 
           .sub-menu {
+            @include trans;
+            @include display(hide);
             display: block;
             position: absolute;
             top: 100%;
             left: 0;
             li {
               white-space: nowrap;
-              &.current-menu-item {
+              &.current-menu-item,
+              &.current_page_ancestor {
 
               }
               a {
@@ -51,8 +60,8 @@
               }
             }
           }
-        } // END li
+        }
       }
     }
-  } // END header
+  }
 }
