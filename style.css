@@ -820,18 +820,18 @@ img {
     display: none
   }
   .mobile-nav-wrap {
-    background: #fff;
-    box-shadow: 0 0 5px rgba(0,0,0,.1);
     position: fixed;
     display: flex;
     align-items: center;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
     left: 0;
     top: 0;
     min-height: 60px;
-    width: 100%;
-    z-index: 3000;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
+    width: 100%;
+    z-index: 3000
   }
   .mobile-nav-wrap .mobile-nav-header {
     display: flex;
@@ -841,7 +841,6 @@ img {
   }
   .mobile-nav-wrap .mobile-nav-header .mobile-brand img,
   .mobile-nav-wrap .mobile-nav-header .mobile-brand svg {
-    width: 60px;
     display: block
   }
   .mobile-nav-wrap .mobile-nav-header .navbar-toggle {
@@ -879,8 +878,8 @@ img {
     top: 34%;
     left: 0;
     margin-bottom: 7px;
-    opacity: 0;
-    transform: rotate(0)
+    transform: rotate(0);
+    opacity: 0
   }
   .mobile-nav-wrap .mobile-nav {
     background: #fff;
@@ -907,8 +906,8 @@ img {
   }
   .mobile-nav-wrap .mobile-nav ul li > a {
     transition: .6s cubic-bezier(.23,1,.32,1);
-    color: #000;
     display: block;
+    color: #000;
     font-size: 1em;
     line-height: 1.2;
     font-weight: 500;
@@ -958,14 +957,14 @@ img {
     transition: .6s cubic-bezier(.23,1,.32,1);
     opacity: 0;
     visibility: hidden;
-    background-color: #fff;
     position: fixed;
+    background-color: #fff;
     border: none;
     text-align: center;
-    width: 100%;
-    height: 100%;
     padding-top: 60px;
     top: 0;
+    width: 100%;
+    height: 100%;
     z-index: 4000
   }
   .mobile-nav-wrap .mobile-nav ul li .sub-menu.sub-open {
@@ -1024,15 +1023,16 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
     top: 0;
     left: 0;
     right: 0;
     text-align: center;
     font-size: 1em;
     font-weight: 500;
+    color: #000;
     background-color: #eee;
-    min-height: 60px
+    min-height: 60px;
+    z-index: 100
   }
 }
 @media only screen and (max-width:767px) {
