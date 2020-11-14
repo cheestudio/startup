@@ -1,4 +1,4 @@
-/* Core Form Styles
+/* Gravity Form Styles
 ========================================================= */
 
 // Placeholder
@@ -9,19 +9,28 @@
   &:-ms-input-placeholder      { @content; }
 }
 
-$input-border-width        : 2;
-$input-border-color        : black;
-$input-border-active-color : red;
-$input-border-error-color  : red;
-$input-border-radius       : 0;
-$input-box-shadow          : none;
+// Settings
+$border-width-top    : 2;
+$border-width-bottom : 2;
+$border-width-right  : 2;
+$border-width-left   : 2;
+$border-color        : black;
+$border-color-active : black;
+$border-color-error  : red;
+$border-radius       : 0;
+$box-shadow          : none;
 
 form input[type], form select, form textarea {
   @include trans( $easing:linear );
   display: inline-block;
-  border: $input-border-width+px solid $input-border-color;
-  box-shadow: $input-box-shadow;
-  border-radius: $input-border-radius+px;
+  border-top-width: $border-width-top+px;
+  border-bottom-width: $border-width-bottom+px;
+  border-right-width: $border-width-right+px;
+  border-left-width: $border-width-left+px;
+  border-style: solid;
+  border-color: $border-color;
+  border-radius: $border-radius+px;
+  box-shadow: $box-shadow;
   padding: 10px 15px !important;
   font-family: inherit;
   color: black;
@@ -32,20 +41,21 @@ form input[type], form select, form textarea {
 
 form input[type]:focus, form select:focus, form textarea:focus {
   outline: 0;
-  border-color: $input-border-active-color;
+  border-color: $border-color-active;
 }
 
 form input[type=file]:focus, form input[type=radio]:focus, form input[type=checkbox]:focus {
-  outline: 1px auto $input-border-active-color;
+  outline: 1px auto $border-color-active;
 }
 
 
-/* Gravity Form Error Styles
+/* Error Styles
 ========================================================= */
 .gform_wrapper.gform_validation_error {
   .validation_message, li.gfield.gfield_error .gfield_description {
     font-size: 12px;
     font-weight: normal;
+    color: $border-color-error;
     display: none;
   }
   li.gfield.gfield_error, li.gfield_contains_required.gfield_creditcard_warning {
@@ -56,34 +66,28 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
       margin-top: 0;
     }
   }
-  li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-    border-color: $input-border-error-color !important;
-  }
-  .top_label .gfield_error {
-    width: 100%;
-    &.ginput_container {
-      max-width: 100%;
+  li.gfield_error {
+    input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), select, textarea {
+      border-top-width: $border-width-top+px;
+      border-bottom-width: $border-width-bottom+px;
+      border-right-width: $border-width-right+px;
+      border-left-width: $border-width-left+px;
+      border-color: $border-color-error;
     }
-  }
-  .gfield_error {
-    input[type="text"], input[type="email"], input[type="tel"], textarea {
-      border-color: $input-border-error-color !important;
+    .gfield_radio, .gfield_checkbox {
+      li label {
+        color: $border-color-error;
+      }
     }
-    .gfield_label {
-      color: $input-border-error-color;
-    }
-  }
-  .gfield_required {
-    color: $input-border-error-color !important;
   }
   li.gfield.gfield_error.gfield_contains_required {
     label.gfield_label, div.ginput_container {
-      color: $input-border-error-color !important;
+      color: $border-color-error !important;
     }
   }
 }
 .validation_error {
-  color: $input-border-error-color !important;
+  color: $border-color-error !important;
   font-size: 12px !important;
   display: none;
 }
@@ -99,7 +103,7 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
 }
 
 
-/* Global Form Default Styles
+/* Global Default Styles
 ========================================================= */
 .gform_wrapper {
   margin: 0;
@@ -108,7 +112,7 @@ form input[type=file]:focus, form input[type=radio]:focus, form input[type=check
       ul {
         @include list-reset;
         li {
-          margin-bottom: 15px;
+
           .gfield_label {
             .gfield_required {
               color: red;
