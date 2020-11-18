@@ -21,7 +21,7 @@
         {
             "key": "field_5b92f8a0032d6",
             "label": "Head Code",
-            "name": "header_code",
+            "name": "head_code",
             "type": "textarea",
             "instructions": "Paste optional JS code here to include in the Head",
             "required": 0,
@@ -93,5 +93,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1602007524
+    "modified": 1605728721
 }
