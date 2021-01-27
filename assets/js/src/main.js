@@ -1,8 +1,9 @@
-jQuery(document).ready(function($) {
+(function($){
+
 
 /* CUSTOM
 ========================================================= */
 
 
 
-}); // End Document Ready
+})(jQuery); // End Document Ready
